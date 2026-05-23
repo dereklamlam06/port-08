@@ -80,7 +80,7 @@
                 
                 <!-- Gear/Tools badge overlay with rotating vector SVG (Replacing Emoji for premium visual output) -->
                 <div class="absolute -bottom-1 -right-1 w-8 h-8 bg-[#0068FF] rounded-full flex items-center justify-center border-2 border-navyDeep shadow-lg">
-                    <svg class="w-4.5 h-4.5 text-white animate-custom-spin" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                    <svg class="w-5 h-5 text-white animate-custom-spin" style="width: 20px; height: 20px;" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
                         <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                     </svg>
@@ -121,7 +121,7 @@
                     <!-- Zalo link -->
                     <a href="https://zalo.me/0945143701" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 px-4 py-3 bg-[#0068FF] hover:bg-[#005AE0] text-white rounded-xl transition-all font-bold shadow-lg duration-300 hover:-translate-y-0.5 active:translate-y-0 h-12 uppercase tracking-wider text-[11px] sm:text-xs">
                         <!-- Premium sharp custom Zalo icon SVG -->
-                        <svg viewBox="0 0 24 24" class="w-4.5 h-4.5 fill-current shrink-0" xmlns="http://www.w3.org/2000/svg">
+                        <svg viewBox="0 0 24 24" class="w-5 h-5 fill-current shrink-0" style="width: 20px; height: 20px; min-width: 20px;" xmlns="http://www.w3.org/2000/svg">
                             <path d="M12 2C6.48 2 2 5.86 2 10.63c0 2.58 1.34 4.89 3.49 6.38l-.73 2.7c-.1.35.26.63.56.44l3.23-2.02c1.08.31 2.24.48 3.45.48 5.52 0 10-3.86 10-8.63S17.52 2 12 2zm3.33 11.2H11.2l-.63.93h2.64v1.16H9.41v-.91l1.83-2.61H9.68V10.6h3.48v.91l-1.83 2.60H13.6c.16 0 .3-.13.3-.3v-.3c0-.17-.14-.3-.3-.3h-.91v-1.16h.91c.8 0 1.46.65 1.46 1.46v.3c0 .8-.66 1.46-1.46 1.46zm-2.27-5.04c.54 0 .98.44.98.98s-.44.98-.98.98a.98.98 0 01-.98-.98c0-.54.44-.98.98-.98z" />
                         </svg>
                         <span>Chat qua Zalo</span>
@@ -129,7 +129,7 @@
 
                     <!-- Phone Hotline link -->
                     <a href="tel:0945143701" class="flex items-center justify-center gap-2 px-4 py-3 bg-gradient-to-r from-goldAccent to-[#E6C200] hover:brightness-110 text-navyDeep rounded-xl transition-all font-black shadow-lg duration-300 hover:-translate-y-0.5 active:translate-y-0 h-12 uppercase tracking-wider text-[11px] sm:text-xs">
-                        <svg class="w-4.5 h-4.5 text-navyDeep shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                        <svg class="w-5 h-5 text-navyDeep shrink-0" style="width: 20px; height: 20px; min-width: 20px;" fill="currentColor" viewBox="0 0 24 24">
                             <path d="M6.62 10.79a15.15 15.15 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.11-.27c1.12.44 2.33.68 3.58.68a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.24 2.46.68 3.58a1 1 0 0 1-.27 1.11z"/>
                         </svg>
                         <span>Hotline gấp</span>
