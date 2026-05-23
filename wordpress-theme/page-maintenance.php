@@ -547,25 +547,25 @@
     </div>
 
     <!-- Main Wrapper with auto centering & proper vertical paddings to avoid cutoff on small devices -->
-    <div class="flex-1 w-full max-w-sm sm:max-w-md mx-auto flex flex-col justify-center items-center px-4 py-8 sm:py-12 relative z-10 my-auto dl-isolate-container">
+    <div class="flex-1 w-full max-w-sm sm:max-w-md mx-auto flex flex-col justify-center items-center px-4 py-8 sm:py-12 relative z-10 my-auto dl-isolate-container" style="display: flex !important; flex-direction: column !important; align-items: center !important; justify-content: center !important; width: 100% !important; max-width: 440px !important; box-sizing: border-box !important; margin: auto !important; padding: 16px !important; min-height: calc(100vh - 80px) !important;">
         
         <!-- Main Card Container -->
-        <div id="dl-maintenance-card" class="w-full bg-white/[0.03] border border-white/[0.08] p-6 sm:p-8 rounded-3xl shadow-2xl text-center space-y-6 sm:space-y-8 backdrop-blur-xl">
+        <div id="dl-maintenance-card" class="w-full bg-white/[0.03] border border-white/[0.08] p-6 sm:p-8 rounded-3xl shadow-2xl text-center space-y-6 sm:space-y-8 backdrop-blur-xl" style="display: flex !important; flex-direction: column !important; width: 100% !important; max-width: 440px !important; box-sizing: border-box !important; background-color: rgba(0, 0, 0, 0.2) !important; border: 1px solid rgba(255, 255, 255, 0.08) !important; border-radius: 24px !important; padding: 24px !important; gap: 24px !important; text-align: center !important;">
             
             <!-- Animated Icon Indicator -->
-            <div class="relative w-24 h-24 mx-auto flex items-center justify-center">
+            <div class="relative w-24 h-24 mx-auto flex items-center justify-center" style="display: flex !important; align-items: center !important; justify-content: center !important; width: 96px !important; height: 96px !important; min-width: 96px !important; min-height: 96px !important; position: relative !important; margin: 0 auto !important;">
                 <!-- Pulsing outer ring -->
-                <span class="absolute inset-0 rounded-full border-2 border-goldAccent/20 animate-ping opacity-60"></span>
-                <span class="absolute inset-2 rounded-full border border-goldAccent/30 animate-pulse opacity-80"></span>
+                <span class="absolute inset-0 rounded-full border-2 border-goldAccent/20 animate-ping opacity-60" style="position: absolute !important; inset: 0 !important; border: 2px solid rgba(255,215,0,0.2) !important; border-radius: 9999px !important;"></span>
+                <span class="absolute inset-2 rounded-full border border-goldAccent/30 animate-pulse opacity-80" style="position: absolute !important; inset: 8px !important; border: 1px solid rgba(255,215,0,0.3) !important; border-radius: 9999px !important;"></span>
                 
                 <!-- Central branding custom badge -->
-                <div class="w-16 h-16 bg-gradient-to-br from-goldAccent to-[#E6C200] text-navyDeep rounded-2xl flex items-center justify-center font-black text-2xl border border-white/20 shadow-2xl relative z-10 select-none">
+                <div class="w-16 h-16 bg-gradient-to-br from-goldAccent to-[#E6C200] text-navyDeep rounded-2xl flex items-center justify-center font-black text-2xl border border-white/20 shadow-2xl relative z-10 select-none" style="display: flex !important; align-items: center !important; justify-content: center !important; width: 64px !important; height: 64px !important; min-width: 64px !important; min-height: 64px !important; background: linear-gradient(135deg, #FFD700, #E6C200) !important; color: #0D0D1A !important; border-radius: 16px !important; font-weight: 900 !important; font-size: 24px !important; position: relative !important; z-index: 10 !important; border: 1px solid rgba(255,255,255,0.2) !important;">
                     DL
                 </div>
                 
                 <!-- Gear/Tools badge overlay with rotating vector SVG (Replacing Emoji for premium visual output) -->
-                <div class="absolute -bottom-1 -right-1 w-8 h-8 bg-[#0068FF] rounded-full flex items-center justify-center border-2 border-navyDeep shadow-lg dl-gear-wrapper">
-                    <svg width="18" height="18" class="text-white animate-custom-spin" style="width: 18px !important; height: 18px !important; min-width: 18px !important; max-width: 18px !important; min-height: 18px !important; max-height: 18px !important; display: inline-block !important; animation: custom-spin 12s linear infinite !important; position: static !important; transform-origin: center !important;" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                <div class="absolute -bottom-1 -right-1 w-8 h-8 bg-[#0068FF] rounded-full flex items-center justify-center border-2 border-navyDeep shadow-lg dl-gear-wrapper" style="position: absolute !important; bottom: -4px !important; right: -4px !important; width: 32px !important; height: 32px !important; min-width: 32px !important; min-height: 32px !important; background-color: #0068FF !important; border-radius: 9999px !important; display: flex !important; align-items: center !important; justify-content: center !important; border: 2px solid #0D0D1A !important; z-index: 20 !important;">
+                    <svg width="18" height="18" class="text-white animate-custom-spin" style="width: 18px !important; height: 18px !important; min-width: 18px !important; max-width: 18px !important; min-height: 18px !important; max-height: 18px !important; display: block !important; position: static !important; transform: none !important; margin: 0 !important; padding: 0 !important;" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
                         <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                     </svg>
@@ -573,51 +573,51 @@
             </div>
 
             <!-- Heading description -->
-            <div class="space-y-3.5">
-                <span class="text-[10px] sm:text-[11px] font-bold tracking-widest uppercase text-goldAccent bg-goldAccent/10 px-4 py-1.5 rounded-full font-mono inline-block border border-goldAccent/15">
+            <div class="space-y-3.5" style="display: block !important; width: 100% !important; margin: 0 auto !important; text-align: center !important;">
+                <span class="text-[10px] sm:text-[11px] font-bold tracking-widest uppercase text-goldAccent bg-goldAccent/10 px-4 py-1.5 rounded-full font-mono inline-block border border-goldAccent/15" style="display: inline-block !important; white-space: nowrap !important; margin-bottom: 8px !important;">
                     <?php echo esc_html(dl_field('maintenance_tag', 'Nâng cấp hạ tầng tối ưu')); ?>
                 </span>
-                <h1 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-white leading-tight">
+                <h1 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-white leading-tight" style="display: block !important; width: 100% !important; font-size: 24px !important; font-weight: 800 !important; line-height: 1.25 !important; color: white !important; margin: 8px 0 !important;">
                     <?php echo esc_html(dl_field('maintenance_title', 'Hệ Thống Đang Bảo Trì')); ?>
                 </h1>
-                <p class="text-xs sm:text-[13px] text-gray-400 leading-relaxed max-w-sm mx-auto">
+                <p class="text-xs sm:text-[13px] text-gray-400 leading-relaxed max-w-sm mx-auto" style="display: block !important; max-width: 320px !important; margin: 0 auto !important; color: #9CA3AF !important; font-size: 13px !important; line-height: 1.5 !important;">
                     <?php echo esc_html(dl_field('maintenance_desc', 'Website Derek Flow hiện đang được xây dựng hệ quản trị tự động hóa thông qua AI Agents. Tớ sẽ sớm trở lại sau.')); ?>
                 </p>
             </div>
 
             <!-- Progress Indicator -->
-            <div class="space-y-3 bg-white/[0.02] border border-white/[0.05] p-3.5 sm:p-4 rounded-2xl">
-                <div class="flex items-center justify-between text-[11px] font-mono text-gray-400">
-                    <span class="font-bold tracking-wider">
+            <div class="space-y-3 bg-white/[0.02] border border-white/[0.05] p-3.5 sm:p-4 rounded-2xl" style="display: block !important; width: 100% !important; box-sizing: border-box !important;">
+                <div class="flex items-center justify-between text-[11px] font-mono text-gray-400" style="display: flex !important; align-items: center !important; justify-content: space-between !important; width: 100% !important;">
+                    <span class="font-bold tracking-wider" style="font-size: 11px !important;">
                         <?php echo esc_html(dl_field('maintenance_progress_label', 'TIẾN ĐỘ THỰC HIỆN')); ?>
                     </span>
-                    <span class="text-goldAccent font-black">
+                    <span class="text-goldAccent font-black" style="font-size: 11px !important; color: #FFD700 !important; font-weight: 900 !important;">
                         <?php echo esc_html(dl_field('maintenance_progress_percent', '95% HOÀN TẤT')); ?>
                     </span>
                 </div>
-                <div class="w-full h-2 bg-white/10 rounded-full overflow-hidden">
+                <div class="w-full h-2 bg-white/10 rounded-full overflow-hidden" style="width: 100% !important; height: 8px !important; background-color: rgba(255,255,255,0.1) !important; border-radius: 9999px !important; overflow: hidden !important; display: block !important; margin: 8px 0 !important;">
                     <?php $progress_val = intval(dl_field('maintenance_progress_num', '95')); ?>
-                    <div class="h-full bg-gradient-to-r from-goldAccent to-[#FFC400] rounded-full animate-pulse transition-all duration-300" style="width: <?php echo esc_attr($progress_val); ?>%"></div>
+                    <div class="h-full bg-gradient-to-r from-goldAccent to-[#FFC400] rounded-full animate-pulse transition-all duration-300" style="width: <?php echo esc_attr($progress_val); ?>% !important; height: 100% !important; border-radius: 9999px !important; background: linear-gradient(to right, #FFD700, #FFC400) !important; display: block !important;"></div>
                 </div>
-                <p class="text-[10px] text-gray-400/85 italic font-medium leading-relaxed">
+                <p class="text-[10px] text-gray-400/85 italic font-medium leading-relaxed" style="font-size: 10px !important; color: rgba(156,163,175,0.85) !important;">
                     <?php echo esc_html(dl_field('maintenance_progress_subtext', 'ĐANG BẬN LÀM DỰ ÁN TRĂM TỶ, NÀO RẢNH BUILD NỐT 5% CÒN LẠI')); ?>
                 </p>
             </div>
 
             <!-- Separation divider and bottom options -->
-            <div class="border-t border-white/[0.08] pt-6 space-y-4">
-                <span class="text-[10px] uppercase font-bold tracking-widest text-goldAccent/90 block font-mono">
+            <div class="border-t border-white/[0.08] pt-6 space-y-4" style="border-top: 1px solid rgba(255,255,255,0.08) !important; width: 100% !important; display: block !important;">
+                <span class="text-[10px] uppercase font-bold tracking-widest text-goldAccent/90 block font-mono" style="font-size: 10px !important; color: rgba(255,215,0,0.9) !important; margin-bottom: 12px !important; display: block !important;">
                     <?php echo esc_html(dl_field('maintenance_support_label', 'RỦ ĐI CÀ PHÊ')); ?>
                 </span>
                 
                 <!-- Contact options (Beautiful, robust, and highly responsive buttons) -->
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs sm:text-[13px]">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs sm:text-[13px]" style="display: flex !important; flex-flow: row wrap !important; gap: 12px !important; width: 100% !important; box-sizing: border-box !important;">
                     <!-- Zalo link -->
                     <?php 
                     $zalo_url = dl_field('maintenance_zalo_url', 'https://zalo.me/093x9x4xxx');
                     $zalo_text = dl_field('maintenance_zalo_text', 'Chat qua Zalo');
                     ?>
-                    <a href="<?php echo esc_url($zalo_url); ?>" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 px-4 bg-[#0068FF] hover:bg-[#005AE0] text-white rounded-xl transition-all font-bold shadow-lg duration-300 hover:-translate-y-0.5 active:translate-y-0 h-12 uppercase tracking-wider text-[11px] sm:text-xs">
+                    <a href="<?php echo esc_url($zalo_url); ?>" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 px-4 bg-[#0068FF] hover:bg-[#005AE0] text-white rounded-xl transition-all font-bold shadow-lg duration-300 hover:-translate-y-0.5 active:translate-y-0 h-12 uppercase tracking-wider text-[11px] sm:text-xs" style="display: inline-flex !important; flex: 1 1 160px !important; align-items: center !important; justify-content: center !important; gap: 8px !important; height: 48px !important; box-sizing: border-box !important; color: white !important; font-weight: bold !important; text-decoration: none !important; text-transform: uppercase !important; border-radius: 12px !important; background-color: #0068FF !important;">
                         <!-- Strict containment wrapper to prevent layout distortion from global Theme rules -->
                         <span style="width: 20px !important; height: 20px !important; min-width: 20px !important; max-width: 20px !important; min-height: 20px !important; max-height: 20px !important; display: inline-flex !important; overflow: hidden !important; align-items: center; justify-content: center; transform: none !important; position: relative !important;" class="shrink-0">
                             <!-- Premium sharp custom Zalo icon SVG with strict inline style isolation -->
@@ -633,7 +633,7 @@
                     $hotline_num = dl_field('maintenance_hotline_number', '093x9x4xxx');
                     $hotline_text = dl_field('maintenance_hotline_text', 'Hotline');
                     ?>
-                    <a href="tel:<?php echo esc_attr(preg_replace('/[^0-9]/', '', $hotline_num)); ?>" class="flex items-center justify-center gap-2 px-4 bg-gradient-to-r from-goldAccent to-[#E6C200] hover:brightness-110 text-navyDeep rounded-xl transition-all font-black shadow-lg duration-300 hover:-translate-y-0.5 active:translate-y-0 h-12 uppercase tracking-wider text-[11px] sm:text-xs">
+                    <a href="tel:<?php echo esc_attr(preg_replace('/[^0-9]/', '', $hotline_num)); ?>" class="flex items-center justify-center gap-2 px-4 bg-gradient-to-r from-goldAccent to-[#E6C200] hover:brightness-110 text-navyDeep rounded-xl transition-all font-black shadow-lg duration-300 hover:-translate-y-0.5 active:translate-y-0 h-12 uppercase tracking-wider text-[11px] sm:text-xs" style="display: inline-flex !important; flex: 1 1 160px !important; align-items: center !important; justify-content: center !important; gap: 8px !important; height: 48px !important; box-sizing: border-box !important; color: #0D0D1A !important; font-weight: 900 !important; text-decoration: none !important; text-transform: uppercase !important; border-radius: 12px !important; background: linear-gradient(to right, #FFD700, #E6C200) !important;">
                         <!-- Strict containment wrapper to prevent layout distortion from global Theme rules -->
                         <span style="width: 20px !important; height: 20px !important; min-width: 20px !important; max-width: 20px !important; min-height: 20px !important; max-height: 20px !important; display: inline-flex !important; overflow: hidden !important; align-items: center; justify-content: center; transform: none !important; position: relative !important;" class="shrink-0">
                             <svg width="20" height="20" class="text-navyDeep shrink-0" style="width: 20px !important; height: 20px !important; min-width: 20px !important; max-width: 20px !important; min-height: 20px !important; max-height: 20px !important; display: block !important; position: static !important; transform: none !important; margin: 0 !important; padding: 0 !important;" fill="currentColor" viewBox="0 0 24 24">
