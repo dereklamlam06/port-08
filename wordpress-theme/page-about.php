@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Derek Lâm About Biography Webpage
+ * Template Name: Derek Lâm Giới Thiệu Webpage
  */
 get_header(); ?>
 
@@ -9,7 +9,7 @@ get_header(); ?>
         <!-- Title layout -->
         <div class="text-center max-w-2xl mx-auto space-y-4">
             <span class="text-[11px] font-bold tracking-widest uppercase text-[#FFD700] bg-navyPrimary px-3 py-1 rounded inline-block font-mono">Đội ngũ đồng hành</span>
-            <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight text-navyPrimary">Về Derek Lâm Specialist</h2>
+            <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight text-navyPrimary">Giới Thiệu Derek Lâm Specialist</h2>
             <p class="text-xs sm:text-sm text-gray-500 leading-relaxed max-w-2xl mx-auto">
                 Chuyên gia SEO thực chiến & Nhà phát triển hệ thống tự động hóa bằng AI tối giản với tôn chỉ làm việc dựa trên dữ liệu thật.
             </p>

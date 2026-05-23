@@ -12,10 +12,10 @@ export default function Header({ currentView, setCurrentView }: HeaderProps) {
 
   const navItems: { label: string; view: AppView }[] = [
     { label: "Dịch Vụ", view: "services" },
-    { label: "Portfolio", view: "portfolio" },
-    { label: "Bảng Giá", view: "pricing" },
+    { label: "Giới Thiệu", view: "about" },
+    { label: "Case Study", view: "portfolio" },
+    { label: "Giá", view: "pricing" },
     { label: "Blog", view: "blog" },
-    { label: "Về Derek Lâm", view: "about" },
     { label: "Liên Hệ", view: "contact" }
   ];
 

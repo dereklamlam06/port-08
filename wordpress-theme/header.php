@@ -83,12 +83,12 @@
             } else {
                 // Static elegant fallback layout
                 ?>
-                <a href="<?php echo esc_url(home_url('/')); ?>" class="text-[11px] font-bold uppercase tracking-wider text-[#1A1A2E] hover:text-[#FFD700] transition-colors">TRANG CHỦ</a>
-                <a href="<?php echo esc_url(home_url('/dich-vu')); ?>" class="text-[11px] font-bold uppercase tracking-wider text-[#1A1A2E] hover:text-[#FFD700] transition-colors">DỊCH VỤ</a>
-                <a href="<?php echo esc_url(home_url('/portfolio')); ?>" class="text-[11px] font-bold uppercase tracking-wider text-[#1A1A2E] hover:text-[#FFD700] transition-colors">PORTFOLIO</a>
-                <a href="<?php echo esc_url(home_url('/bang-gia')); ?>" class="text-[11px] font-bold uppercase tracking-wider text-[#1A1A2E] hover:text-[#FFD700] transition-colors">BẢNG GIÁ</a>
-                <a href="<?php echo esc_url(home_url('/blog')); ?>" class="text-[11px] font-bold uppercase tracking-wider text-goldAccent font-extrabold">BLOG</a>
-                <a href="<?php echo esc_url(home_url('/lien-he')); ?>" class="text-[11px] font-bold uppercase tracking-wider text-[#1A1A2E] hover:text-[#FFD700] transition-colors">LIÊN HỆ</a>
+                <a href="<?php echo esc_url(home_url('/dich-vu')); ?>" class="text-[11px] font-bold uppercase tracking-wider text-[#1A1A2E] hover:text-[#FFD700] transition-colors animate-pulse">DỊCH VỤ</a>
+                <a href="<?php echo esc_url(home_url('/gioi-thieu')); ?>" class="text-[11px] font-bold uppercase tracking-wider text-[#1A1A2E] hover:text-[#FFD700] transition-colors">GIỚI THIỆU</a>
+                <a href="<?php echo esc_url(home_url('/case-study')); ?>" class="text-[11px] font-bold uppercase tracking-wider text-[#1A1A2E] hover:text-[#FFD700] transition-colors">CASE STUDY</a>
+                <a href="<?php echo esc_url(home_url('/gia')); ?>" class="text-[11px] font-bold uppercase tracking-wider text-[#1A1A2E] hover:text-[#FFD700] transition-colors">GIÁ</a>
+                <a href="<?php echo esc_url(home_url('/blog')); ?>" class="text-[11px] font-bold uppercase tracking-wider text-[#1A1A2E] hover:text-[#FFD700] transition-colors">BLOG</a>
+                <a href="<?php echo esc_url(home_url('/lien-he')); ?>" class="text-[11px] font-bold uppercase tracking-wider text-goldAccent font-extrabold">LIÊN HỆ</a>
                 <?php
             }
             ?>

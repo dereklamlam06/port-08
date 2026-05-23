@@ -71,3 +71,52 @@ function derek_lam_excerpt_more($more) {
     return '...';
 }
 add_filter('excerpt_more', 'derek_lam_excerpt_more');
+
+/**
+ * =========================================================================
+ * DEREK LÂM - CHUYÊN GIA TỐI ƯU HOÁ WP (ACF CODES & BẢO TRÌ SỬ DỤNG)
+ * =========================================================================
+ */
+
+/**
+ * 1. TRANG BẢO TRÌ AUTO-ROUTER (CHẾ ĐỘ FIX WEB AN TOÀN)
+ * Cách dùng:
+ * - Để BẬT chế độ bảo trì toàn trang, bạn chỉ cần đổi 'false' thành 'true' ở dòng dưới.
+ * - Khi bật, khách truy cập thường sẽ thấy trang Bảo Trì Đẳng Cấp, riêng Admin (Bạn) vẫn vào chỉnh web bình thường!
+ */
+define('DEREK_LAM_MAINTENANCE_MODE', false); 
+
+function derek_lam_maintenance_redirect() {
+    if (defined('DEREK_LAM_MAINTENANCE_MODE') && DEREK_LAM_MAINTENANCE_MODE) {
+        // Chỉ chặn người dùng chưa đăng nhập hoặc không phải Administrator
+        if (!current_user_can('manage_options') && !is_user_logged_in()) {
+            $maintenance_template = locate_template('page-maintenance.php');
+            if ($maintenance_template) {
+                include($maintenance_template);
+                exit;
+            }
+        }
+    }
+}
+add_action('template_redirect', 'derek_lam_maintenance_redirect', 1);
+
+
+/**
+ * 2. HELPER GRACEFUL ACF FIELDS (CHÈN HÌNH & CHỮ CỰC DỄ)
+ * Hàm giúp bạn liên kết Advanced Custom Fields (ACF) nhanh gọn lẹ.
+ * Bạn chỉ cần bọc: echo dl_field('ten_field_acf', 'Nội dung mặc định');
+ */
+function dl_field($field_name, $default_fallback = '') {
+    if (function_exists('get_field')) {
+        $acf_val = get_field($field_name);
+        if ($acf_val) {
+            // Nếu là dạng Mảng hình ảnh (ACF Image Array)
+            if (is_array($acf_val) && isset($acf_val['url'])) {
+                return $acf_val['url'];
+            }
+            return $acf_val;
+        }
+    }
+    return $default_fallback;
+}
+

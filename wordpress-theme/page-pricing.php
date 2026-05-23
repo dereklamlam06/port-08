@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Derek Lâm Pricing Webpage
+ * Template Name: Derek Lâm Giá Webpage
  */
 get_header(); ?>
 

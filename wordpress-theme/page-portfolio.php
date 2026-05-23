@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Derek Lâm Portfolio Case Studies
+ * Template Name: Derek Lâm Case Studies Webpage
  */
 get_header(); ?>
 
@@ -299,7 +299,7 @@ get_header(); ?>
                     </svg>
                 </a>
                 <a
-                    href="<?php echo esc_url(home_url('/bang-gia')); ?>"
+                    href="<?php echo esc_url(home_url('/gia')); ?>"
                     class="inline-flex items-center justify-center space-x-2 border border-gray-650 hover:border-white text-xs font-semibold px-6 py-4.5 rounded transition-all cursor-pointer h-12 text-white"
                 >
                     Xem Chi Tiết Chi Phí
