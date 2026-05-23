@@ -104,16 +104,29 @@ add_action('template_redirect', 'derek_lam_maintenance_redirect', 1);
 /**
  * 2. HELPER GRACEFUL ACF FIELDS (CHÈN HÌNH & CHỮ CỰC DỄ)
  * Hàm giúp bạn liên kết Advanced Custom Fields (ACF) nhanh gọn lẹ.
- * Bạn chỉ cần bọc: echo dl_field('ten_field_acf', 'Nội dung mặc định');
+ * Tự động nhận diện & xử lý thông minh cả 3 kiểu dữ liệu hình ảnh (Array, URL, ID) và Văn bản.
+ * PHP sẽ không bao giờ bị lỗi trắng trang (White Screen) khi chưa cài ACF.
+ * Cách dùng: echo dl_field('ten_field_acf', 'Nội dung/Ảnh mặc định');
  */
 function dl_field($field_name, $default_fallback = '') {
     if (function_exists('get_field')) {
         $acf_val = get_field($field_name);
-        if ($acf_val) {
-            // Nếu là dạng Mảng hình ảnh (ACF Image Array)
-            if (is_array($acf_val) && isset($acf_val['url'])) {
-                return $acf_val['url'];
+        if ($acf_val !== null && $acf_val !== false && $acf_val !== '') {
+            // 2.1. Nếu là dạng MẢNG hình ảnh (ACF Image Array)
+            if (is_array($acf_val)) {
+                if (isset($acf_val['url'])) {
+                    return $acf_val['url'];
+                }
+                return reset($acf_val);
             }
+            // 2.2. Nếu là dạng ID hình ảnh (ACF Image ID) - lấy link ảnh gốc
+            if (is_numeric($acf_val)) {
+                $img_url = wp_get_attachment_url($acf_val);
+                if ($img_url) {
+                    return $img_url;
+                }
+            }
+            // 2.3. Trả về giá trị chữ hoặc link ảnh dạng chuỗi (ACF Plain Text, URL, Wysiwyg...)
             return $acf_val;
         }
     }
