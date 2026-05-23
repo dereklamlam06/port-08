@@ -570,7 +570,9 @@
                         <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                     </svg>
                 </div>
-                    <!-- Heading description -->
+            </div>
+
+            <!-- Heading description -->
             <div class="space-y-3.5">
                 <span class="text-[10px] sm:text-[11px] font-bold tracking-widest uppercase text-goldAccent bg-goldAccent/10 px-4 py-1.5 rounded-full font-mono inline-block border border-goldAccent/15">
                     <?php echo esc_html(dl_field('maintenance_tag', 'Nâng cấp hạ tầng tối ưu')); ?>
