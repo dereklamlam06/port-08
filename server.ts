@@ -4,6 +4,7 @@ import fs from "fs";
 import { createServer as createViteServer } from "vite";
 import { GoogleGenAI } from "@google/genai";
 import dns from "dns";
+import AdmZip from "adm-zip";
 
 // Fix Node.js DNS path resolution for localhost lookups
 dns.setDefaultResultOrder("ipv4first");
@@ -327,6 +328,32 @@ app.get("/api/analytics", (req, res) => {
     serviceDistribution,
     chatLogs: chatLogs.slice(0, 15) // send history
   });
+});
+
+// Endpoint ẩn để tải về toàn bộ mã nguồn WordPress Theme đã biên dịch
+app.get("/api/download-theme", (req, res) => {
+  try {
+    const wordpressFolderPath = path.join(process.cwd(), "wordpress-theme");
+    if (!fs.existsSync(wordpressFolderPath)) {
+      return res.status(404).json({ error: "Không tìm thấy thư mục wordpress-theme" });
+    }
+
+    const zip = new AdmZip();
+    
+    // Add the local wordpress-theme directory under the zip root folder name "derek-lam-theme"
+    zip.addLocalFolder(wordpressFolderPath, "derek-lam-theme");
+    
+    const zipBuffer = zip.toBuffer();
+
+    res.setHeader("Content-Type", "application/zip");
+    res.setHeader("Content-Disposition", "attachment; filename=derek-lam-wordpress-theme.zip");
+    res.send(zipBuffer);
+  } catch (error: any) {
+    console.error("Lỗi nén wordpress-theme bằng adm-zip:", error);
+    if (!res.headersSent) {
+      res.status(500).json({ error: "Thao tác nén tài liệu WordPress thất bại: " + error.message });
+    }
+  }
 });
 
 

@@ -4,143 +4,327 @@
  */
 get_header(); ?>
 
-<main class="flex-1 py-16 px-6 md:px-12 max-w-7xl mx-auto w-full font-sans text-gray-800 relative">
-    
-    <!-- Header visual -->
-    <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
-        <span class="text-[11px] font-black tracking-widest uppercase text-goldAccent bg-navyPrimary px-3 py-1 rounded inline-block">NĂNG LỰC CỐT LÕI SPECIALIST</span>
-        <h1 class="text-3xl sm:text-4xl md:text-5xl font-black text-navyPrimary tracking-tight">Dịch Vụ Tinh Hoa</h1>
-        <p class="text-xs sm:text-sm text-gray-500 leading-relaxed max-w-2xl mx-auto">
-            Giải pháp chuyên sâu kết kết hợp sức mạnh của Technical SEO Entity và kiến trúc Tự động hóa bằng AI Agents giúp giải biên nguồn lực cho doanh nghiệp của bạn.
-        </p>
-    </div>
+<main class="flex-1 py-16 px-6 md:px-12 max-w-7xl mx-auto w-full font-sans text-[#1A1A2E] bg-[#FAFAF7] relative">
+    <div class="max-w-7xl mx-auto space-y-16">
+        <!-- Header title -->
+        <div class="text-center max-w-2xl mx-auto space-y-4">
+            <span class="text-[11px] font-bold tracking-widest uppercase text-[#FFD700] bg-[#1A1A2E] px-3 py-1 rounded inline-block font-mono">Năng lực cốt lõi</span>
+            <h1 class="text-3xl md:text-4xl font-extrabold tracking-tight">Dịch Vụ Tinh Hoa</h1>
+            <p class="text-xs sm:text-sm text-gray-500 leading-relaxed max-w-xl mx-auto">
+                Giải pháp công nghệ bứt phá kết hợp hoàn hảo giữa năng lực chiến lược SEO và công nghệ AI Automation giúp tự động hóa quy trình nghiệp vụ tối đa của bạn.
+            </p>
+        </div>
 
-    <!-- Core Services Grid -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20 relative z-10">
-        
-        <?php
-        $services_query = new WP_Query( array(
-            'post_type'      => 'post',
-            'posts_per_page' => 12,
-            'tax_query'      => array(
-                'relation' => 'OR',
-                array(
-                    'taxonomy' => 'category',
-                    'field'    => 'slug',
-                    'terms'    => array( 'services', 'dich-vu' ),
-                ),
-            ),
-        ) );
+        <!-- Services Grid - Including pre-configured static layouts so it renders out of the box -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            
+            <!-- Service 1: SEO Fullstack -->
+            <div class="bg-[#F5F0E8] border border-gray-200 p-6 md:p-8 rounded-lg space-y-5 hover:border-[#FFD700] hover:shadow-md transition-all group duration-300">
+                <div class="flex items-center space-x-3">
+                    <div class="p-3 bg-white border border-gray-100 rounded">
+                        <svg class="w-6 h-6 text-[#FFD700]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-[#1A1A2E] group-hover:text-[#FFD700] transition-colors">SEO Fullstack</h3>
+                </div>
 
-        if ( $services_query->have_posts() ) :
-            while ( $services_query->have_posts() ) : $services_query->the_post();
-                // Get features or process flow from custom fields
-                $process_flow = get_post_meta( get_the_ID(), 'process_flow', true ) ?: 'Tư vấn ➔ Thiết kế ➔ Thực thi ➔ Bàn giao';
-                $deliverables = get_post_meta( get_the_ID(), 'deliverables', true );
-                $deliverables_list = $deliverables ? explode(',', $deliverables) : array(
-                    'Nghiên cứu & Đo lường chuyên sâu thị trường', 
-                    'Vận hành chuẩn tốc độ & bảo mật hạ tầng', 
-                    'Bàn giao đầy đủ tài chính tri thức bản quyền'
-                );
-                
-                // Get dynamic icon custom field (or default map)
-                $icon_svg = get_post_meta( get_the_ID(), 'icon_svg', true ) ?: '<svg class="w-6 h-6 text-goldAccent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>';
-                ?>
-                <div class="bg-[#F5F0E8] border border-gray-200 p-6 sm:p-8 rounded-xl space-y-5 hover:border-goldAccent hover:shadow-md transition-all group duration-300">
-                    <div class="flex items-center space-x-3">
-                        <div class="p-3 bg-white border border-gray-150 rounded-lg text-navyPrimary font-black">
-                            <?php echo $icon_svg; ?>
+                <p class="text-xs sm:text-[13px] text-gray-500 leading-relaxed text-justify">
+                    Tối ưu hóa toàn diện từ cấu trúc kỹ thuật hạ tầng (Technical SEO), nâng cao chất lượng content độc bản đến tối ưu On-page và backlink xây dựng uy tín. Giúp website tăng trưởng tự nhiên bền vững, không ngại thuật toán Google.
+                </p>
+
+                <div class="bg-white/60 p-3.5 rounded border border-gray-200/50 space-y-1">
+                    <span class="text-[10px] font-extrabold uppercase tracking-wider text-gray-400 block">Quy trình thực thi 4 bước nhỏ</span>
+                    <p class="text-xs italic text-gray-650 leading-normal">Audit kỹ thuật ➔ Nghiên cứu từ khóa chuyên sâu ➔ Tối ưu hóa On-page ➔ Báo cáo chi tiết định kỳ hàng tháng.</p>
+                </div>
+
+                <div class="space-y-2">
+                    <span class="text-[11px] font-extrabold uppercase tracking-wide text-gray-700 block">Kết quả bàn giao thực tế:</span>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-[11px]">
+                        <div class="flex items-start space-x-1.5 text-gray-600">
+                            <span class="text-[#FFD700] font-bold shrink-0">✓</span>
+                            <span>Nghiên cứu bộ từ khóa đối thủ chuyên sâu</span>
                         </div>
-                        <h3 class="text-lg font-black text-navyPrimary group-hover:text-goldAccent transition-colors"><?php the_title(); ?></h3>
-                    </div>
-                    <div class="text-xs sm:text-[13px] text-gray-500 leading-relaxed text-justify">
-                        <?php the_excerpt(); ?>
-                    </div>
-                    <div class="bg-white/60 p-4 rounded-lg border border-gray-200/50 space-y-1">
-                        <span class="text-[10px] uppercase font-black tracking-wider text-gray-400 block">Quy trình vận hành:</span>
-                        <p class="text-xs font-bold text-navyPrimary"><?php echo esc_html( $process_flow ); ?></p>
-                    </div>
-                    <div class="space-y-2">
-                        <span class="text-[10px] uppercase font-black tracking-wider text-gray-400 block">Kết quả bàn giao:</span>
-                        <ul class="text-xs space-y-1.5 font-semibold text-gray-750">
-                            <?php foreach ( $deliverables_list as $item ) : ?>
-                                <li class="flex items-center gap-1.5"><span class="text-goldAccent">✔</span> <?php echo esc_html( trim($item) ); ?></li>
-                            <?php endforeach; ?>
-                        </ul>
+                        <div class="flex items-start space-x-1.5 text-gray-600">
+                            <span class="text-[#FFD700] font-bold shrink-0">✓</span>
+                            <span>Tối ưu hóa On-page & cấu tạo dữ liệu schema</span>
+                        </div>
+                        <div class="flex items-start space-x-1.5 text-gray-600">
+                            <span class="text-[#FFD700] font-bold shrink-0">✓</span>
+                            <span>Backlink audit & xây dựng liên kết sạch</span>
+                        </div>
+                        <div class="flex items-start space-x-1.5 text-gray-600">
+                            <span class="text-[#FFD700] font-bold shrink-0">✓</span>
+                            <span>Cài đặt theo dõi GSC & GA4 nâng cao</span>
+                        </div>
                     </div>
                 </div>
+            </div>
+
+            <!-- Service 2: Build Web Chuẩn SEO -->
+            <div class="bg-[#F5F0E8] border border-gray-200 p-6 md:p-8 rounded-lg space-y-5 hover:border-[#FFD700] hover:shadow-md transition-all group duration-300">
+                <div class="flex items-center space-x-3">
+                    <div class="p-3 bg-white border border-gray-100 rounded">
+                        <svg class="w-6 h-6 text-[#FFD700]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3-4.5 16.5" />
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-[#1A1A2E] group-hover:text-[#FFD700] transition-colors">Build Web Chuẩn SEO</h3>
+                </div>
+
+                <p class="text-xs sm:text-[13px] text-gray-550 leading-relaxed text-justify">
+                    Thiết kế và phát triển ứng dụng web, trang giới thiệu doanh nghiệp hoặc landing page cực kỳ cao cấp, tối ưu tốc độ tải trang dưới 1 giây. Giao diện tối giản, hiện đại và tương thích hoàn hảo mọi thiết bị di động.
+                </p>
+
+                <div class="bg-white/60 p-3.5 rounded border border-gray-200/50 space-y-1">
+                    <span class="text-[10px] font-extrabold uppercase tracking-wider text-gray-400 block">Quy trình thực thi 4 bước nhỏ</span>
+                    <p class="text-xs italic text-gray-550 leading-normal">Vẽ sơ đồ (Sketch) ➔ Thiết kế UI/UX ➔ Lập trình mã nguồn sạch ➔ Kiểm định tốc độ & bảo mật.</p>
+                </div>
+
+                <div class="space-y-2">
+                    <span class="text-[11px] font-extrabold uppercase tracking-wide text-gray-700 block">Kết quả bàn giao thực tế:</span>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-[11px]">
+                        <div class="flex items-start space-x-1.5 text-gray-600">
+                            <span class="text-[#FFD700] font-bold shrink-0">✓</span>
+                            <span>Công nghệ hiện đại React / Vite / Express</span>
+                        </div>
+                        <div class="flex items-start space-x-1.5 text-gray-600">
+                            <span class="text-[#FFD700] font-bold shrink-0">✓</span>
+                            <span>Thiết kế UI/UX độc quyền sang trọng</span>
+                        </div>
+                        <div class="flex items-start space-x-1.5 text-gray-600">
+                            <span class="text-[#FFD700] font-bold shrink-0">✓</span>
+                            <span>Tối ưu Core Web Vitals, tải trang thần tốc</span>
+                        </div>
+                        <div class="flex items-start space-x-1.5 text-gray-600">
+                            <span class="text-[#FFD700] font-bold shrink-0">✓</span>
+                            <span>Tích hợp các cổng thanh toán & chatbots</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Service 3: AI Agent Doanh Nghiệp -->
+            <div class="bg-[#F5F0E8] border border-gray-200 p-6 md:p-8 rounded-lg space-y-5 hover:border-[#FFD700] hover:shadow-md transition-all group duration-300">
+                <div class="flex items-center space-x-3">
+                    <div class="p-3 bg-white border border-gray-100 rounded">
+                        <svg class="w-6 h-6 text-[#FFD700]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2zM9 6h6M9 10h6" />
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-[#1A1A2E] group-hover:text-[#FFD700] transition-colors">AI Agent Doanh Nghiệp</h3>
+                </div>
+
+                <p class="text-xs sm:text-[13px] text-gray-550 leading-relaxed text-justify">
+                    Tích hợp trí tuệ nhân tạo (Generative AI) vào trực tiếp quy trình vận hành của bạn. Thiết lập các trợ lý ảo hỗ trợ khách hàng tự động 24/7, tự sinh nội dung tiếp thị thông minh, RAG dữ liệu doanh nghiệp và tăng tỷ lệ giữ chân khách hàng.
+                </p>
+
+                <div class="bg-white/60 p-3.5 rounded border border-gray-200/50 space-y-1">
+                    <span class="text-[10px] font-extrabold uppercase tracking-wider text-gray-400 block">Quy trình thực thi 4 bước nhỏ</span>
+                    <p class="text-xs italic text-gray-550 leading-normal">Thu thập dữ liệu tri thức ➔ Thiết kế prompts chuyên biệt ➔ Fine-tuning LLMs ➔ Triển khai & theo dõi.</p>
+                </div>
+
+                <div class="space-y-2">
+                    <span class="text-[11px] font-extrabold uppercase tracking-wide text-gray-700 block">Kết quả bàn giao thực tế:</span>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-[11px]">
+                        <div class="flex items-start space-x-1.5 text-gray-600">
+                            <span class="text-[#FFD700] font-bold shrink-0">✓</span>
+                            <span>Chatbot AI bám sát dữ liệu sản phẩm</span>
+                        </div>
+                        <div class="flex items-start space-x-1.5 text-gray-600">
+                            <span class="text-[#FFD700] font-bold shrink-0">✓</span>
+                            <span>Hệ thống chấm điểm khách tiềm năng</span>
+                        </div>
+                        <div class="flex items-start space-x-1.5 text-gray-600">
+                            <span class="text-[#FFD700] font-bold shrink-0">✓</span>
+                            <span>Trợ lý AI lập báo cáo tự sinh tự động</span>
+                        </div>
+                        <div class="flex items-start space-x-1.5 text-gray-600">
+                            <span class="text-[#FFD700] font-bold shrink-0">✓</span>
+                            <span>Tối ưu hóa quy trình tư vấn tự động hóa</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Service 4: Tự Động Hóa Automation -->
+            <div class="bg-[#F5F0E8] border border-gray-200 p-6 md:p-8 rounded-lg space-y-5 hover:border-[#FFD700] hover:shadow-md transition-all group duration-300">
+                <div class="flex items-center space-x-3">
+                    <div class="p-3 bg-white border border-gray-100 rounded">
+                        <svg class="w-6 h-6 text-[#FFD700]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 12c0-1.232-.046-2.453-.138-3.662a4.006 4.006 0 00-3.7-3.7 48.656 48.656 0 00-7.324 0 4.006 4.006 0 00-3.7 3.7c-.017.22-.032.441-.046.662M19.5 12l3-3m-3 3-3-3M1.5 12a48.654 48.654 0 011.01-11.162M1.5 12l3 3m-3-3-3 3" />
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-[#1A1A2E] group-hover:text-[#FFD700] transition-colors">Tự Động Hóa Automation</h3>
+                </div>
+
+                <p class="text-xs sm:text-[13px] text-gray-550 leading-relaxed text-justify">
+                    Kết nối toàn bộ hệ thống lưu trữ, trang web, CRM và các kênh truyền thông của bạn thông qua Make.com, N8N hoặc Zapier. Giải phóng đến 80% nhân sự khỏi các tác vụ nhập liệu, chuyển nguồn và thống kê thủ công.
+                </p>
+
+                <div class="bg-white/60 p-3.5 rounded border border-gray-200/50 space-y-1">
+                    <span class="text-[10px] font-extrabold uppercase tracking-wider text-gray-400 block">Quy trình thực thi 4 bước nhỏ</span>
+                    <p class="text-xs italic text-gray-550 leading-normal">Vẽ luồng xử lý (Map Flow) ➔ Thiết lập logic điều kiện ➔ Xử lý lỗi tự động ➔ Tối ưu hóa quy trình.</p>
+                </div>
+
+                <div class="space-y-2">
+                    <span class="text-[11px] font-extrabold uppercase tracking-wide text-gray-700 block">Kết quả bàn giao thực tế:</span>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-[11px]">
+                        <div class="flex items-start space-x-1.5 text-gray-600">
+                            <span class="text-[#FFD700] font-bold shrink-0">✓</span>
+                            <span>Đồng bộ data từ Web về Google Sheets/CRM</span>
+                        </div>
+                        <div class="flex items-start space-x-1.5 text-gray-600">
+                            <span class="text-[#FFD700] font-bold shrink-0">✓</span>
+                            <span>Hệ thống Email Marketing tự động bám đuổi</span>
+                        </div>
+                        <div class="flex items-start space-x-1.5 text-gray-600">
+                            <span class="text-[#FFD700] font-bold shrink-0">✓</span>
+                            <span>Scraping Bots thu thập giá đối thủ</span>
+                        </div>
+                        <div class="flex items-start space-x-1.5 text-gray-600">
+                            <span class="text-[#FFD700] font-bold shrink-0">✓</span>
+                            <span>Cảnh báo lỗi tức thì qua Telegram/Zalo</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <?php
-            endwhile;
-            wp_reset_postdata();
-        else :
+            // WP dynamic services loop expansion
+            $services_query = new WP_Query( array(
+                'post_type'      => 'post',
+                'posts_per_page' => 6,
+                'tax_query'      => array(
+                    'relation' => 'OR',
+                    array(
+                        'taxonomy' => 'category',
+                        'field'    => 'slug',
+                        'terms'    => array( 'services', 'dich-vu' ),
+                    ),
+                ),
+            ) );
+
+            if ( $services_query->have_posts() ) {
+                while ( $services_query->have_posts() ) {
+                    $services_query->the_post();
+                    $process_flow = get_post_meta( get_the_ID(), 'process_flow', true ) ?: 'Phân tích ➔ Cài đặt ➔ Chuyển giao';
+                    $deliverables = get_post_meta( get_the_ID(), 'deliverables', true );
+                    $deliverables_list = $deliverables ? explode(',', $deliverables) : array('Cấu hình chu đáo', 'Đảm bảo KPIs chuyển đổi');
+                    ?>
+                    <div class="bg-[#F5F0E8] border border-gray-200 p-6 md:p-8 rounded-lg space-y-5 hover:border-[#FFD700] hover:shadow-md transition-all group duration-300">
+                        <div class="flex items-center space-x-3">
+                            <div class="p-3 bg-white border border-gray-100 rounded">
+                                <svg class="w-6 h-6 text-[#FFD700]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                                </svg>
+                            </div>
+                            <h3 class="text-lg font-bold text-[#1A1A2E] group-hover:text-[#FFD700] transition-colors"><?php the_title(); ?></h3>
+                        </div>
+
+                        <p class="text-xs sm:text-[13px] text-gray-500 leading-relaxed text-justify">
+                            <?php echo get_the_excerpt(); ?>
+                        </p>
+
+                        <div class="bg-white/60 p-3.5 rounded border border-gray-200/50 space-y-1">
+                            <span class="text-[10px] font-extrabold uppercase tracking-wider text-gray-400 block">Quy trình thực thi</span>
+                            <p class="text-xs italic text-gray-600 leading-normal"><?php echo esc_html($process_flow); ?></p>
+                        </div>
+
+                        <div class="space-y-2">
+                            <span class="text-[11px] font-extrabold uppercase tracking-wide text-gray-700 block">Kết quả bàn giao thực tế:</span>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-[11px]">
+                                <?php foreach ($deliverables_list as $item) { ?>
+                                    <div class="flex items-start space-x-1.5 text-gray-600">
+                                        <span class="text-[#FFD700] font-bold shrink-0">✓</span>
+                                        <span><?php echo esc_html(trim($item)); ?></span>
+                                    </div>
+                                <?php } ?>
+                            </div>
+                        </div>
+                    </div>
+                    <?php
+                }
+                wp_reset_postdata();
+            }
             ?>
-            <div class="col-span-1 md:col-span-2 text-center py-12 bg-[#F5F0E8] border border-gray-250 rounded-xl p-8 space-y-4">
-                <span class="text-4xl">💼</span>
-                <h3 class="text-lg font-black text-navyPrimary">Hiện Chưa Có Dịch Vụ Nào Được Tạo</h3>
-                <p class="text-xs text-gray-500 max-w-md mx-auto">
-                    Để trang trí cột dịch vụ tại đây, quý khách vui lòng tạo các **Bài Viết** có tên chuyên mục (Category slug) là: `services` hoặc `dich-vu` trong trang quản lý của WordPress.
-                </p>
-                <div class="text-[10px] font-mono bg-white border border-gray-200 p-4 rounded text-navyPrimary max-w-lg mx-auto text-left space-y-1 shadow-xs">
-                    <strong>Cách thức cấu tạo bài viết dịch vụ:</strong><br>
-                    • Gán chuyên mục: `services` hoặc `dich-vu`.<br>
-                    • Soạn thảo phần tóm tắt ngắn (Excerpt) làm nội dung giới thiệu.<br>
-                    • Khai báo Custom Field `process_flow` (ví dụ: Audit ➔ Tối ưu On-page).<br>
-                    • Khai báo Custom Field `deliverables` (mỗi mục cách nhau bằng dấu phẩy) để hiển thị danh sách dạng hộp kiểm ✔.<br>
-                    • Khai báo Custom Field `icon_svg` để gán mã SVG biểu tượng tùy chỉnh.
+        </div>
+
+        <!-- Workflow Diagram Roadmap -->
+        <div class="bg-white border border-gray-200 p-8 rounded-lg space-y-10 shadow-sm">
+            <div class="text-center max-w-xl mx-auto space-y-2">
+                <span class="text-[10px] font-bold tracking-widest uppercase text-gray-400">Minh bạch & chuẩn mực</span>
+                <h3 class="text-xl md:text-2xl font-bold text-[#1A1A2E]">Quy Trình Làm Việc Thống Nhất</h3>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 relative">
+                <div class="space-y-3.5 relative">
+                    <div class="flex items-center space-x-3">
+                        <span class="text-2xl font-extrabold text-[#FFD700] font-mono tracking-tighter">01</span>
+                        <div class="h-[1px] bg-gray-200 flex-1 hidden lg:block"></div>
+                    </div>
+                    <h4 class="text-[13px] font-bold uppercase tracking-wide text-[#1A1A2E]">Tư Vấn Chuyên Sâu</h4>
+                    <p class="text-xs text-gray-500 leading-relaxed text-justify">Lắng nghe bài toán kinh doanh, ngân sách và nhu cầu đặc thù thực tế của doanh nghiệp.</p>
+                </div>
+                <div class="space-y-3.5 relative">
+                    <div class="flex items-center space-x-3">
+                        <span class="text-2xl font-extrabold text-[#FFD700] font-mono tracking-tighter">02</span>
+                        <div class="h-[1px] bg-gray-200 flex-1 hidden lg:block"></div>
+                    </div>
+                    <h4 class="text-[13px] font-bold uppercase tracking-wide text-[#1A1A2E]">Lên Kế Hoạch Lộ Trình</h4>
+                    <p class="text-xs text-gray-500 leading-relaxed text-justify">Thiết kế giải pháp kiến trúc kỹ thuật tối giản, lộ trình triển khai chi tiết & báo giá rõ ràng.</p>
+                </div>
+                <div class="space-y-3.5 relative">
+                    <div class="flex items-center space-x-3">
+                        <span class="text-2xl font-extrabold text-[#FFD700] font-mono tracking-tighter">03</span>
+                        <div class="h-[1px] bg-gray-200 flex-1 hidden lg:block"></div>
+                    </div>
+                    <h4 class="text-[13px] font-bold uppercase tracking-wide text-[#1A1A2E]">Thực Thi Toàn Diện</h4>
+                    <p class="text-xs text-gray-500 leading-relaxed text-justify">Phát triển giải pháp, tối ưu SEO, lập trình logic, tích hợp AI và kiểm định tốc độ ngặt nghèo.</p>
+                </div>
+                <div class="space-y-3.5 relative">
+                    <div class="flex items-center space-x-3">
+                        <span class="text-2xl font-extrabold text-[#FFD700] font-mono tracking-tighter">04</span>
+                    </div>
+                    <h4 class="text-[13px] font-bold uppercase tracking-wide text-[#1A1A2E]">Bàn Giao & Báo Cáo</h4>
+                    <p class="text-xs text-gray-500 leading-relaxed text-justify">Thống kê hiệu quả chuyển đổi thực tế, bàn giao hệ thống và hướng dẫn vận hành trực quan.</p>
                 </div>
             </div>
-        <?php endif; ?>
-
-    </div>
-
-    <!-- Workflow Execution Steps Roadmap -->
-    <div class="border-t border-gray-200 pt-16">
-        <div class="text-center max-w-xl mx-auto space-y-2 mb-12">
-            <span class="text-[10px] text-gray-400 font-extrabold uppercase tracking-widest block">Phương pháp luận</span>
-            <h2 class="text-2xl font-black text-navyPrimary tracking-tight uppercase">Quy Trình Triển Khai Chuyên Nghiệp</h2>
         </div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div class="bg-white p-6 border border-gray-150 rounded-xl space-y-3 relative overflow-hidden">
-                <span class="text-4xl font-black text-goldAccent/35 font-mono">01</span>
-                <h4 class="text-xs font-black uppercase tracking-wider text-navyPrimary">Tư Vấn Chuyên Sâu</h4>
-                <p class="text-[11px] text-gray-500 leading-relaxed">
-                    Lắng nghe các bài toán kinh doanh cụ thể, rà soát ngân sách và mục tiêu tăng trưởng tự nhiên của khách hàng.
+        <!-- Call to action card -->
+        <div class="bg-[#1A1A2E] text-white p-8 md:p-12 rounded-lg text-center space-y-6 relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-32 h-32 bg-[#FFD700]/5 rounded-full blur-2xl"></div>
+            <div class="absolute bottom-0 left-0 w-48 h-48 bg-white/5 rounded-full blur-2xl"></div>
+
+            <div class="max-w-xl mx-auto space-y-4">
+                <h3 class="text-2xl md:text-3xl font-extrabold tracking-tight">Sẵn sàng đưa thương hiệu của bạn vươn xa?</h3>
+                <p class="text-xs sm:text-sm text-gray-300 leading-relaxed">
+                    Hãy cùng thảo luận về chiến lược tăng trưởng bền vững và giải pháp công nghệ tối ưu cho doanh nghiệp của bạn hoàn toàn miễn phí.
                 </p>
             </div>
-            <div class="bg-white p-6 border border-gray-150 rounded-xl space-y-3 relative overflow-hidden">
-                <span class="text-4xl font-black text-goldAccent/35 font-mono">02</span>
-                <h4 class="text-xs font-black uppercase tracking-wider text-navyPrimary">Lên Kế Hoạch Lộ Trình</h4>
-                <p class="text-[11px] text-gray-500 leading-relaxed">
-                    Thiết kế bản vẽ sơ đồ kỹ thuật chi tiết, đề xuất ngân sách đầu tư tinh gọn và đảm bảo bảo mật.
-                </p>
-            </div>
-            <div class="bg-white p-6 border border-gray-150 rounded-xl space-y-3 relative overflow-hidden">
-                <span class="text-4xl font-black text-goldAccent/35 font-mono">03</span>
-                <h4 class="text-xs font-black uppercase tracking-wider text-navyPrimary">Thực Thi Toàn Diện</h4>
-                <p class="text-[11px] text-gray-500 leading-relaxed">
-                    Triển khai hệ code React/Wordpress chuẩn On-page, cấu tạo luồng n8n mượt mà và tối ưu Core Web Vitals tối đa.
-                </p>
-            </div>
-            <div class="bg-white p-6 border border-gray-150 rounded-xl space-y-3 relative overflow-hidden">
-                <span class="text-4xl font-black text-goldAccent/35 font-mono">04</span>
-                <h4 class="text-xs font-black uppercase tracking-wider text-navyPrimary">Bàn Giao & Theo Dõi</h4>
-                <p class="text-[11px] text-gray-500 leading-relaxed">
-                    Kiểm định lưu lượng chuyển lead, tối ưu hóa các bẫy, bàn giao bảng tri thức kèm video hướng dẫn cầm tay chỉ việc.
-                </p>
+
+            <div class="flex flex-wrap items-center justify-center gap-4 pt-2">
+                <a
+                    href="<?php echo esc_url(home_url('/lien-he')); ?>"
+                    class="inline-flex items-center justify-center space-x-2 bg-[#FFD700] hover:bg-[#E6C200] text-[#1A1A2E] text-xs font-bold uppercase tracking-wide px-6 py-4.5 rounded shadow cursor-pointer h-12"
+                >
+                    <span>Yêu Cầu Audit + Tư Vấn Miễn Phí</span>
+                    <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                    </svg>
+                </a>
+                <a 
+                    href="https://zalo.me/0945143701"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="inline-flex items-center justify-center space-x-2 border border-gray-600 hover:border-white text-xs font-bold uppercase tracking-wide px-6 py-4.5 rounded shadow transition-all h-12 text-white"
+                >
+                    <span>Trao đổi qua Zalo</span>
+                </a>
             </div>
         </div>
     </div>
-
-    <!-- Bottom CTA block -->
-    <div class="mt-16 bg-navyPrimary text-white p-8 sm:p-12 rounded-2xl flex flex-col md:flex-row items-center justify-between gap-6 overflow-hidden relative">
-        <div class="space-y-2 max-w-lg">
-            <h3 class="text-xl sm:text-2xl font-black text-white leading-tight">Sẵn sàng để bứt phá không giới hạn?</h3>
-            <p class="text-xs text-gray-300">Nhấp đặt lịch ngay lập tức để nhận bảng phân tích Audit Entity SEO toàn bộ Website miễn phí trị giá 3.000.000đ.</p>
-        </div>
-        <a href="<?php echo esc_url(home_url('/lien-he')); ?>" class="bg-goldAccent text-navyPrimary font-extrabold text-xs uppercase tracking-widest px-6 py-4 rounded-lg hover:bg-white transition-all">đặt lịch kiểm toán ngay</a>
-    </div>
-
 </main>
 
 <?php get_footer(); ?>
