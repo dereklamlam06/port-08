@@ -9,7 +9,7 @@
 <head>
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hệ thống Đang Bảo Trì Nâng Cấp - Derek Lâm</title>
+    <title>Hệ thống Đang Bảo Trì Nâng Cấp - Derek Flow</title>
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -82,7 +82,7 @@
             display: inline-block !important;
         }
         
-        /* Premium Background Rockets */
+        /* Premium Background Rockets & Trajectories Container */
         .dl-rockets-background {
             position: absolute;
             inset: 0;
@@ -90,31 +90,28 @@
             pointer-events: none;
             z-index: 1;
         }
+        
+        /* General styling for background rockets */
         .dl-rocket {
             position: absolute;
-            left: 0;
-            top: 0;
             display: flex;
             align-items: center;
-            gap: 12px;
-            will-change: transform;
+            gap: 10px;
+            will-change: transform, opacity;
             pointer-events: none;
             opacity: 0;
-            animation: rocket-move 18s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
         }
         .dl-rocket-ship {
             position: relative;
             color: #FFD700;
-            filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.75));
-            width: 28px !important;
-            height: 28px !important;
-            min-width: 28px !important;
-            max-width: 28px !important;
-            min-height: 28px !important;
-            max-height: 28px !important;
+            filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.65));
+            width: 24px !important;
+            height: 24px !important;
+            min-width: 24px !important;
+            max-width: 24px !important;
+            min-height: 24px !important;
+            max-height: 24px !important;
             display: inline-block !important;
-            animation: ship-rotate 18s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
-            will-change: transform;
         }
         .dl-rocket-ship svg {
             width: 100% !important;
@@ -127,72 +124,254 @@
         }
         .dl-rocket-label {
             font-family: 'JetBrains Mono', monospace;
-            font-size: 11px;
+            font-size: 10px;
             font-weight: 700;
             color: #FFD700;
             background: rgba(13, 13, 26, 0.85);
             border: 1px solid rgba(255, 215, 0, 0.35);
-            padding: 4px 10px;
-            border-radius: 8px;
+            padding: 3px 8px;
+            border-radius: 6px;
             white-space: nowrap;
             text-shadow: 0 0 5px rgba(255, 215, 0, 0.4);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
             letter-spacing: 0.1em;
             text-transform: uppercase;
         }
         .dl-rocket-engine {
             position: absolute;
-            bottom: -6px;
+            bottom: -5px;
             left: 50%;
             transform: translateX(-50%);
-            width: 6px;
-            height: 12px;
-            background: linear-gradient(to top, rgba(255, 215, 0, 0), rgba(255, 215, 0, 0.9));
+            width: 5px;
+            height: 10px;
+            background: linear-gradient(to top, rgba(255, 69, 0, 0), rgba(255, 120, 0, 0.85), #FFD700);
             border-radius: 50%;
             filter: blur(1px);
             opacity: 0.8;
-            animation: engine-flicker 0.15s infinite alternate;
+            animation: engine-flicker 0.1s infinite alternate;
         }
         @keyframes engine-flicker {
-            0% { height: 8px; opacity: 0.6; }
-            100% { height: 14px; opacity: 1; }
+            0% { height: 6px; opacity: 0.6; }
+            100% { height: 12px; opacity: 1; }
         }
-        @keyframes rocket-move {
+
+        /* Flight Path 1: Diagonal Up-Right (Angle: +45 degrees) */
+        .dl-path-ur-1 {
+            left: -100px;
+            top: 85%;
+            transform: rotate(45deg);
+            animation: flight-ur 15s linear infinite;
+        }
+        .dl-path-ur-2 {
+            left: -100px;
+            top: 55%;
+            transform: rotate(45deg);
+            animation: flight-ur 13s linear infinite;
+            animation-delay: 4.5s;
+        }
+        @keyframes flight-ur {
+            0% { transform: translate(0, 0) rotate(45deg); opacity: 0; }
+            4% { opacity: 0.7; }
+            94% { opacity: 0.7; }
+            100% { transform: translate(115vw, -115vw) rotate(45deg); opacity: 0; }
+        }
+
+        /* Flight Path 2: Diagonal Up-Left (Angle: -45 degrees) */
+        .dl-path-ul-1 {
+            right: -100px;
+            top: 90%;
+            transform: rotate(-45deg);
+            animation: flight-ul 16s linear infinite;
+            animation-delay: 2.5s;
+        }
+        .dl-path-ul-2 {
+            right: -100px;
+            top: 60%;
+            transform: rotate(-45deg);
+            animation: flight-ul 14s linear infinite;
+            animation-delay: 7.5s;
+        }
+        @keyframes flight-ul {
+            0% { transform: translate(0, 0) rotate(-45deg); opacity: 0; }
+            4% { opacity: 0.65; }
+            94% { opacity: 0.65; }
+            100% { transform: translate(-115vw, -115vw) rotate(-45deg); opacity: 0; }
+        }
+
+        /* Flight Path 3: Horizontal Left-to-Right (Angle: +90 degrees) */
+        .dl-path-lr-1 {
+            left: -100px;
+            top: 35%;
+            transform: rotate(90deg);
+            animation: flight-lr 18s linear infinite;
+            animation-delay: 1s;
+        }
+        .dl-path-lr-2 {
+            left: -100px;
+            top: 65%;
+            transform: rotate(90deg);
+            animation: flight-lr 15s linear infinite;
+            animation-delay: 9s;
+        }
+        @keyframes flight-lr {
+            0% { transform: translate(0, 0) rotate(90deg); opacity: 0; }
+            4% { opacity: 0.75; }
+            94% { opacity: 0.75; }
+            100% { transform: translate(115vw, 0) rotate(90deg); opacity: 0; }
+        }
+
+        /* Flight Path 4: Horizontal Right-to-Left (Angle: -90 degrees) */
+        .dl-path-rl-1 {
+            right: -100px;
+            top: 45%;
+            transform: rotate(-90deg);
+            animation: flight-rl 17s linear infinite;
+            animation-delay: 5s;
+        }
+        .dl-path-rl-2 {
+            right: -100px;
+            top: 75%;
+            transform: rotate(-90deg);
+            animation: flight-rl 19s linear infinite;
+            animation-delay: 11s;
+        }
+        @keyframes flight-rl {
+            0% { transform: translate(0, 0) rotate(-90deg); opacity: 0; }
+            4% { opacity: 0.6; }
+            94% { opacity: 0.6; }
+            100% { transform: translate(-115vw, 0) rotate(-90deg); opacity: 0; }
+        }
+
+        /* Flight Path 5: Straight Up-Vertical (Angle: 0 degrees) */
+        .dl-path-up-1 {
+            left: 20%;
+            bottom: -100px;
+            transform: rotate(0deg);
+            animation: flight-up 11s linear infinite;
+            animation-delay: 3s;
+        }
+        .dl-path-up-2 {
+            left: 80%;
+            bottom: -100px;
+            transform: rotate(0deg);
+            animation: flight-up 12s linear infinite;
+            animation-delay: 8s;
+        }
+        @keyframes flight-up {
+            0% { transform: translateY(0) rotate(0deg); opacity: 0; }
+            5% { opacity: 0.7; }
+            95% { opacity: 0.7; }
+            100% { transform: translateY(-115vh) rotate(0deg); opacity: 0; }
+        }
+
+        /* DEREK Rocket Squadron Container */
+        .dl-derek-squad-container {
+            position: absolute;
+            inset: 0;
+            overflow: hidden;
+            pointer-events: none;
+            z-index: 2;
+        }
+        .dl-squad-member {
+            position: absolute;
+            bottom: -120px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            will-change: transform, opacity;
+            animation: squad-launch 20s cubic-bezier(0.25, 1, 0.45, 1) infinite;
+        }
+
+        /* Horizontal layout tracks spanning screen width nicely */
+        .dl-squad-d  { left: 10vw; --target-y: -78vh; animation-delay: 0s; }
+        .dl-squad-e1 { left: 28vw; --target-y: -78vh; animation-delay: 0.2s; }
+        .dl-squad-r  { left: 48vw; --target-y: -78vh; animation-delay: 0.4s; }
+        .dl-squad-e2 { left: 68vw; --target-y: -78vh; animation-delay: 0.6s; }
+        .dl-squad-k  { left: 86vw; --target-y: -78vh; animation-delay: 0.8s; }
+
+        @keyframes squad-launch {
             0% {
-                transform: translate(115vw, var(--start-y, 70vh));
+                transform: translateY(0);
                 opacity: 0;
             }
-            3% {
+            1.5% {
+                opacity: 0;
+            }
+            11% {
+                transform: translateY(var(--target-y));
+                opacity: 0.95;
+            }
+            /* Hover / Gentle Constellation Bobbing spelling out D-E-R-E-K */
+            11%, 82% {
+                transform: translateY(var(--target-y));
+                opacity: 0.95;
+            }
+            25%, 45%, 65% {
+                transform: translateY(calc(var(--target-y) - 15px));
+                opacity: 0.95;
+            }
+            35%, 55%, 75% {
+                transform: translateY(calc(var(--target-y) + 5px));
+                opacity: 0.95;
+            }
+            /* Ignition pre-blast recoil shake */
+            85% {
+                transform: translateY(calc(var(--target-y) + 12px));
                 opacity: 1;
             }
-            /* End of horizontal phase */
-            40% {
-                transform: translate(48vw, var(--start-y, 70vh));
-            }
-            /* Diagonal phase to left-up */
-            75% {
-                transform: translate(12vw, var(--diag-y, 35vh));
-                opacity: 1;
-            }
-            /* Vertical phase straight up */
-            98% {
-                opacity: 1;
+            92% {
+                transform: translateY(-135vh);
+                opacity: 0;
             }
             100% {
-                transform: translate(12vw, -25vh);
+                transform: translateY(-135vh);
                 opacity: 0;
             }
         }
-        @keyframes ship-rotate {
-            0%, 40% {
-                transform: rotate(-90deg);
+
+        /* Spelling letters badge above the rocket nose */
+        .dl-squad-letter {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 15px;
+            font-weight: 900;
+            color: #FFD700;
+            background: rgba(13, 13, 26, 0.96);
+            width: 34px;
+            height: 34px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            border: 1.5px solid rgba(255, 215, 0, 0.6);
+            box-shadow: 0 0 12px rgba(255, 215, 0, 0.5);
+            text-shadow: 0 0 5px rgba(255, 215, 0, 0.85);
+            animation: pulse-letter-glow 2.5s infinite alternate;
+        }
+        @keyframes pulse-letter-glow {
+            0% {
+                box-shadow: 0 0 8px rgba(255, 215, 0, 0.4);
+                border-color: rgba(255, 215, 0, 0.35);
             }
-            48%, 75% {
-                transform: rotate(-45deg);
+            100% {
+                box-shadow: 0 0 18px rgba(255, 215, 0, 0.75);
+                border-color: rgba(255, 215, 0, 0.85);
             }
-            82%, 100% {
-                transform: rotate(0deg);
+        }
+
+        /* Screen responses to keep DEREK squad clean on small screens */
+        @media (max-width: 640px) {
+            .dl-squad-letter {
+                width: 25px;
+                height: 25px;
+                font-size: 11px;
+                border: 1.2px solid rgba(255, 215, 0, 0.5);
             }
+            .dl-squad-d  { left: 5vw; --target-y: -78vh; }
+            .dl-squad-e1 { left: 23vw; --target-y: -78vh; }
+            .dl-squad-r  { left: 48vw; --target-y: -78vh; }
+            .dl-squad-e2 { left: 73vw; --target-y: -78vh; }
+            .dl-squad-k  { left: 88vw; --target-y: -78vh; }
         }
     </style>
     <?php wp_head(); ?>
@@ -207,8 +386,17 @@
         
         <!-- Animated custom dynamic rockets background requested by user -->
         <div class="dl-rockets-background">
-            <!-- Rocket 1 -->
-            <div class="dl-rocket" style="--start-y: 65vh; --diag-y: 28vh; animation-delay: 0s;">
+            <!-- Flight Path 1: Diagonal Up-Right -->
+            <div class="dl-rocket dl-path-ur-1">
+                <div class="dl-rocket-ship">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12,2C11.5,4,10,8.5,10,12v4l-4,3v2l4-1v2h4v-2l4,1v-2l-4-3V12C14,8.5,12.5,4,12,2z" />
+                    </svg>
+                    <div class="dl-rocket-engine"></div>
+                </div>
+                <div class="dl-rocket-label">Derek Flow</div>
+            </div>
+            <div class="dl-rocket dl-path-ur-2">
                 <div class="dl-rocket-ship">
                     <svg viewBox="0 0 24 24" fill="currentColor">
                         <path d="M12,2C11.5,4,10,8.5,10,12v4l-4,3v2l4-1v2h4v-2l4,1v-2l-4-3V12C14,8.5,12.5,4,12,2z" />
@@ -218,8 +406,8 @@
                 <div class="dl-rocket-label">Derek Flow</div>
             </div>
             
-            <!-- Rocket 2 -->
-            <div class="dl-rocket" style="--start-y: 78vh; --diag-y: 38vh; animation-delay: 6s;">
+            <!-- Flight Path 2: Diagonal Up-Left -->
+            <div class="dl-rocket dl-path-ul-1">
                 <div class="dl-rocket-ship">
                     <svg viewBox="0 0 24 24" fill="currentColor">
                         <path d="M12,2C11.5,4,10,8.5,10,12v4l-4,3v2l4-1v2h4v-2l4,1v-2l-4-3V12C14,8.5,12.5,4,12,2z" />
@@ -228,9 +416,7 @@
                 </div>
                 <div class="dl-rocket-label">Derek Flow</div>
             </div>
-            
-            <!-- Rocket 3 -->
-            <div class="dl-rocket" style="--start-y: 48vh; --diag-y: 18vh; animation-delay: 12s;">
+            <div class="dl-rocket dl-path-ul-2">
                 <div class="dl-rocket-ship">
                     <svg viewBox="0 0 24 24" fill="currentColor">
                         <path d="M12,2C11.5,4,10,8.5,10,12v4l-4,3v2l4-1v2h4v-2l4,1v-2l-4-3V12C14,8.5,12.5,4,12,2z" />
@@ -238,6 +424,124 @@
                     <div class="dl-rocket-engine"></div>
                 </div>
                 <div class="dl-rocket-label">Derek Flow</div>
+            </div>
+
+            <!-- Flight Path 3: Horizontal Left-to-Right -->
+            <div class="dl-rocket dl-path-lr-1">
+                <div class="dl-rocket-ship">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12,2C11.5,4,10,8.5,10,12v4l-4,3v2l4-1v2h4v-2l4,1v-2l-4-3V12C14,8.5,12.5,4,12,2z" />
+                    </svg>
+                    <div class="dl-rocket-engine"></div>
+                </div>
+                <div class="dl-rocket-label">Derek Flow</div>
+            </div>
+            <div class="dl-rocket dl-path-lr-2">
+                <div class="dl-rocket-ship">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12,2C11.5,4,10,8.5,10,12v4l-4,3v2l4-1v2h4v-2l4,1v-2l-4-3V12C14,8.5,12.5,4,12,2z" />
+                    </svg>
+                    <div class="dl-rocket-engine"></div>
+                </div>
+                <div class="dl-rocket-label">Derek Flow</div>
+            </div>
+
+            <!-- Flight Path 4: Horizontal Right-to-Left -->
+            <div class="dl-rocket dl-path-rl-1">
+                <div class="dl-rocket-ship">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12,2C11.5,4,10,8.5,10,12v4l-4,3v2l4-1v2h4v-2l4,1v-2l-4-3V12C14,8.5,12.5,4,12,2z" />
+                    </svg>
+                    <div class="dl-rocket-engine"></div>
+                </div>
+                <div class="dl-rocket-label">Derek Flow</div>
+            </div>
+            <div class="dl-rocket dl-path-rl-2">
+                <div class="dl-rocket-ship">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12,2C11.5,4,10,8.5,10,12v4l-4,3v2l4-1v2h4v-2l4,1v-2l-4-3V12C14,8.5,12.5,4,12,2z" />
+                    </svg>
+                    <div class="dl-rocket-engine"></div>
+                </div>
+                <div class="dl-rocket-label">Derek Flow</div>
+            </div>
+
+            <!-- Flight Path 5: Straight Up -->
+            <div class="dl-rocket dl-path-up-1">
+                <div class="dl-rocket-ship">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12,2C11.5,4,10,8.5,10,12v4l-4,3v2l4-1v2h4v-2l4,1v-2l-4-3V12C14,8.5,12.5,4,12,2z" />
+                    </svg>
+                    <div class="dl-rocket-engine"></div>
+                </div>
+                <div class="dl-rocket-label">Derek Flow</div>
+            </div>
+            <div class="dl-rocket dl-path-up-2">
+                <div class="dl-rocket-ship">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12,2C11.5,4,10,8.5,10,12v4l-4,3v2l4-1v2h4v-2l4,1v-2l-4-3V12C14,8.5,12.5,4,12,2z" />
+                    </svg>
+                    <div class="dl-rocket-engine"></div>
+                </div>
+                <div class="dl-rocket-label">Derek Flow</div>
+            </div>
+        </div>
+
+        <!-- Coordinated "DEREK" Constellation Rocket Squadron -->
+        <div class="dl-derek-squad-container">
+            <!-- Rocket 1: D -->
+            <div class="dl-squad-member dl-squad-d">
+                <div class="dl-squad-letter shadow-lgshadow-goldAccent/10">D</div>
+                <div class="dl-rocket-ship">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12,2C11.5,4,10,8.5,10,12v4l-4,3v2l4-1v2h4v-2l4,1v-2l-4-3V12C14,8.5,12.5,4,12,2z" />
+                    </svg>
+                    <div class="dl-rocket-engine"></div>
+                </div>
+            </div>
+
+            <!-- Rocket 2: E -->
+            <div class="dl-squad-member dl-squad-e1">
+                <div class="dl-squad-letter">E</div>
+                <div class="dl-rocket-ship">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12,2C11.5,4,10,8.5,10,12v4l-4,3v2l4-1v2h4v-2l4,1v-2l-4-3V12C14,8.5,12.5,4,12,2z" />
+                    </svg>
+                    <div class="dl-rocket-engine"></div>
+                </div>
+            </div>
+
+            <!-- Rocket 3: R -->
+            <div class="dl-squad-member dl-squad-r">
+                <div class="dl-squad-letter">R</div>
+                <div class="dl-rocket-ship">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12,2C11.5,4,10,8.5,10,12v4l-4,3v2l4-1v2h4v-2l4,1v-2l-4-3V12C14,8.5,12.5,4,12,2z" />
+                    </svg>
+                    <div class="dl-rocket-engine"></div>
+                </div>
+            </div>
+
+            <!-- Rocket 4: E -->
+            <div class="dl-squad-member dl-squad-e2">
+                <div class="dl-squad-letter">E</div>
+                <div class="dl-rocket-ship">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12,2C11.5,4,10,8.5,10,12v4l-4,3v2l4-1v2h4v-2l4,1v-2l-4-3V12C14,8.5,12.5,4,12,2z" />
+                    </svg>
+                    <div class="dl-rocket-engine"></div>
+                </div>
+            </div>
+
+            <!-- Rocket 5: K -->
+            <div class="dl-squad-member dl-squad-k">
+                <div class="dl-squad-letter">K</div>
+                <div class="dl-rocket-ship">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12,2C11.5,4,10,8.5,10,12v4l-4,3v2l4-1v2h4v-2l4,1v-2l-4-3V12C14,8.5,12.5,4,12,2z" />
+                    </svg>
+                    <div class="dl-rocket-engine"></div>
+                </div>
             </div>
         </div>
     </div>
@@ -266,9 +570,7 @@
                         <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                     </svg>
                 </div>
-            </div>
-
-            <!-- Heading description -->
+                    <!-- Heading description -->
             <div class="space-y-3.5">
                 <span class="text-[10px] sm:text-[11px] font-bold tracking-widest uppercase text-goldAccent bg-goldAccent/10 px-4 py-1.5 rounded-full font-mono inline-block border border-goldAccent/15">
                     <?php echo esc_html(dl_field('maintenance_tag', 'Nâng cấp hạ tầng tối ưu')); ?>
@@ -277,7 +579,7 @@
                     <?php echo esc_html(dl_field('maintenance_title', 'Hệ Thống Đang Bảo Trì')); ?>
                 </h1>
                 <p class="text-xs sm:text-[13px] text-gray-400 leading-relaxed max-w-sm mx-auto">
-                    <?php echo esc_html(dl_field('maintenance_desc', 'Website của Chuyên gia SEO Derek Lâm hiện đang được tối ưu hóa tốc độ load trang, cấu trúc mã nguồn Core Web Vitals và lắp ráp hệ quản trị tự động hóa thông qua AI Agents. Chúng tôi sẽ sớm trở lại ngay lập tức.')); ?>
+                    <?php echo esc_html(dl_field('maintenance_desc', 'Website Derek Flow hiện đang được xây dựng hệ quản trị tự động hóa thông qua AI Agents. Tớ sẽ sớm trở lại sau.')); ?>
                 </p>
             </div>
 
@@ -296,21 +598,21 @@
                     <div class="h-full bg-gradient-to-r from-goldAccent to-[#FFC400] rounded-full animate-pulse transition-all duration-300" style="width: <?php echo esc_attr($progress_val); ?>%"></div>
                 </div>
                 <p class="text-[10px] text-gray-400/85 italic font-medium leading-relaxed">
-                    <?php echo esc_html(dl_field('maintenance_progress_subtext', 'Bàn giao & kích hoạt lại trong 15-30 phút tới')); ?>
+                    <?php echo esc_html(dl_field('maintenance_progress_subtext', 'ĐANG BẬN LÀM DỰ ÁN TRĂM TỶ, NÀO RẢNH BUILD NỐT 5% CÒN LẠI')); ?>
                 </p>
             </div>
 
             <!-- Separation divider and bottom options -->
             <div class="border-t border-white/[0.08] pt-6 space-y-4">
                 <span class="text-[10px] uppercase font-bold tracking-widest text-goldAccent/90 block font-mono">
-                    <?php echo esc_html(dl_field('maintenance_support_label', 'HỖ TRỢ TƯ VẤN KHẨN CẤP')); ?>
+                    <?php echo esc_html(dl_field('maintenance_support_label', 'RỦ ĐI CÀ PHÊ')); ?>
                 </span>
                 
                 <!-- Contact options (Beautiful, robust, and highly responsive buttons) -->
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs sm:text-[13px]">
                     <!-- Zalo link -->
                     <?php 
-                    $zalo_url = dl_field('maintenance_zalo_url', 'https://zalo.me/0945143701');
+                    $zalo_url = dl_field('maintenance_zalo_url', 'https://zalo.me/093x9x4xxx');
                     $zalo_text = dl_field('maintenance_zalo_text', 'Chat qua Zalo');
                     ?>
                     <a href="<?php echo esc_url($zalo_url); ?>" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 px-4 bg-[#0068FF] hover:bg-[#005AE0] text-white rounded-xl transition-all font-bold shadow-lg duration-300 hover:-translate-y-0.5 active:translate-y-0 h-12 uppercase tracking-wider text-[11px] sm:text-xs">
@@ -326,8 +628,8 @@
 
                     <!-- Phone Hotline link -->
                     <?php 
-                    $hotline_num = dl_field('maintenance_hotline_number', '0945143701');
-                    $hotline_text = dl_field('maintenance_hotline_text', 'Hotline gấp');
+                    $hotline_num = dl_field('maintenance_hotline_number', '093x9x4xxx');
+                    $hotline_text = dl_field('maintenance_hotline_text', 'Hotline');
                     ?>
                     <a href="tel:<?php echo esc_attr(preg_replace('/[^0-9]/', '', $hotline_num)); ?>" class="flex items-center justify-center gap-2 px-4 bg-gradient-to-r from-goldAccent to-[#E6C200] hover:brightness-110 text-navyDeep rounded-xl transition-all font-black shadow-lg duration-300 hover:-translate-y-0.5 active:translate-y-0 h-12 uppercase tracking-wider text-[11px] sm:text-xs">
                         <!-- Strict containment wrapper to prevent layout distortion from global Theme rules -->
