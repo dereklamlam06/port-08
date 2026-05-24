@@ -54,7 +54,7 @@ export default function ContactView() {
           <span className="text-[11px] font-bold tracking-widest uppercase text-[#FFD700]">Đăng ký nhanh</span>
           <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight">Khởi Chạy Buổi Tư Vấn</h2>
           <p className="text-xs sm:text-sm text-gray-500 leading-relaxed">
-            Điền nhanh thông tin yêu cầu của bạn, Derek Lâm sẽ trực tiếp phân phối giải pháp kỹ thuật & liên lạc hỗ trợ bạn trong vòng tối đa 2 giờ làm việc.
+            Điền nhanh thông tin yêu cầu của bạn, Derek Flow sẽ trực tiếp phân phối giải pháp kỹ thuật & liên lạc hỗ trợ bạn trong vòng tối đa 2 giờ làm việc.
           </p>
         </div>
 
@@ -199,7 +199,7 @@ export default function ContactView() {
               {isSubmitted && (
                 <div className="text-xs text-green-700 bg-green-50 p-3.5 rounded flex items-center gap-2 font-semibold">
                   <Check size={16} />
-                  <span>Cảm ơn bạn! Đơn đăng ký của bạn đã được ghi nhận thành công trên hệ thống. Derek Lâm sẽ gửi liên hệ tư vấn trong 2h làm việc.</span>
+                  <span>Cảm ơn bạn! Đơn đăng ký của bạn đã được ghi nhận thành công trên hệ thống. Derek Flow sẽ gửi liên hệ tư vấn trong 2h làm việc.</span>
                 </div>
               )}
 

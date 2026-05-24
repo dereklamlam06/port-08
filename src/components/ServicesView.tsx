@@ -167,8 +167,12 @@ export default function ServicesView({ setCurrentView }: ServicesViewProps) {
               href="https://zalo.me/0901234567"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center space-x-2 border border-gray-600 hover:border-white text-xs font-bold uppercase tracking-wide px-6 py-3 rounded shadow transition-all h-12 text-white"
+              className="flex items-center justify-center space-x-2 border border-gray-600 hover:border-white text-xs font-bold uppercase tracking-wide px-5 py-3 rounded shadow transition-all h-12 text-white"
             >
+              <svg viewBox="0 0 24 24" className="w-4 h-4 shrink-0 animate-pulse" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2C6.48 2 2 5.86 2 10.63c0 2.58 1.34 4.89 3.49 6.38l-.73 2.73c-.09.34.25.62.55.43l3.23-2.01c1.08.31 2.24.48 3.46.48 5.52 0 10-3.86 10-8.63S17.52 2 12 2z" fill="#FFFFFF" />
+                <path d="M9.63 13.2v-1.2l3.41-4.9H9.78V5.94h4.94V7.6l-3.41 4.9h3.41v1.2H9.63z" fill="#0068FF" />
+              </svg>
               <span>Trao đổi qua Zalo</span>
             </a>
           </div>

@@ -1,6 +1,6 @@
 {
-  "name": "Derek Lam - SEO & AI Automation",
-  "description": "Trang web dịch vụ tối giản, hiện đại của Derek Lâm hỗ trợ SEO & tự động hóa bằng AI, tích hợp thanh toán bảo mật, chatbot tư vấn và bảng điều khiển quản trị.",
+  "name": "Derek Flow - SEO & AI Automation",
+  "description": "Trang web dịch vụ tối giản, hiện đại của Derek Flow hỗ trợ SEO & tự động hóa bằng AI, tích hợp thanh toán bảo mật, chatbot tư vấn và bảng điều khiển quản trị.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

@@ -119,7 +119,7 @@ export default function PortfolioView({ setCurrentView }: PortfolioViewProps) {
           <span className="text-[11px] font-bold tracking-widest uppercase text-[#FFD700]">Dự án thực tế tiêu biểu</span>
           <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight text-[#1A1A2E]">Kết Quả Bứt Phá Thực Tế</h2>
           <p className="text-xs sm:text-sm text-gray-500 leading-relaxed">
-            Xem cách Derek Lâm hỗ trợ các nhãn hàng tăng trưởng vượt bậc thứ hạng tìm kiếm tự nhiên và tối ưu tỷ suất tự động hóa vận hành.
+            Xem cách Derek Flow hỗ trợ các nhãn hàng tăng trưởng vượt bậc thứ hạng tìm kiếm tự nhiên và tối ưu tỷ suất tự động hóa vận hành.
           </p>
         </div>
 

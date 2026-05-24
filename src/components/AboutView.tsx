@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { AppView } from "../types";
 import { Award, Code, Globe, UserCheck, ShieldCheck, Mail, Calendar, Sparkles } from "lucide-react";
 
@@ -7,6 +7,19 @@ interface AboutViewProps {
 }
 
 export default function AboutView({ setCurrentView }: AboutViewProps) {
+  const [avatarUrl, setAvatarUrl] = useState<string>(localStorage.getItem("custom_avatar_url") || "");
+
+  useEffect(() => {
+    const handleImagesUpdate = () => {
+      setAvatarUrl(localStorage.getItem("custom_avatar_url") || "");
+    };
+
+    window.addEventListener("custom-images-updated", handleImagesUpdate);
+    return () => {
+      window.removeEventListener("custom-images-updated", handleImagesUpdate);
+    };
+  }, []);
+
   const seoTools = [
     { name: "Google Search Console", desc: "Theo dõi lập chỉ mục & hiệu suất từ khóa chuyên sâu" },
     { name: "Google Analytics 4", desc: "Phân tích luồng hành vi & hiệu suất phễu chuyển đổi" },
@@ -31,7 +44,7 @@ export default function AboutView({ setCurrentView }: AboutViewProps) {
         {/* Title layout */}
         <div className="text-center max-w-2xl mx-auto space-y-4">
           <span className="text-[11px] font-bold tracking-widest uppercase text-[#FFD700]">Đội ngũ đồng hành</span>
-          <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight">Về Derek Lâm Specialist</h2>
+          <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight">Về Derek Flow Specialist</h2>
           <p className="text-xs sm:text-sm text-gray-500 leading-relaxed">
             Chuyên gia SEO thực chiến & Nhà phát triển hệ thống tự động hóa bằng AI tối giản với tôn chỉ làm việc dựa trên dữ liệu thật.
           </p>
@@ -41,37 +54,62 @@ export default function AboutView({ setCurrentView }: AboutViewProps) {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           {/* Avatar frame */}
           <div className="lg:col-span-5 flex justify-center">
-            <div className="relative w-72 h-80 sm:w-80 sm:h-96 md:w-[350px] md:h-[420px] rounded-2xl bg-gradient-to-tr from-[#1A1A2E] to-gray-800 p-8 shadow-2xl overflow-hidden text-[#FAFAF7] flex flex-col justify-between">
-              {/* Decorative items */}
-              <div className="absolute top-0 right-0 w-32 h-32 bg-[#FFD700]/10 rounded-full blur-2xl"></div>
-              
-              <div className="space-y-4">
-                <div className="w-12 h-12 rounded bg-[#FFD700] flex items-center justify-center text-[#1A1A2E]">
-                  <Sparkles size={24} />
+            <div className="relative w-72 h-80 sm:w-80 sm:h-96 md:w-[350px] md:h-[420px] rounded-2xl shadow-2xl overflow-hidden group">
+              {avatarUrl ? (
+                /* High-Fidelity Custom Image uploaded by user, fits 4:5 vertical proportions nicely */
+                <div className="absolute inset-0 w-full h-full">
+                    <div className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                      <img 
+                        src={avatarUrl} 
+                        alt="Derek Flow Specialist" 
+                        className="w-full h-full object-cover" 
+                      />
+                    </div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent flex flex-col justify-end p-6 select-none font-sans">
+                      <div className="space-y-1">
+                        <h3 className="text-xl font-extrabold uppercase tracking-wide text-white leading-none">DEREK FLOW</h3>
+                      <p className="text-[10px] text-[#FFD700] uppercase tracking-widest font-mono font-bold">Senior Strategist & Developer</p>
+                    </div>
+                    <p className="text-[11px] text-gray-300 leading-relaxed pt-2 border-t border-white/10 mt-2.5">
+                      "Sự vượt bậc trong thứ hạng và độ tinh giản vận hành là thước đo duy nhất thành công."
+                    </p>
+                  </div>
                 </div>
-                <div className="space-y-1">
-                  <h3 className="text-xl font-extrabold uppercase tracking-wide text-white">DEREK LÂM</h3>
-                  <p className="text-[11px] text-gray-400 uppercase tracking-widest font-mono">Senior Strategist & Developer</p>
-                </div>
-                <p className="text-xs text-gray-300 leading-relaxed pt-2">
-                  "Sự vượt bậc trong vị trí thứ hạng tìm kiếm và độ tinh giản của bộ máy vận hành là thước đo duy nhất để đánh giá thành công của dự án."
-                </p>
-              </div>
+              ) : (
+                /* Default Luxury Badge visual if no custom image is uploaded */
+                <div className="w-full h-full bg-gradient-to-tr from-[#1A1A2E] to-gray-800 p-8 text-[#FAFAF7] flex flex-col justify-between absolute inset-0">
+                  {/* Decorative items */}
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-[#FFD700]/10 rounded-full blur-2xl"></div>
+                  
+                  <div className="space-y-4 relative z-10">
+                    <div className="w-12 h-12 rounded bg-[#FFD700] flex items-center justify-center text-[#1A1A2E]">
+                      <Sparkles size={24} />
+                    </div>
+                    <div className="space-y-1">
+                      <h3 className="text-xl font-extrabold uppercase tracking-wide text-white">DEREK FLOW</h3>
+                      <p className="text-[11px] text-gray-400 uppercase tracking-widest font-mono">Senior Strategist & Developer</p>
+                    </div>
+                    <p className="text-xs text-gray-300 leading-relaxed pt-2">
+                      "Sự vượt bậc trong vị trí thứ hạng tìm kiếm và độ tinh giản của bộ máy vận hành là thước đo duy nhất để đánh giá thành công của dự án."
+                    </p>
+                  </div>
 
-              <div className="space-y-2 border-t border-gray-700/50 pt-4 text-xs font-mono">
-                <div className="flex justify-between">
-                  <span className="text-gray-500">Kinh nghiệm:</span>
-                  <span className="text-white">10+ Năm Thực Chiến</span>
+                  <div className="space-y-2 border-t border-gray-700/50 pt-4 text-xs font-mono relative z-10">
+                    <div className="flex justify-between">
+                      <span className="text-gray-500">Kinh nghiệm:</span>
+                      <span className="text-white">10+ Năm Thực Chiến</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-gray-500">Thế mạnh chính:</span>
+                      <span className="text-white">Technical SEO & AI RAG</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-gray-500">Mục tiêu:</span>
+                      <span className="text-[#FFD700]">To Peak Efficiency</span>
+                    </div>
+                  </div>
                 </div>
-                <div className="flex justify-between">
-                  <span className="text-gray-500">Thế mạnh chính:</span>
-                  <span className="text-white">Technical SEO & AI RAG</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-gray-500">Mục tiêu:</span>
-                  <span className="text-[#FFD700]">To Peak Efficiency</span>
-                </div>
-              </div>
+              )}
             </div>
           </div>
 
@@ -85,9 +123,9 @@ export default function AboutView({ setCurrentView }: AboutViewProps) {
             </div>
 
             <p className="text-xs sm:text-[13px] text-gray-500 leading-relaxed whitespace-pre-line">
-              Derek Lâm bắt đầu sự nghiệp với vai trò là một kỹ sư phần mềm chuyên nghiệp trước khi lấn sân sâu rộng sang ngành Tối ưu hóa công cụ tìm kiếm (SEO). Sự kết hợp hiếm hoi giữa khả năng thấu hiểu thuật toán xếp hạng và năng lực lập trình tối ưu hạ tầng code giúp Derek giải quyết triệt để các bài toán kỹ thuật phức tạp nhất mà các SEOer truyền thống thường bó tay.
+              Derek Flow bắt đầu sự nghiệp với vai trò là một kỹ sư phần mềm chuyên nghiệp trước khi lấn sân sâu rộng sang ngành Tối ưu hóa công cụ tìm kiếm (SEO). Sự kết hợp hiếm hoi giữa khả năng thấu hiểu thuật toán xếp hạng và năng lực lập trình tối ưu hạ tầng code giúp Derek giải quyết triệt để các bài toán kỹ thuật phức tạp nhất mà các SEOer truyền thống thường bó tay.
               {"\n\n"}
-              Mỗi dòng mã nguồn do Derek Lâm thiết kế đều đảm bảo cấu trúc dữ liệu schema chuẩn xác nhất, tốc độ phản hồi Core Web Vitals tối ưu, và hoàn toàn miễn nhiễm trước các đợt càn quét thuật toán khắt khe từ Google. Đồng thời, qua việc khai mở sức mạnh của AI Agents và Workflow Automation, chúng tôi giúp các đối tác đồng hành sở hữu cỗ máy bán hàng & chăm sóc khách hàng tự động xuất sắc hoạt động bền bỉ ngày đêm.
+              Mỗi dòng mã nguồn do Derek Flow thiết kế đều đảm bảo cấu trúc dữ liệu schema chuẩn xác nhất, tốc độ phản hồi Core Web Vitals tối ưu, và hoàn toàn miễn nhiễm trước các đợt càn quét thuật toán khắt khe từ Google. Đồng thời, qua việc khai mở sức mạnh của AI Agents và Workflow Automation, chúng tôi giúp các đối tác đồng hành sở hữu cỗ máy bán hàng & chăm sóc khách hàng tự động xuất sắc hoạt động bền bỉ ngày đêm.
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4 border-t border-gray-200">
@@ -155,7 +193,7 @@ export default function AboutView({ setCurrentView }: AboutViewProps) {
         {/* CTA Contact link bottom */}
         <div className="bg-[#1A1A2E] text-white p-8 md:p-12 rounded-lg flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="space-y-2 max-w-lg">
-            <h4 className="text-lg md:text-xl font-bold tracking-tight">Bạn muốn trao đổi trực tiếp cùng chuyên gia Derek Lâm?</h4>
+            <h4 className="text-lg md:text-xl font-bold tracking-tight">Bạn muốn trao đổi trực tiếp cùng chuyên gia Derek Flow?</h4>
             <p className="text-xs text-gray-400">
               Đặt lịch họp nhanh 15 phút qua Zoom hoặc gặp mặt trực tiếp để giải quyết bài toán tăng trưởng thứ hạng và xây dựng tự động hóa.
             </p>

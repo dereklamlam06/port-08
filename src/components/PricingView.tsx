@@ -550,7 +550,7 @@ export default function PricingView({ setCurrentView }: PricingViewProps) {
                         <div className="text-[11px] text-left space-y-2 text-gray-650">
                           <p>● Ngân hàng: <strong className="text-gray-900">MOCK COMMERCIAL TECHBANK</strong></p>
                           <p>● Số tài khoản: <strong className="text-gray-900 font-mono">901234567</strong></p>
-                          <p>● Chủ tài khoản: <strong className="text-gray-900 uppercase">DEREK LAM SPECIALIST</strong></p>
+                          <p>● Chủ tài khoản: <strong className="text-gray-900 uppercase">DEREK FLOW SPECIALIST</strong></p>
                           <p>● Số tiền chuyển: <strong className="text-[#FFD700] font-mono text-sm">{createdOrderDetails.amount.toLocaleString("vi-VN")} VNĐ</strong></p>
                           <p>● Nội dung chuyển khoản: <strong className="text-gray-900 font-mono uppercase bg-white px-1 border">{createdOrderDetails.txHash}</strong></p>
                         </div>
@@ -562,7 +562,7 @@ export default function PricingView({ setCurrentView }: PricingViewProps) {
                     )}
 
                     <p className="text-xs text-gray-500 leading-normal">
-                      Hệ thống tự động hóa sẽ gửi nội dung hợp đồng số và lịch đặt tư vấn trực tiếp với anh Derek Lâm qua Email/Zalo của bạn trong vòng tối đa 15 phút.
+                      Hệ thống tự động hóa sẽ gửi nội dung hợp đồng số và lịch đặt tư vấn trực tiếp với anh Derek Flow qua Email/Zalo của bạn trong vòng tối đa 15 phút.
                     </p>
 
                     <button

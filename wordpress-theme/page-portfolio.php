@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Derek Lâm Case Studies Webpage
+ * Template Name: Derek Flow Case Studies Webpage
  */
 get_header(); ?>
 
@@ -11,7 +11,7 @@ get_header(); ?>
             <span class="text-[11px] font-bold tracking-widest uppercase text-[#FFD700] bg-navyPrimary px-3 py-1 rounded inline-block font-mono">Dự án thực tế tiêu biểu</span>
             <h1 class="text-3xl md:text-4xl font-extrabold tracking-tight text-[#1A1A2E]">Kết Quả Bứt Phá Thực Tế</h1>
             <p class="text-xs sm:text-sm text-gray-500 leading-relaxed max-w-xl mx-auto">
-                Xem cách Derek Lâm hỗ trợ các nhãn hàng tăng trưởng vượt bậc thứ hạng tìm kiếm tự nhiên và tối ưu tỷ suất tự động hóa vận hành.
+                Xem cách Derek Flow hỗ trợ các nhãn hàng tăng trưởng vượt bậc thứ hạng tìm kiếm tự nhiên và tối ưu tỷ suất tự động hóa vận hành.
             </p>
         </div>
 

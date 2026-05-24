@@ -54,7 +54,7 @@ export default function Error404View({ setCurrentView }: Error404ViewProps) {
           <div className="flex items-center gap-2 border-b pb-3 border-gray-100 justify-center">
             <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
             <span className="text-[11px] font-bold uppercase tracking-widest text-[#1A1A2E]">
-              Hệ thống phòng vệ Derek Lâm
+              Hệ thống phòng vệ Derek Flow
             </span>
           </div>
           

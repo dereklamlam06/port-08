@@ -1,6 +1,6 @@
 <?php
 /**
- * Derek Lâm - WordPress Single Post Detail Template
+ * Derek Flow - WordPress Single Post Detail Template
  */
 get_header(); ?>
 

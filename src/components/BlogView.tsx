@@ -115,11 +115,11 @@ const generateSimulatedPosts = (basePosts: BlogPost[]): BlogPost[] => {
       tags: postTags,
       readTime: `${4 + (i % 8)} phút đọc`,
       date: `${dateDay} ${dateMonth}, 2026`,
-      author: "Derek Lâm",
+      author: "Derek Flow",
       imageUrl: imagesPool[i % imagesPool.length],
       likes: likesCount,
       content: [
-        `Đây là hệ thống tài liệu hướng dẫn kỹ thuật mở rộng số #${i + 4} nằm trong danh mục tài nguyên gồm 1,000 chuyên đề tích hợp tăng trưởng của Derek Lâm Specialist.`,
+        `Đây là hệ thống tài liệu hướng dẫn kỹ thuật mở rộng số #${i + 4} nằm trong danh mục tài nguyên gồm 1,000 chuyên đề tích hợp tăng trưởng của Derek Flow Specialist.`,
         `### 1. Tại sao cần áp dụng giải pháp ${sub}?`,
         `Giai đoạn chuyển đổi số của các ${frame} đòi hỏi sự tinh gọn tối đa. Việc ứng dụng ${method} giúp nâng tầm hiệu quả lên gấp nhiều lần, hạn chế triệt để tỷ lệ rơi rụng khách hàng do quy trình tư vấn chậm trễ.`,
         `### 2. Các mắt xích quan trọng nhất`,
@@ -144,7 +144,7 @@ const basePosts: BlogPost[] = [
     tags: ["Semantic Content", "SEO Onpage", "Topic Cluster", "Google Algorithm"],
     readTime: "6 phút đọc",
     date: "20 Tháng 5, 2026",
-    author: "Derek Lâm",
+    author: "Derek Flow",
     imageUrl: "https://images.unsplash.com/photo-1572021335469-31706a17aaef?auto=format&fit=crop&w=800&q=80",
     likes: 42,
     content: [
@@ -173,7 +173,7 @@ const basePosts: BlogPost[] = [
     tags: ["n8n", "Make", "Gemini API", "CRM Automation"],
     readTime: "8 phút đọc",
     date: "12 Tháng 5, 2026",
-    author: "Derek Lâm",
+    author: "Derek Flow",
     imageUrl: "https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=800&q=80",
     likes: 58,
     content: [
@@ -183,13 +183,13 @@ const basePosts: BlogPost[] = [
       "Mô hình automation chuẩn bao gồm 4 khối mắt xích cốt lõi:",
       "1. **Trigger (Cổng đón nhận):** Form đăng ký từ landing page, tin nhắn từ Fanpage, Zalo OA đổ về hệ thống.",
       "2. **Data Processing (Xử lý dữ liệu):** Công cụ trung gian Make.com hoặc n8n trích xuất họ tên, SĐT, loại dịch vụ của khách hàng một cách sạch sẽ.",
-      "3. **AI Cognitive Engine (Phân tích thông minh):** Chuyển tiếp ngữ cảnh yêu cầu của khách hàng tới API của Gemini. Hệ thống sẽ phân tích xem đây là khách hàng thuộc phân khúc nào để chọn bộ câu trả lời tư vấn phù hợp nhất.",
+      "3. **AI Cognitive Engine (Phân tích thông minh):** Chuyển tiếp ngữ cảnh yêu cảnh yêu cầu của khách hàng tới API của Gemini. Hệ thống sẽ phân tích xem đây là khách hàng thuộc phân khúc nào để chọn bộ câu trả lời tư vấn phù hợp nhất.",
       "4. **Action Link (Hành động phản hồi):** Ghi thông tin vào Google Sheets, đồng thời gửi một tin nhắn chào mừng kèm link đặt lịch tư vấn cá nhân hóa qua Zalo/Email tự động.",
       "### 2. Cách Tạo Trợ Lý Chatbot Biết Trả Lời Theo Kiến Thức Riêng (RAG)",
       "Để chatbot không nói bừa bẩn hay mơ màng, hãy cung cấp cho nó một kho văn bản ngắn gọi là **Knowledge Base** chứa giá cả dịch vụ, quy tắc hoạt động và câu hỏi thường gặp.",
       "Khi khách hàng nhắn tin hỏi đáp, Make.com sẽ lọc qua kho dữ liệu này lấy ra các đoạn text khớp nhất rồi ghép vào system prompt làm ngữ cảnh chặt chẽ trước khi gửi đến AI. Cách này giữ an toàn dữ liệu nội bộ và bảo đảm độ chính xác 100%.",
       "### 3. Hiệu Quả Đo Lường Từ Dự Án Thực Tế",
-      "In một dự án Derek Lâm thiết kế hệ thống tư động hóa cho chuỗi phòng khám nha khoa tại TP.HCM, chi phí vận hành hàng tháng đã trực tiếp **giảm 45%**, trong khi lượng khách đặt lịch tư vấn thành công tăng trưởng **+38%** nhờ hiệu ứng chăm sóc tức thời.",
+      "In một dự án Derek Flow thiết kế hệ thống tư động hóa cho chuỗi phòng khám nha khoa tại TP.HCM, chi phí vận hành hàng tháng đã trực tiếp **giảm 45%**, trong khi lượng khách đặt lịch tư vấn thành công tăng trưởng **+38%** nhờ hiệu ứng chăm sóc tức thời.",
       "Đây chính là minh chứng rõ rệt nhất cho thấy công nghệ AI tối giản mang lại giá trị thực tiễn siêu tốc cho doanh nghiệp."
     ]
   },
@@ -202,7 +202,7 @@ const basePosts: BlogPost[] = [
     tags: ["React Performance", "Vite Config", "Lighthouse 100", "Core Web Vitals"],
     readTime: "5 phút đọc",
     date: "05 Tháng 5, 2026",
-    author: "Derek Lâm",
+    author: "Derek Flow",
     imageUrl: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80",
     likes: 35,
     content: [
@@ -228,19 +228,19 @@ const basePosts: BlogPost[] = [
     tags: ["Funnel SEO", "Lead Conversion", "Inbound Marketing", "User Journey"],
     readTime: "7 phút đọc",
     date: "28 Tháng Tư, 2026",
-    author: "Derek Lâm",
+    author: "Derek Flow",
     imageUrl: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80",
     likes: 47,
     content: [
       "Sai lầm chí mạng nhất của đa số quản lý thương hiệu khi thuê ngoài dịch vụ SEO là ép chỉ số lượng Traffic tổng thể. Lượng truy cập khổng lồ từ các từ khóa không liên quan chỉ làm tốn chi phí băng thông mà hoàn toàn không đóng góp vào doanh thu thực tế.",
-      "Để giải quyết triệt để nút thắt này, Derek Lâm đề xuất tư duy **SEO Phễu Bản Chất (Funnel SEO Strategy)** bám sát hành trình nhận thức khách hàng.",
+      "Để giải quyết triệt để nút thắt này, Derek Flow đề xuất tư duy **SEO Phễu Bản Chất (Funnel SEO Strategy)** bám sát hành trình nhận thức khách hàng.",
       "### 1. 3 Giai Đoạn Vận Hành Của Phễu Nội Dung",
       "**Giai đoạn 1: TOFU (Top of Funnel - Nhận diện thắc mắc)**",
       "Khách hàng đang gặp khó khăn và tìm kiếm các thông tin khách quan chung chung. Ví dụ: 'Cách tăng doanh thu spa', 'Tại sao web wordpress chạy chậm'. Mục tiêu ở đây là cung cấp giải pháp miễn phí vô điều kiện để xây dựng lòng tin.",
       "**Giai đoạn 2: MOFU (Middle of Funnel - Cân nhắc giải pháp)**",
       "Khách hàng đã nhận định được giải pháp nhưng phân vân lựa chọn hình thức tối ưu nhất. Ví dụ: 'Có nên tự học làm SEO không', 'Nên xây dựng Landing Page bằng React hay WordPress'. Bài viết cần phân tích ưu nhược điểm khách quan và khôn khéo định hình xu hướng chọn lựa.",
       "**Giai đoạn 3: BOFU (Bottom of Funnel - Chốt đơn hành động)**",
-      "Khách hàng đã sẵn sàng đầu tư ngân sách để thuê chuyên gia. Họ tìm kiếm các từ khóa có ý định thương mại rõ rệt: 'Dịch vụ SEO thực chiến uy tín HCM', 'Báo giá thiết kế website SEO Derek Lâm'. Trang đích lúc này cần cam kết KPI minh bạch, trưng dẫn các dự án thực tế và biểu mẫu đặt lịch nhanh.",
+      "Khách hàng đã sẵn sàng đầu tư ngân sách để thuê chuyên gia. Họ tìm kiếm các từ khóa có ý định thương mại rõ rệt: 'Dịch vụ SEO thực chiến uy tín HCM', 'Báo giá thiết kế website SEO Derek Flow'. Trang đích lúc này cần cam kết KPI minh bạch, trưng dẫn các dự án thực tế và biểu mẫu đặt lịch nhanh.",
       "### 2. Thiết Kế Liên Kết Nội Bộ Để Khách Hàng Chuyển Động Trơn Tru Trong Phễu",
       "Đừng để người dùng đọc xong 1 bài TOFU rồi tắt tab ra đi. Hãy đặt các khối CTA kêu gọi đọc tiếp các bài MOFU có liên quan trực tiếp một cách thông thoáng.",
       "Cuối mỗi bài viết MOFU, hãy bổ sung nút kích hoạt biểu mẫu đăng ký tư vấn trực tiếp BOFU hoặc liên kết đến chatbot tự động để giải đáp nhanh. Việc kết nối chặt chẽ này tạo nên một cỗ máy bán hàng khép kín bền đại."
@@ -754,14 +754,14 @@ export default function BlogView({ setCurrentView }: BlogViewProps) {
                     <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-[#FFD700] shrink-0">
                       <img 
                         src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=150&q=80" 
-                        alt="Derek Lâm Specialist" 
+                        alt="Derek Flow Specialist" 
                         referrerPolicy="no-referrer"
                         className="w-full h-full object-cover"
                       />
                     </div>
                     <div>
                       <h4 className="text-xs text-[#FFD700] font-extrabold tracking-widest uppercase">CHUYÊN GIA ĐỒNG HÀNH</h4>
-                      <h3 className="text-sm font-bold text-white">Derek Lâm Specialist</h3>
+                      <h3 className="text-sm font-bold text-white">Derek Flow Specialist</h3>
                       <p className="text-[10px] text-gray-400">SEO & AI Automation Specialist</p>
                     </div>
                   </div>
@@ -857,7 +857,7 @@ export default function BlogView({ setCurrentView }: BlogViewProps) {
                     Bạn muốn có một chiến lược SEO & AI Automation tối ưu đỉnh cao?
                   </h3>
                   <p className="text-xs text-gray-300 max-w-xl leading-relaxed">
-                    Đăng ký tư vấn trực tiếp 1-1 cùng Derek Lâm thiết lập sơ đồ tăng trưởng Semantic Content và sơ đồ hóa tự động chăm khách hàng toàn diện.
+                    Đăng ký tư vấn trực tiếp 1-1 cùng Derek Flow thiết lập sơ đồ tăng trưởng Semantic Content và sơ đồ hóa tự động chăm khách hàng toàn diện.
                   </p>
                 </div>
                 <button

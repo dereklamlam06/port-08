@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Derek Lâm Giới Thiệu Webpage
+ * Template Name: Derek Flow Giới Thiệu Webpage
  */
 get_header(); ?>
 
@@ -9,7 +9,7 @@ get_header(); ?>
         <!-- Title layout -->
         <div class="text-center max-w-2xl mx-auto space-y-4">
             <span class="text-[11px] font-bold tracking-widest uppercase text-[#FFD700] bg-navyPrimary px-3 py-1 rounded inline-block font-mono">Đội ngũ đồng hành</span>
-            <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight text-navyPrimary">Giới Thiệu Derek Lâm Specialist</h2>
+            <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight text-navyPrimary">Giới Thiệu Derek Flow Specialist</h2>
             <p class="text-xs sm:text-sm text-gray-500 leading-relaxed max-w-2xl mx-auto">
                 Chuyên gia SEO thực chiến & Nhà phát triển hệ thống tự động hóa bằng AI tối giản với tôn chỉ làm việc dựa trên dữ liệu thật.
             </p>
@@ -30,7 +30,7 @@ get_header(); ?>
                             </svg>
                         </div>
                         <div class="space-y-1">
-                            <h3 class="text-xl font-extrabold uppercase tracking-wide text-white">DEREK LÂM</h3>
+                            <h3 class="text-xl font-extrabold uppercase tracking-wide text-white">DEREK FLOW</h3>
                             <p class="text-[11px] text-gray-400 uppercase tracking-widest font-mono">Senior Strategist & Developer</p>
                         </div>
                         <p class="text-xs text-gray-300 leading-relaxed pt-2">
@@ -65,9 +65,9 @@ get_header(); ?>
                 </div>
 
                 <p class="text-xs sm:text-[13px] text-gray-550 leading-relaxed text-justify whitespace-pre-line">
-                    Derek Lâm bắt đầu sự nghiệp với vai trò là một kỹ sư phần mềm chuyên nghiệp trước khi lấn sân sâu rộng sang ngành Tối ưu hóa công cụ tìm kiếm (SEO). Sự kết hợp hiếm hoi giữa khả năng thấu hiểu thuật toán xếp hạng và năng lực lập trình tối ưu hạ tầng code giúp Derek giải quyết triệt để các bài toán kỹ thuật phức tạp nhất mà các SEOer truyền thống thường bó tay.
+                    Derek Flow bắt đầu sự nghiệp với vai trò là một kỹ sư phần mềm chuyên nghiệp trước khi lấn sân sâu rộng sang ngành Tối ưu hóa công cụ tìm kiếm (SEO). Sự kết hợp hiếm hoi giữa khả năng thấu hiểu thuật toán xếp hạng và năng lực lập trình tối ưu hạ tầng code giúp Derek giải quyết triệt để các bài toán kỹ thuật phức tạp nhất mà các SEOer truyền thống thường bó tay.
 
-                    Mỗi dòng mã nguồn do Derek Lâm thiết kế đều đảm bảo cấu trúc dữ liệu schema chuẩn xác nhất, tốc độ phản hồi Core Web Vitals tối ưu, và hoàn toàn miễn nhiễm trước các đợt càn quét thuật toán khắt khe từ Google. Đồng thời, qua việc khai mở sức mạnh của AI Agents và Workflow Automation, chúng tôi giúp các đối tác đồng hành sở hữu cỗ máy bán hàng & chăm sóc khách hàng tự động xuất sắc hoạt động bền bỉ ngày đêm.
+                    Mỗi dòng mã nguồn do Derek Flow thiết kế đều đảm bảo cấu trúc dữ liệu schema chuẩn xác nhất, tốc độ phản hồi Core Web Vitals tối ưu, và hoàn toàn miễn nhiễm trước các đợt càn quét thuật toán khắt khe từ Google. Đồng thời, qua việc khai mở sức mạnh của AI Agents và Workflow Automation, chúng tôi giúp các đối tác đồng hành sở hữu cỗ máy bán hàng & chăm sóc khách hàng tự động xuất sắc hoạt động bền bỉ ngày đêm.
                 </p>
 
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4 border-t border-gray-200">
@@ -186,7 +186,7 @@ get_header(); ?>
         <!-- CTA Contact link bottom -->
         <div class="bg-[#1A1A2E] text-white p-8 md:p-12 rounded-lg flex flex-col md:flex-row items-center justify-between gap-6">
             <div class="space-y-2 max-w-lg">
-                <h4 class="text-lg md:text-xl font-bold tracking-tight">Bạn muốn trao đổi trực tiếp cùng chuyên gia Derek Lâm?</h4>
+                <h4 class="text-lg md:text-xl font-bold tracking-tight">Bạn muốn trao đổi trực tiếp cùng chuyên gia Derek Flow?</h4>
                 <p class="text-xs text-gray-400">
                     Đặt lịch họp nhanh 15 phút qua Zoom hoặc gặp mặt trực tiếp để giải quyết bài toán tăng trưởng thứ hạng và xây dựng tự động hóa.
                 </p>

@@ -24,6 +24,18 @@ export default function App() {
     if (isTryingAdmin) {
       setCurrentView("404");
     }
+
+    // 2. Listen to custom view shifts triggered from other widgets like customizer
+    const handleNavigate = (e: any) => {
+      if (e.detail) {
+        setCurrentView(e.detail);
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+    };
+    window.addEventListener("navigate-view", handleNavigate);
+    return () => {
+      window.removeEventListener("navigate-view", handleNavigate);
+    };
   }, []);
 
   // Renders the specific sub-page matching state selection
@@ -63,7 +75,7 @@ export default function App() {
                   </div>
                   <h4 className="text-sm font-bold uppercase tracking-wider text-[#FFD700]">Định Hướng Thực Chiến</h4>
                   <p className="text-xs text-gray-300 leading-relaxed">
-                    "Sau 4 tháng triển khai chiến dịch SEO chuyên nghiệp cùng Derek Lâm, organic traffic nhãn mỹ phẩm của chúng tôi tăng vượt bậc <strong>+210%</strong>, lọt top 3 danh mục bán chạy nhất thị trường."
+                    "Sau 4 tháng triển khai chiến dịch SEO chuyên nghiệp cùng Derek Flow, organic traffic nhãn mỹ phẩm của chúng tôi tăng vượt bậc <strong>+210%</strong>, lọt top 3 danh mục bán chạy nhất thị trường."
                   </p>
                   <span className="text-[10px] text-gray-500 font-bold block">— Giám đốc Marketing, Nhãn hàng Mỹ phẩm Mỹ</span>
                 </div>

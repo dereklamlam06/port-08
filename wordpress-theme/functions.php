@@ -1,6 +1,6 @@
 <?php
 /**
- * Derek Lâm - WordPress Theme Functions and Support Code
+ * Derek Flow - WordPress Theme Functions and Support Code
  */
 
 if (!function_exists('derek_lam_theme_setup')) {
@@ -60,7 +60,7 @@ function derek_lam_scripts() {
 add_action('wp_enqueue_scripts', 'derek_lam_scripts');
 
 /**
- * Filter the excerpt length to match Derek Lâm premium grid visuals
+ * Filter the excerpt length to match Derek Flow premium grid visuals
  */
 function derek_lam_custom_excerpt_length($length) {
     return 25; // Compact excerpt length
@@ -84,7 +84,7 @@ add_filter('excerpt_more', 'derek_lam_excerpt_more');
  * - Để BẬT chế độ bảo trì toàn trang, bạn chỉ cần đổi 'false' thành 'true' ở dòng dưới.
  * - Khi bật, khách truy cập thường sẽ thấy trang Bảo Trì Đẳng Cấp, riêng Admin (Bạn) vẫn vào chỉnh web bình thường!
  */
-define('DEREK_LAM_MAINTENANCE_MODE', false); 
+define('DEREK_LAM_MAINTENANCE_MODE', true); 
 
 function derek_lam_maintenance_redirect() {
     if (defined('DEREK_LAM_MAINTENANCE_MODE') && DEREK_LAM_MAINTENANCE_MODE) {

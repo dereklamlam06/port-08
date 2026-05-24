@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { AppView } from "../types";
 import { Mail, MapPin, Send, Zap, Check } from "lucide-react";
+import LogoIcon from "./LogoIcon";
 
 interface FooterProps {
   setCurrentView: (view: AppView) => void;
@@ -51,9 +52,8 @@ export default function Footer({ setCurrentView }: FooterProps) {
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
         {/* Profile / Summary */}
         <div className="md:col-span-1.5 space-y-4">
-          <div className="flex items-center space-x-2">
-            <span className="text-xl font-extrabold uppercase tracking-widest text-[#FAFAF7]">Derek L_m</span>
-            <span className="w-1.5 h-1.5 bg-[#FFD700] rounded-full"></span>
+          <div className="flex items-center">
+            <LogoIcon width={120} height={48} />
           </div>
           <p className="text-xs text-gray-400 leading-relaxed max-w-sm">
             Cung cấp giải pháp tối ưu SEO & Công nghệ AI Automation cao cấp hướng đến sự bứt phá bền vững và hiệu suất vận hành vượt trội cho doanh nghiệp của bạn.
@@ -95,7 +95,7 @@ export default function Footer({ setCurrentView }: FooterProps) {
             </li>
             <li>
               <button onClick={() => handleQuickLink("about")} className="text-xs text-gray-400 hover:text-white transition-colors cursor-pointer">
-                Về Derek Lâm Specialist
+                Về Derek Flow Specialist
               </button>
             </li>
           </ul>
@@ -151,7 +151,7 @@ export default function Footer({ setCurrentView }: FooterProps) {
       </div>
 
       <div className="max-w-7xl mx-auto border-t border-gray-800 mt-12 pt-6 flex flex-col md:flex-row items-center justify-between text-xs text-gray-500">
-        <p>© 2026 Derek Lâm. All rights reserved. Designed for Premium Performance.</p>
+        <p>© 2026 Derek Flow. All rights reserved. Designed for Premium Performance.</p>
         <div className="flex space-x-6 mt-3 md:mt-0">
           <a href="#privacy" className="hover:text-white transition-colors">Chính Sách Bảo Mật</a>
           <a href="#terms" className="hover:text-white transition-colors">Điều Khoản Dịch Vụ</a>

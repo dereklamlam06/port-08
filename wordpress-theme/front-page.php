@@ -1,8 +1,12 @@
 <?php
 /**
- * Template Name: Derek Lâm Custom Homepage Front Page
+ * Template Name: Derek Flow Custom Homepage Front Page
  */
-// Tự động nhận diện nếu bạn chọn trang tĩnh Trang Chủ sử dụng Template Bảo Trì
+// Tự động nhận diện nếu bạn chọn trang tĩnh Trang Chủ sử dụng Template Bảo Trì hoặc bật chế độ bảo trì toàn trang
+if (defined('DEREK_LAM_MAINTENANCE_MODE') && DEREK_LAM_MAINTENANCE_MODE) {
+    include(locate_template('page-maintenance.php'));
+    exit;
+}
 $front_page_id = get_option('page_on_front');
 if ($front_page_id) {
     $template = get_page_template_slug($front_page_id);
@@ -74,7 +78,7 @@ get_header(); ?>
                     if ($hero_image_url) : 
                     ?>
                         <div class="relative w-72 h-72 sm:w-80 sm:h-80 md:w-96 md:h-96 rounded-2xl overflow-hidden shadow-2xl border border-gray-250 bg-white p-2">
-                            <img src="<?php echo esc_url($hero_image_url); ?>" alt="Derek Lâm Specialist" class="w-full h-full object-cover rounded-xl">
+                            <img src="<?php echo esc_url($hero_image_url); ?>" alt="Derek Flow Specialist" class="w-full h-full object-cover rounded-xl">
                         </div>
                     <?php else : ?>
                         <!-- Default high-end abstract design fallback if no custom image is declared in ACF -->
@@ -145,7 +149,7 @@ get_header(); ?>
                 <div class="text-goldAccent font-black text-sm">★★★★★</div>
                 <h4 class="text-xs font-bold uppercase tracking-wider text-goldAccent">Định Hướng Thực Chiến</h4>
                 <p class="text-xs text-gray-300 leading-relaxed">
-                    "Sau 4 tháng triển khai chiến dịch SEO chuyên nghiệp cùng Derek Lâm, organic traffic nhãn mỹ phẩm của chúng tôi tăng vượt bậc <strong>+210%</strong>, lọt top 3 danh mục bán chạy nhất thị trường."
+                    "Sau 4 tháng triển khai chiến dịch SEO chuyên nghiệp cùng Derek Flow, organic traffic nhãn mỹ phẩm của chúng tôi tăng vượt bậc <strong>+210%</strong>, lọt top 3 danh mục bán chạy nhất thị trường."
                 </p>
                 <span class="text-[10px] text-gray-500 font-bold block">— Giám đốc Marketing, Nhãn hàng Mỹ phẩm Mỹ</span>
             </div>

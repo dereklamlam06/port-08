@@ -4,10 +4,10 @@
         <div class="col-span-12 md:col-span-5 space-y-5">
             <div class="flex items-center gap-2">
                 <span class="w-10 h-10 bg-white/10 text-goldAccent rounded-lg flex items-center justify-center font-extrabold text-lg border border-goldAccent/20">
-                    DL
+                    DF
                 </span>
                 <div class="leading-none">
-                    <span class="text-sm font-black text-white tracking-tighter uppercase block">DEREK LÂM</span>
+                    <span class="text-sm font-black text-white tracking-tighter uppercase block">DEREK FLOW</span>
                     <span class="text-[9px] font-bold text-gray-400 tracking-widest uppercase block">SEO & AUTOMATION SPECIALIST</span>
                 </div>
             </div>
@@ -57,7 +57,7 @@
     <!-- Bottom Copyright -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 pt-6 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-gray-500">
         <div>
-            &copy; <?php echo date('Y'); ?> <strong>Derek Lâm</strong>. Toàn bộ bản quyền được bảo lưu. Thiết kế tương thích WordPress.
+            &copy; <?php echo date('Y'); ?> <strong>Derek Flow</strong>. Toàn bộ bản quyền được bảo lưu. Thiết kế tương thích WordPress.
         </div>
         <div class="flex items-center gap-4">
             <a href="#" class="hover:underline">Điều khoản bảo mật</a>
@@ -87,8 +87,9 @@
        class="w-12 h-12 sm:w-14 sm:h-14 bg-[#0068FF] hover:bg-[#005AE0] text-white rounded-full shadow-2xl flex items-center justify-center transition-all duration-300 cursor-pointer relative group" 
        title="Kết nối Zalo tư vấn 24/7">
         <span class="absolute inset-0 rounded-full bg-[#0068FF]/30 animate-ping opacity-75"></span>
-        <svg viewBox="0 0 24 24" class="w-6 h-6 sm:w-7 sm:h-7 fill-white relative z-10 group-hover:scale-110 transition-transform" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12 2C6.48 2 2 5.86 2 10.63c0 2.58 1.34 4.89 3.49 6.38l-.73 2.7c-.1.35.26.63.56.44l3.23-2.02c1.08.31 2.24.48 3.45.48 5.52 0 10-3.86 10-8.63S17.52 2 12 2zm3.33 11.2H11.2l-.63.93h2.64v1.16H9.41v-.91l1.83-2.61H9.68V10.6h3.48v.91l-1.83 2.60H13.6c.16 0 .3-.13.3-.3v-.3c0-.17-.14-.3-.3-.3h-.91v-1.16h.91c.8 0 1.46.65 1.46 1.46v.3c0 .8-.66 1.46-1.46 1.46zm-2.27-5.04c.54 0 .98.44.98.98s-.44.98-.98.98a.98.98 0 01-.98-.98c0-.54.44-.98.98-.98z" />
+        <svg viewBox="0 0 24 24" class="w-6 h-6 sm:w-7 sm:h-7 relative z-10 group-hover:scale-110 transition-transform" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2C6.48 2 2 5.86 2 10.63c0 2.58 1.34 4.89 3.49 6.38l-.73 2.73c-.09.34.25.62.55.43l3.23-2.01c1.08.31 2.24.48 3.46.48 5.52 0 10-3.86 10-8.63S17.52 2 12 2z" fill="#FFFFFF" />
+            <path d="M9.63 13.2v-1.2l3.41-4.9H9.78V5.94h4.94V7.6l-3.41 4.9h3.41v1.2H9.63z" fill="#0068FF" />
         </svg>
     </a>
 
@@ -120,7 +121,7 @@
                 A
             </div>
             <div>
-                <h3 class="text-xs font-black uppercase tracking-wide text-white">Derek Lâm Assistant</h3>
+                <h3 class="text-xs font-black uppercase tracking-wide text-white">Derek Flow Assistant</h3>
                 <div class="flex items-center space-x-1">
                     <span class="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse"></span>
                     <span class="text-[10px] text-gray-400">Tư vấn tự động phản hồi ngay</span>
@@ -144,7 +145,7 @@
                 </div>
                 <div>
                     <div class="text-[12.5px] px-3.5 py-2.5 rounded-lg leading-relaxed bg-[#F5F0E8] text-navyPrimary border border-gray-200 rounded-bl-none text-justify">
-                        Xin chào! Tôi là Trợ lý AI tự động của Derek Lâm. Tôi có thể hỗ trợ giải đáp nhanh mọi thắc mắc của bạn về tối ưu hóa SEO chuyên sâu, thiết kế website Luxury Tech, tích hợp AI Agents và tự động hóa quy trình. Bạn cần tôi hỗ trợ thông tin gì hôm nay?
+                        Xin chào! Tôi là Trợ lý AI tự động của Derek Flow. Tôi có thể hỗ trợ giải đáp nhanh mọi thắc mắc của bạn về tối ưu hóa SEO chuyên sâu, thiết kế website Luxury Tech, tích hợp AI Agents và tự động hóa quy trình. Bạn cần tôi hỗ trợ thông tin gì hôm nay?
                     </div>
                     <span class="text-[9px] text-gray-400 mt-1 block px-1" id="wp-chatbot-welcome-time">12:00</span>
                 </div>
@@ -331,18 +332,18 @@
         function getOfflineFailsafeResponse(query) {
             const lower = query.toLowerCase();
             if (lower.includes('seo') || lower.includes('từ khóa') || lower.includes('dịch vụ seo')) {
-                return "Dịch thuật toán SEO của Derek Lâm tập trung vào cấu trúc chuẩn Technical và content bao trùm ngữ nghĩa:\n\n- **SEO Starter**: 15.000.000 VNĐ / Tháng (Từ khóa sâu, On-page, theo dõi GSC & GA4).\n- **SEO Pro**: 35.000.000 VNĐ / Tháng (Chiến dịch tổng lực, backlinks chất lượng cao, Looker Studio dashboards).\n\nBạn có muốn tôi gửi tài liệu audit cho dự án của bạn không?";
+                return "Dịch thuật toán SEO của Derek Flow tập trung vào cấu trúc chuẩn Technical và content bao trùm ngữ nghĩa:\n\n- **SEO Starter**: 15.000.000 VNĐ / Tháng (Từ khóa sâu, On-page, theo dõi GSC & GA4).\n- **SEO Pro**: 35.000.000 VNĐ / Tháng (Chiến dịch tổng lực, backlinks chất lượng cao, Looker Studio dashboards).\n\nBạn có muốn tôi gửi tài liệu audit cho dự án của bạn không?";
             }
             if (lower.includes('website') || lower.includes('thiết kế') || lower.includes('báo giá web') || lower.includes('build web')) {
-                return "Website do Derek Lâm thiết kế sử dụng Modern Stack (React/Vite) cực kỳ sang trọng và tải trang thần tốc (< 1 giây). Chi phí thiết kế trọn gói từ 25.000.000 VNĐ tùy mức độ tích hợp bảo mật, chatbots, thanh toán.";
+                return "Website do Derek Flow thiết kế sử dụng Modern Stack (React/Vite) cực kỳ sang trọng và tải trang thần tốc (< 1 giây). Chi phí thiết kế trọn gói từ 25.000.000 VNĐ tùy mức độ tích hợp bảo mật, chatbots, thanh toán.";
             }
             if (lower.includes('automation') || lower.includes('tự động') || lower.includes('n8n') || lower.includes('zapier')) {
                 return "Giải pháp AI & Automation giúp tối ưu và giải phóng sức lao động thủ công tới 80%. Chi phí xây dựng hệ thống (Make, n8n, Pinecone Vector DB, AI Agents) dao động từ 60.000.000 VNĐ / Dự án. Bảo hành trơn tru 12 tháng!";
             }
             if (lower.includes('quy trình') || lower.includes('làm việc') || lower.includes('mấy bước')) {
-                return "Quy trình làm việc tối giản và cam kết hiệu suất của Derek Lâm:\n1. Tư vấn khảo sát nhu cầu chuyên sâu.\n2. Thiết kế giải pháp kỹ thuật, tiến độ & báo giá chi tiết.\n3. Lập trình mã nguồn sạch, tối ưu hóa Core Web Vitals khắt khe.\n4. Nghiệm thu, đào tạo bàn giao và báo cáo realtime KPI.";
+                return "Quy trình làm việc tối giản và cam kết hiệu suất của Derek Flow:\n1. Tư vấn khảo sát nhu cầu chuyên sâu.\n2. Thiết kế giải pháp kỹ thuật, tiến độ & báo giá chi tiết.\n3. Lập trình mã nguồn sạch, tối ưu hóa Core Web Vitals khắt khe.\n4. Nghiệm thu, đào tạo bàn giao và báo cáo realtime KPI.";
             }
-            return "Cảm ơn bạn đã nhắn tin! Để nhanh chóng nhận Lộ trình Tối ưu SEO & Tự động hóa MIỄN PHÍ, bạn có thể gọi Hotline hoặc kết nối Zalo trực tiếp của anh Derek Lâm: (+84) 945.143.701 nhé. Trợ lý ảo sẽ chuyển ngay thông tin đến anh ấy!";
+            return "Cảm ơn bạn đã nhắn tin! Để nhanh chóng nhận Lộ trình Tối ưu SEO & Tự động hóa MIỄN PHÍ, bạn có thể gọi Hotline hoặc kết nối Zalo trực tiếp của anh Derek Flow: (+84) 945.143.701 nhé. Trợ lý ảo sẽ chuyển ngay thông tin đến anh ấy!";
         }
 
         // Global function for suggestions

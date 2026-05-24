@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Derek Lâm Contact Webpage
+ * Template Name: Derek Flow Contact Webpage
  */
 get_header(); ?>
 
@@ -10,7 +10,7 @@ get_header(); ?>
         <span class="text-[11px] font-bold tracking-widest uppercase text-[#FFD700] bg-navyPrimary px-3 py-1 rounded inline-block font-mono">Giải pháp bứt phá tối giản</span>
         <h1 class="text-3xl md:text-4xl font-extrabold tracking-tight text-[#1A1A2E]">Khởi Động Dự Án Của Bạn</h1>
         <p class="text-xs sm:text-sm text-gray-500 leading-relaxed max-w-md mx-auto">
-            Gửi yêu cầu hoặc để lại thông tin liên hệ, Derek Lâm sẽ chủ động liên lạc qua Zalo/Email trong vòng 10 phút để khảo sát và lên lộ trình tối ưu miễn phí.
+            Gửi yêu cầu hoặc để lại thông tin liên hệ, Derek Flow sẽ chủ động liên lạc qua Zalo/Email trong vòng 10 phút để khảo sát và lên lộ trình tối ưu miễn phí.
         </p>
     </div>
 
@@ -59,7 +59,7 @@ get_header(); ?>
             <div class="bg-navyPrimary/5 border border-navyPrimary/10 p-5 rounded-lg space-y-1.5 text-xs">
                 <strong class="text-navyPrimary block uppercase text-[10px] tracking-wider">Hỗ Trợ Khẩn Cấp Bàn Giao</strong>
                 <p class="text-gray-500 text-justify leading-relaxed">
-                    Yêu cầu khẩn cấp liên quan đến khôi phục traffic do dính án phạt thuật toán Google, hoặc lỗi nghiêm trọng của API Automation được Derek Lâm xử lý ưu tiên 24/7.
+                    Yêu cầu khẩn cấp liên quan đến khôi phục traffic do dính án phạt thuật toán Google, hoặc lỗi nghiêm trọng của API Automation được Derek Flow xử lý ưu tiên 24/7.
                 </p>
             </div>
         </div>
@@ -150,14 +150,14 @@ get_header(); ?>
         })
         .then(data => {
             statusBox.className = "text-xs font-semibold p-4 rounded text-center bg-green-50 border border-green-200 text-green-700";
-            statusBox.textContent = "Bạn đã đăng ký thành công! Derek Lâm đã nhận thông tin và sẽ liên hệ lại trực tiếp qua Zalo hoặc Hotline trong vòng tối đa 10 phút.";
+            statusBox.textContent = "Bạn đã đăng ký thành công! Derek Flow đã nhận thông tin và sẽ liên hệ lại trực tiếp qua Zalo hoặc Hotline trong vòng tối đa 10 phút.";
             statusBox.classList.remove('hidden');
 
             document.getElementById('lead-form').reset();
         })
         .catch(err => {
             statusBox.className = "text-xs font-semibold p-4 rounded text-center bg-red-50 border border-red-200 text-red-700";
-            statusBox.textContent = "Gửi thông tin thành công! Derek Lâm đã nhận yêu cầu của quý khách và sẽ liên lạc ngay lập tức.";
+            statusBox.textContent = "Gửi thông tin thành công! Derek Flow đã nhận yêu cầu của quý khách và sẽ liên lạc ngay lập tức.";
             statusBox.classList.remove('hidden');
         })
         .finally(() => {

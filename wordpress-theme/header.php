@@ -61,10 +61,10 @@
         <!-- Logo -->
         <a href="<?php echo esc_url(home_url('/')); ?>" class="flex items-center gap-2 group">
             <span class="w-10 h-10 bg-navyPrimary text-goldAccent rounded-lg flex items-center justify-center font-extrabold text-lg border border-goldAccent/25 shadow-sm">
-                DL
+                DF
             </span>
             <div class="leading-none">
-                <span class="text-sm font-black text-navyPrimary tracking-tighter uppercase block">DEREK LÂM</span>
+                <span class="text-sm font-black text-navyPrimary tracking-tighter uppercase block">DEREK FLOW</span>
                 <span class="text-[9px] font-bold text-gray-400 tracking-widest uppercase block">SEO & AUTOMATION</span>
             </div>
         </a>

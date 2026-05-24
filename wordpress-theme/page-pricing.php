@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Derek Lâm Giá Webpage
+ * Template Name: Derek Flow Giá Webpage
  */
 get_header(); ?>
 
@@ -513,7 +513,7 @@ get_header(); ?>
                         <div class="text-[11px] text-left space-y-1.5 text-gray-700 font-sans">
                             <p>● Ngân hàng: <strong class="text-gray-900">MOCK COMMERCIAL TECHBANK</strong></p>
                             <p>● Số tài khoản: <strong class="text-gray-900 font-mono">901234567</strong></p>
-                            <p>● Chủ tài khoản: <strong class="text-gray-900 uppercase">DEREK LAM SPECIALIST</strong></p>
+                            <p>● Chủ tài khoản: <strong class="text-gray-900 uppercase">DEREK FLOW SPECIALIST</strong></p>
                             <p>● Số tiền chuyển: <strong id="receipt-grand-price" class="text-red-700 font-mono font-bold text-sm">35,000,000 VNĐ</strong></p>
                             <p>● Nội dung chuyển khoản: <strong id="receipt-tx-memo" class="text-gray-900 font-mono uppercase bg-white px-1 border">SEOPRO1234567</strong></p>
                         </div>
@@ -529,7 +529,7 @@ get_header(); ?>
                     </div>
 
                     <p class="text-xs text-gray-500 leading-normal max-w-md mx-auto">
-                        Hệ thống tự động hóa sẽ gửi nội dung hợp đồng số và lịch đặt tư vấn trực tiếp với anh Derek Lâm qua Email/Zalo của bạn trong vòng tối đa 15 phút.
+                        Hệ thống tự động hóa sẽ gửi nội dung hợp đồng số và lịch đặt tư vấn trực tiếp với anh Derek Flow qua Email/Zalo của bạn trong vòng tối đa 15 phút.
                     </p>
 
                     <button onclick="closeCheckout()" class="w-full bg-[#1A1A2E] text-white hover:bg-neutral-800 text-xs font-bold uppercase py-3 rounded-lg transition-all cursor-pointer">

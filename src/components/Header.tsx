@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { AppView } from "../types";
 import { Menu, X } from "lucide-react";
+import LogoIcon from "./LogoIcon";
 
 interface HeaderProps {
   currentView: AppView;
@@ -9,6 +10,18 @@ interface HeaderProps {
 
 export default function Header({ currentView, setCurrentView }: HeaderProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [headerLogo, setHeaderLogo] = useState<string>(localStorage.getItem("custom_header_logo_url") || "");
+
+  useEffect(() => {
+    const handleImagesUpdate = () => {
+      setHeaderLogo(localStorage.getItem("custom_header_logo_url") || "");
+    };
+
+    window.addEventListener("custom-images-updated", handleImagesUpdate);
+    return () => {
+      window.removeEventListener("custom-images-updated", handleImagesUpdate);
+    };
+  }, []);
 
   const navItems: { label: string; view: AppView }[] = [
     { label: "Dịch Vụ", view: "services" },
@@ -28,13 +41,21 @@ export default function Header({ currentView, setCurrentView }: HeaderProps) {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-[#FAFAF8]/95 backdrop-blur-md border-b border-[#E5E7EB] font-sans shadow-sm">
       <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-        {/* Brand Logo */}
+        {/* Brand Logo - Supporting customizable logo uploads */}
         <div 
           onClick={() => handleNavClick("home")} 
-          className="text-xl font-bold tracking-tight text-[#1A1A2E] cursor-pointer hover:opacity-80 transition-opacity flex items-center space-x-2"
+          className="cursor-pointer hover:opacity-80 transition-opacity flex items-center h-12"
         >
-          <span className="font-extrabold uppercase tracking-widest text-[#1A1A2E]">Derek L_m</span>
-          <span className="w-1.5 h-1.5 bg-[#FFD700] rounded-full"></span>
+          {headerLogo ? (
+            <img 
+              src={headerLogo} 
+              alt="Derek Flow Branding" 
+              className="h-10 max-w-[155px] object-contain" 
+              style={{ maxHeight: "40px" }}
+            />
+          ) : (
+            <LogoIcon width={120} height={48} light={true} />
+          )}
         </div>
 
         {/* Desktop Navigation */}

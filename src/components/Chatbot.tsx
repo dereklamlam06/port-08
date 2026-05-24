@@ -10,7 +10,7 @@ export default function Chatbot() {
     {
       id: "welcome",
       sender: "bot",
-      text: "Xin chào! Tôi là Trợ lý AI tự động của Derek Lâm. Tôi có thể hỗ trợ giải đáp nhanh mọi thắc mắc của bạn về tối ưu hóa SEO chuyên sâu, thiết kế website Luxury Tech, tích hợp AI Agents và tự động hóa quy trình. Bạn cần tôi hỗ trợ thông tin gì hôm nay?",
+      text: "Xin chào! Tôi là Trợ lý AI tự động của Derek Flow. Tôi có thể hỗ trợ giải đáp nhanh mọi thắc mắc của bạn về tối ưu hóa SEO chuyên sâu, thiết kế website Luxury Tech, tích hợp AI Agents và tự động hóa quy trình. Bạn cần tôi hỗ trợ thông tin gì hôm nay?",
       timestamp: new Date().toLocaleTimeString("vi-VN", { hour: "2-digit", minute: "2-digit" })
     }
   ]);
@@ -78,7 +78,7 @@ export default function Chatbot() {
       const errMsg: ChatMessage = {
         id: "error_" + Date.now(),
         sender: "bot",
-        text: "Hiện tại kết nối mạng đang gián đoạn. Đừng lo lắng! Gói dịch vụ SEO Starter có giá 15tr, SEO Pro có giá 35tr/tháng. Hãy nhấn biểu mẫu Liên hệ hoặc gọi điện cho Derek Lâm nhé!",
+        text: "Hiện tại kết nối mạng đang gián đoạn. Đừng lo lắng! Gói dịch vụ SEO Starter có giá 15tr, SEO Pro có giá 35tr/tháng. Hãy nhấn biểu mẫu Liên hệ hoặc gọi điện cho Derek Flow nhé!",
         timestamp: new Date().toLocaleTimeString("vi-VN", { hour: "2-digit", minute: "2-digit" })
       };
       setMessages(prev => [...prev, errMsg]);
@@ -116,7 +116,7 @@ export default function Chatbot() {
                   <Bot size={18} />
                 </div>
                 <div>
-                  <h3 className="text-sm font-semibold tracking-wide">Derek Lâm Assistant</h3>
+                  <h3 className="text-sm font-semibold tracking-wide">Derek Flow Assistant</h3>
                   <div className="flex items-center space-x-1">
                     <span className="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse"></span>
                     <span className="text-[11px] text-gray-300">Tư vấn tự động phản hồi ngay</span>
@@ -254,9 +254,10 @@ export default function Chatbot() {
               title="Kết nối Zalo tư vấn 24/7"
             >
               <span className="absolute inset-0 rounded-full bg-[#0068FF]/30 animate-pulse"></span>
-              {/* Zalo Icon SVG with accurate high-quality vector bubble chat */}
-              <svg viewBox="0 0 24 24" className="w-6 h-6 sm:w-7 sm:h-7 fill-white relative z-10 group-hover:scale-110 transition-transform" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 2C6.48 2 2 5.86 2 10.63c0 2.58 1.34 4.89 3.49 6.38l-.73 2.7c-.1.35.26.63.56.44l3.23-2.02c1.08.31 2.24.48 3.45.48 5.52 0 10-3.86 10-8.63S17.52 2 12 2zm3.33 11.2H11.2l-.63.93h2.64v1.16H9.41v-.91l1.83-2.61H9.68V10.6h3.48v.91l-1.83 2.6H13.6c.16 0 .3-.13.3-.3v-.3c0-.17-.14-.3-.3-.3h-.91v-1.16h.91c.8 0 1.46.65 1.46 1.46v.3c0 .8-.66 1.46-1.46 1.46zm-2.27-5.04c.54 0 .98.44.98.98s-.44.98-.98.98a.98.98 0 01-.98-.98c0-.54.44-.98.98-.98z" />
+              {/* Zalo Icon SVG with accurate high-quality official Zalo app icon branding */}
+              <svg viewBox="0 0 24 24" className="w-6 h-6 sm:w-7 sm:h-7 relative z-10 group-hover:scale-110 transition-transform" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2C6.48 2 2 5.86 2 10.63c0 2.58 1.34 4.89 3.49 6.38l-.73 2.73c-.09.34.25.62.55.43l3.23-2.01c1.08.31 2.24.48 3.46.48 5.52 0 10-3.86 10-8.63S17.52 2 12 2z" fill="#FFFFFF" />
+                <path d="M9.63 13.2v-1.2l3.41-4.9H9.78V5.94h4.94V7.6l-3.41 4.9h3.41v1.2H9.63z" fill="#0068FF" />
               </svg>
             </motion.a>
           )}

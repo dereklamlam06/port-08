@@ -1,6 +1,6 @@
 <?php
 /**
- * Derek Lâm - WordPress Blog Template File
+ * Derek Flow - WordPress Blog Template File
  */
 get_header(); ?>
 
@@ -240,7 +240,7 @@ get_header(); ?>
                     <div class="flex items-center gap-3">
                         <div class="w-12 h-12 bg-navyPrimary border border-goldAccent/25 text-goldAccent rounded-full flex items-center justify-center font-extrabold text-xs">DL</div>
                         <div>
-                            <h5 class="text-xs font-extrabold text-[#1A1A2E] leading-snug">Derek Lâm</h5>
+                            <h5 class="text-xs font-extrabold text-[#1A1A2E] leading-snug">Derek Flow</h5>
                             <span class="text-[10px] font-bold text-gray-400 uppercase">Consultant Specialist</span>
                         </div>
                     </div>
