@@ -208,6 +208,23 @@ function derek_flow_register_acf_fields_programmatically() {
         'title' => '⚙️ Cấu Hình Trang Chủ (Homepage)',
         'fields' => [
             [
+                'key' => 'field_home_header_logo',
+                'label' => 'Logo Header của Website (Tải tệp từ máy)',
+                'name' => 'header_logo',
+                'type' => 'image',
+                'instructions' => 'Tải lên hình bọc logo thương hiệu (khuyên dùng ảnh PNG trong suốt hoặc SVG). Nếu không có sẽ hiển thị logo chữ Derek Flow gốc.',
+                'return_format' => 'url',
+                'preview_size' => 'medium',
+            ],
+            [
+                'key' => 'field_home_tech_tools_list',
+                'label' => 'Danh sách Công Cụ / Công Nghệ (Các từ cách nhau bằng dấu phẩy)',
+                'name' => 'tech_tools_list',
+                'type' => 'text',
+                'instructions' => 'Nhập các từ khóa phân tách bằng dấu phẩy để hệ thống tự phân tách và hiển thị dưới dạng badge (Ví dụ: GSC, GA4, SEMRUSH, AHREFS, REACTJS, VITE).',
+                'default_value' => 'GSC, GA4, SEMRUSH, AHREFS, REACTJS, VITE',
+            ],
+            [
                 'key' => 'field_home_hero_slogan_tag',
                 'label' => 'Slogan nhỏ phía trên Hero Title',
                 'name' => 'hero_slogan_tag',

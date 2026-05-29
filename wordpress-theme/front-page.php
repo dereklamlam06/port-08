@@ -183,54 +183,30 @@ get_header(); ?>
             </div>
 
             <!-- Tools strip -->
-            <div class="mt-12 flex flex-col sm:flex-row items-center justify-between gap-6 opacity-60">
-                <span class="text-[11px] font-bold uppercase tracking-wider text-gray-500">CÔNG CỤ PHÂN TÍCH:</span>
-                <div class="flex flex-wrap items-center justify-center gap-6 md:gap-12 text-xs font-mono font-bold text-gray-650">
-                    <span>GOOGLE SEARCH CONSOLE</span>
-                    <span>GOOGLE ANALYTICS 4</span>
-                    <span>SEMRUSH</span>
-                    <span>AHREFS</span>
-                    <span>OPENAI API</span>
-                    <span>MAKE / N8N</span>
+            <div class="mt-12 flex flex-col sm:flex-row items-center justify-between gap-6">
+                <span class="text-[11.5px] font-extrabold uppercase tracking-widest text-[var(--app-accent-custom,#AA7500)]">CÔNG CỤ SỬ DỤNG CHUYÊN SÂU:</span>
+                <div class="flex flex-wrap items-center justify-center gap-6 md:gap-12 text-[12.5px] font-mono font-black text-[var(--app-text-muted,#2E3B4E)]">
+                    <?php 
+                    $tools_raw = '';
+                    if (function_exists('get_field')) {
+                        $tools_raw = get_field('tech_tools_list');
+                    }
+                    if (empty($tools_raw)) {
+                        $tools_raw = dl_field('tech_tools_list', 'GSC, GA4, SEMRUSH, AHREFS, REACTJS, VITE');
+                    }
+                    $tools_array = array_map('trim', explode(',', $tools_raw));
+                    foreach ($tools_array as $tool) {
+                        if (!empty($tool)) {
+                            echo '<span class="hover:text-[var(--app-accent-custom,#AA7500)] transition-colors cursor-default duration-200 uppercase tracking-wider">' . esc_html($tool) . '</span>';
+                        }
+                    }
+                    ?>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Trust Band (Reviews Section) -->
-    <section class="bg-navyPrimary text-white py-16 px-6 md:px-12">
-        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
-            <!-- Testimonial 1 -->
-            <div class="space-y-3.5 border-l-2 border-goldAccent pl-5">
-                <div class="text-goldAccent font-black text-sm">★★★★★</div>
-                <h4 class="text-xs font-bold uppercase tracking-wider text-goldAccent">Định Hướng Thực Chiến</h4>
-                <p class="text-xs text-gray-300 leading-relaxed">
-                    "Sau 4 tháng triển khai chiến dịch SEO chuyên nghiệp cùng Derek Flow, organic traffic nhãn mỹ phẩm của chúng tôi tăng vượt bậc <strong>+210%</strong>, lọt top 3 danh mục bán chạy nhất thị trường."
-                </p>
-                <span class="text-[10px] text-gray-500 font-bold block">— Giám đốc Marketing, Nhãn hàng Mỹ phẩm Mỹ</span>
-            </div>
 
-            <!-- Testimonial 2 -->
-            <div class="space-y-3.5 border-l-2 border-goldAccent pl-5">
-                <div class="text-goldAccent font-black text-sm">★★★★★</div>
-                <h4 class="text-xs font-bold uppercase tracking-wider text-goldAccent">Tự Động Hóa Vượt Bậc</h4>
-                <p class="text-xs text-gray-300 leading-relaxed">
-                    "Giải pháp tích hợp AI chatbot và tự động hóa Make.com giúp hệ thống kinh doanh bất động sản của chúng tôi đồng bộ lead tự động 100%, tỷ lệ phản hồi đáp ứng giảm từ 30 phút xuống còn <strong>10 giây</strong>."
-                </p>
-                <span class="text-[10px] text-gray-500 font-bold block">— Lê Minh Quốc, CEO TechStart JSC</span>
-            </div>
-
-            <!-- Testimonial 3 -->
-            <div class="space-y-3.5 border-l-2 border-goldAccent pl-5">
-                <div class="text-goldAccent font-black text-sm">★★★★★</div>
-                <h4 class="text-xs font-bold uppercase tracking-wider text-goldAccent">Website Tải Trang Thần Tốc</h4>
-                <p class="text-xs text-gray-300 leading-relaxed">
-                    "Trang đích load trong vòng vỏn vẹn <strong>0.8 giây</strong>, thiết kế tối giản cực sang trọng, tích hợp trơn tru cổng mua bán khiến tỉ lệ chốt đơn (CVR) cải thiện ngay lập tức thêm 15%."
-                </p>
-                <span class="text-[10px] text-gray-500 font-bold block">— Trần Phương Thảo, Founder ScentLux</span>
-            </div>
-        </div>
-    </section>
 
     <!-- Technical Standards Section -->
     <section id="technical-standards" class="bg-[#121315] text-white py-16 px-6 md:px-12 rounded-xl border border-gray-800 my-12 shadow-2xl mx-auto max-w-7xl relative z-10">

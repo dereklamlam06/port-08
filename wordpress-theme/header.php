@@ -82,7 +82,13 @@
                     'body, .bg-\\[\\#F4EFE6\\], .bg-\\[\\#FDFBF7\\], section.bg-\\[\\|\\#F4EFE6\\|\\], div.bg-\\[\\#F4EFE6\\], .bg-\\[\\#FAFAF8\\] {',
                     '    background-color: ' + t.bg + ' !important;',
                     '}',
-                    'body { color: ' + textCustom + ' !important; }',
+                    'body {',
+                    '    color: ' + textCustom + ' !important;',
+                    '    --app-accent-custom: ' + accent + ' !important;',
+                    '    --app-text-muted: ' + textMuted + ' !important;',
+                    '    --app-text-lighter: ' + textLighter + ' !important;',
+                    '    --app-text-custom: ' + textCustom + ' !important;',
+                    '}',
                     '.derek-gold-card {',
                     '    background-image: linear-gradient(to top right, ' + goldStart + ', ' + goldEnd + ') !important;',
                     '    border-color: #FFD700 !important;',
@@ -112,7 +118,7 @@
                     '.text-gray-400, .text-slate-400 {',
                     '    color: ' + textFaint + ' !important;',
                     '}',
-                    '.bg-\\[\\#1D1F23\\], .bg-gray-950, .bg-black, footer, .bg-\\[\\#1A1A2E\\] {',
+                    '.bg-\\[\\#1D1F23\\], .bg-gray-950, .bg-black, footer, .bg-\\[\\#1A1A2E\\], #technical-standards, .bg-\\[\\#121315\\] {',
                     '    --app-text-custom: #F8FAFC !important;',
                     '    --app-text-muted: #CBD5E1 !important;',
                     '    --app-text-lighter: #94A3B8 !important;',
@@ -120,14 +126,22 @@
                     '}',
                     '.bg-\\[\\#1A1A2E\\] h1, .bg-\\[\\#1A1A2E\\] h2, .bg-\\[\\#1A1A2E\\] h3, .bg-\\[\\#1A1A2E\\] h4, .bg-\\[\\#1A1A2E\\] h5, .bg-\\[\\#1A1A2E\\] h6,',
                     '.bg-\\[\\#1A1A2E\\] p, .bg-\\[\\#1A1A2E\\] li, .bg-\\[\\#1A1A2E\\] strong, .bg-\\[\\#1A1A2E\\] a,',
+                    '.bg-\\[\\#121315\\] h1, .bg-\\[\\#121315\\] h2, .bg-\\[\\#121315\\] h3, .bg-\\[\\#121315\\] h4, .bg-\\[\\#121315\\] h5, .bg-\\[\\#121315\\] h6,',
+                    '.bg-\\[\\#121315\\] p, .bg-\\[\\#121315\\] li, .bg-\\[\\#121315\\] strong, .bg-\\[\\#121315\\] a,',
+                    '#technical-standards h1, #technical-standards h2, #technical-standards h3, #technical-standards h4, #technical-standards h5, #technical-standards h6,',
+                    '#technical-standards p, #technical-standards li, #technical-standards strong, #technical-standards a,',
                     'footer, footer h1, footer h2, footer h3, footer h4, footer h5, footer h6, footer p, footer li, footer a, footer strong {',
                     '    color: #F8FAFC !important;',
                     '}',
                     '.bg-\\[\\#1A1A2E\\] .text-gray-300, .bg-\\[\\#1A1A2E\\] .text-gray-400,',
+                    '.bg-\\[\\#121315\\] .text-gray-300, .bg-\\[\\#121315\\] .text-gray-400,',
+                    '#technical-standards .text-gray-300, #technical-standards .text-gray-400,',
                     'footer .text-gray-400, footer .text-slate-400 {',
                     '    color: #CBD5E1 !important;',
                     '}',
                     '.bg-\\[\\#1A1A2E\\] .text-\\[\\#FFD700\\], .bg-\\[\\#1A1A2E\\] svg.text-\\[\\#FFD700\\],',
+                    '.bg-\\[\\#121315\\] .text-\\[\\#FFD700\\], .bg-\\[\\#121315\\] svg.text-\\[\\#FFD700\\],',
+                    '#technical-standards .text-\\[\\#FFD700\\], #technical-standards svg.text-\\[\\#FFD700\\],',
                     'footer .text-\\[\\#FFD700\\], footer svg.text-\\[\\#FFD700\\] {',
                     '    color: #FFD700 !important;',
                     '    stroke: #FFD700 !important;',
@@ -172,18 +186,32 @@
 </head>
 <body <?php body_class('min-h-screen flex flex-col justify-between'); ?>>
 
-<!<!-- Navigation Header with gold top-border -->
+<!-- Navigation Header with gold top-border -->
 <header class="bg-white border-b border-gray-150 sticky top-0 z-50 border-t-4 border-goldAccent">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
         <!-- Logo -->
-        <a href="<?php echo esc_url(home_url('/')); ?>" class="flex items-center gap-2 group">
-            <span class="w-10 h-10 bg-navyPrimary text-goldAccent rounded-lg flex items-center justify-center font-extrabold text-lg border border-goldAccent/25 shadow-sm">
-                DF
-            </span>
-            <div class="leading-none">
-                <span class="text-sm font-black text-navyPrimary tracking-tighter uppercase block">DEREK FLOW</span>
-                <span class="text-[9px] font-bold text-gray-400 tracking-widest uppercase block">SEO & AUTOMATION</span>
-            </div>
+        <a href="<?php echo esc_url(home_url('/')); ?>" class="flex items-center gap-2.5 group">
+            <?php 
+            $custom_logo = '';
+            if (function_exists('get_field')) {
+                // Try fetching global ACF field 'header_logo' from frontpage
+                $custom_logo = get_field('header_logo', 'option') ?: get_field('header_logo', get_option('page_on_front'));
+            }
+            if (empty($custom_logo)) {
+                $custom_logo = dl_field('header_logo', '');
+            }
+            
+            if (!empty($custom_logo)): ?>
+                <img src="<?php echo esc_url($custom_logo); ?>" alt="<?php bloginfo('name'); ?>" class="h-10 max-w-[160px] object-contain transition-all hover:opacity-90" style="max-height: 42px;" />
+            <?php else: ?>
+                <span class="w-10 h-10 bg-navyPrimary text-goldAccent rounded-lg flex items-center justify-center font-extrabold text-lg border border-goldAccent/25 shadow-sm">
+                    DF
+                </span>
+                <div class="leading-none">
+                    <span class="text-sm font-black text-navyPrimary tracking-tighter uppercase block">DEREK FLOW</span>
+                    <span class="text-[9px] font-bold text-gray-400 tracking-widest uppercase block">SEO & AUTOMATION</span>
+                </div>
+            <?php endif; ?>
         </a>
 
         <!-- Classic WordPress dynamic menu navigation mapping -->

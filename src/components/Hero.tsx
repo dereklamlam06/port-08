@@ -15,7 +15,28 @@ export default function Hero({ setCurrentView }: HeroProps) {
     { value: "06", label: "Tháng Đạt Đỉnh", description: "Thời gian trung bình" }
   ];
 
-  const brandLogs = ["GSC", "GA4", "SEMRUSH", "AHREFS", "REACTJS", "VITE"];
+  const [brandLogs, setBrandLogs] = React.useState<string[]>(() => {
+    const saved = localStorage.getItem("derek-tech-tools");
+    if (saved) {
+      return saved.split(",").map(s => s.trim()).filter(Boolean);
+    }
+    return ["GSC", "GA4", "SEMRUSH", "AHREFS", "REACTJS", "VITE"];
+  });
+
+  React.useEffect(() => {
+    const handleUpdate = () => {
+      const saved = localStorage.getItem("derek-tech-tools");
+      if (saved) {
+        setBrandLogs(saved.split(",").map(s => s.trim()).filter(Boolean));
+      } else {
+        setBrandLogs(["GSC", "GA4", "SEMRUSH", "AHREFS", "REACTJS", "VITE"]);
+      }
+    };
+    window.addEventListener("custom-images-updated", handleUpdate);
+    return () => {
+      window.removeEventListener("custom-images-updated", handleUpdate);
+    };
+  }, []);
 
   return (
     <section className="bg-transparent text-[#1A1A2E] py-16 lg:py-24 px-6 md:px-12 font-sans overflow-hidden relative">
@@ -170,11 +191,11 @@ export default function Hero({ setCurrentView }: HeroProps) {
         </div>
 
         {/* Trust logos */}
-        <div className="mt-12 flex flex-col sm:flex-row items-center justify-between gap-6 opacity-60">
-          <span className="text-[11px] font-bold uppercase tracking-wider text-gray-500">CÔNG CỤ SỬ DỤNG CHUYÊN SÂU:</span>
-          <div className="flex flex-wrap items-center justify-center gap-6 md:gap-12 text-sm font-mono font-bold text-gray-600">
+        <div className="mt-12 flex flex-col sm:flex-row items-center justify-between gap-6 border-t border-gray-200/45 pt-8">
+          <span className="text-[11.5px] font-black uppercase tracking-widest text-[var(--app-accent-custom)]">CÔNG CỤ SỬ DỤNG CHUYÊN SÂU:</span>
+          <div className="flex flex-wrap items-center justify-center gap-6 md:gap-11 text-[13px] font-mono font-black text-[var(--app-text-muted)]">
             {brandLogs.map((log) => (
-              <span key={log} className="hover:text-amber-500 transition-colors pointer-events-none">
+              <span key={log} className="hover:text-[var(--app-accent-custom)] transition-colors cursor-default uppercase tracking-wider">
                 {log}
               </span>
             ))}

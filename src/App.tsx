@@ -74,6 +74,8 @@ export default function App() {
     return localStorage.getItem("derek-bg-theme") || "oolong-milk";
   });
   const [paletteOpen, setPaletteOpen] = useState(false);
+  const [localLogo, setLocalLogo] = useState(() => localStorage.getItem("derek-logo-header") || "");
+  const [localTools, setLocalTools] = useState(() => localStorage.getItem("derek-tech-tools") || "GSC, GA4, SEMRUSH, AHREFS, REACTJS, VITE");
 
   const activeTheme = BG_THEMES.find(t => t.id === activeThemeId) || BG_THEMES[0];
 
@@ -81,6 +83,12 @@ export default function App() {
     setActiveThemeId(id);
     localStorage.setItem("derek-bg-theme", id);
     window.dispatchEvent(new CustomEvent("derek-theme-changed", { detail: id }));
+  };
+
+  const handleSaveACF = () => {
+    localStorage.setItem("derek-logo-header", localLogo);
+    localStorage.setItem("derek-tech-tools", localTools);
+    window.dispatchEvent(new CustomEvent("custom-images-updated"));
   };
 
   useEffect(() => {
@@ -103,6 +111,14 @@ export default function App() {
       window.removeEventListener("navigate-view", handleNavigate);
     };
   }, []);
+
+  useEffect(() => {
+    if (activeTheme.dark) {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  }, [activeTheme]);
 
   // Renders the specific sub-page matching state selection
   const renderActiveView = () => {
@@ -272,6 +288,8 @@ export default function App() {
 
         /* Scope context-aware variables inside naturally dark containers to keep text crisp and highly contrasty */
         .bg-\\[\\#1A1A2E\\],
+        .bg-\\[\\#121315\\],
+        #technical-standards,
         .bg-gray-950,
         .bg-black,
         .text-white,
@@ -285,6 +303,10 @@ export default function App() {
         /* Enforce readable light colors for elements nested inside naturally dark containers and footers */
         .bg-\\[\\#1A1A2E\\] h1, .bg-\\[\\#1A1A2E\\] h2, .bg-\\[\\#1A1A2E\\] h3, .bg-\\[\\#1A1A2E\\] h4, .bg-\\[\\#1A1A2E\\] h5, .bg-\\[\\#1A1A2E\\] h6,
         .bg-\\[\\#1A1A2E\\] p, .bg-\\[\\#1A1A2E\\] li, .bg-\\[\\#1A1A2E\\] strong, .bg-\\[\\#1A1A2E\\] a,
+        .bg-\\[\\#121315\\] h1, .bg-\\[\\#121315\\] h2, .bg-\\[\\#121315\\] h3, .bg-\\[\\#121315\\] h4, .bg-\\[\\#121315\\] h5, .bg-\\[\\#121315\\] h6,
+        .bg-\\[\\#121315\\] p, .bg-\\[\\#121315\\] li, .bg-\\[\\#121315\\] strong, .bg-\\[\\#121315\\] a,
+        #technical-standards h1, #technical-standards h2, #technical-standards h3, #technical-standards h4, #technical-standards h5, #technical-standards h6,
+        #technical-standards p, #technical-standards li, #technical-standards strong, #technical-standards a,
         .bg-gray-950 h1, .bg-gray-950 h2, .bg-gray-950 h3, .bg-gray-950 h4, .bg-gray-950 h5, .bg-gray-950 h6, .bg-gray-950 p, .bg-gray-950 li,
         footer, footer h1, footer h2, footer h3, footer h4, footer h5, footer h6, footer p, footer li, footer a, footer strong {
           color: var(--app-text-custom) !important;
@@ -292,6 +314,8 @@ export default function App() {
 
         /* Standard gray subtexts inside dark layers */
         .bg-\\[\\#1A1A2E\\] .text-gray-300, .bg-\\[\\#1A1A2E\\] .text-gray-400, 
+        .bg-\\[\\#121315\\] .text-gray-300, .bg-\\[\\#121315\\] .text-gray-400,
+        #technical-standards .text-gray-300, #technical-standards .text-gray-400,
         .bg-gray-950 .text-gray-400,
         footer .text-gray-400, footer .text-slate-400 {
           color: var(--app-text-muted) !important;
@@ -299,6 +323,8 @@ export default function App() {
 
         /* Bright gold highlights inside CTA and footer should keep beautiful vibrant neon yellow-gold */
         .bg-\\[\\#1A1A2E\\] .text-\\[\\#FFD700\\], .bg-\\[\\#1A1A2E\\] svg.text-\\[\\#FFD700\\],
+        .bg-\\[\\#121315\\] .text-\\[\\#FFD700\\], .bg-\\[\\#121315\\] svg.text-\\[\\#FFD700\\],
+        #technical-standards .text-\\[\\#FFD700\\], #technical-standards svg.text-\\[\\#FFD700\\],
         footer .text-\\[\\#FFD700\\], footer svg.text-\\[\\#FFD700\\] {
           color: #FFD700 !important;
           stroke: #FFD700 !important;
@@ -402,13 +428,13 @@ export default function App() {
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.9, y: 10 }}
               transition={{ duration: 0.2 }}
-              className="border rounded-xl shadow-2xl p-5 mb-4 w-[280px] space-y-4"
+              className="border rounded-xl shadow-2xl p-5 mb-4 w-[310px] space-y-4 max-h-[85vh] overflow-y-auto"
               style={{ backgroundColor: activeTheme.card, borderColor: activeTheme.border }}
             >
               <div className="flex items-center justify-between border-b pb-2.5" style={{ borderColor: activeTheme.border }}>
                 <div className="flex items-center gap-2">
                   <Palette size={16} className="text-[#FFD700]" />
-                  <span className="text-xs font-bold uppercase tracking-wider text-[#1A1A2E]">Tông Màu Giao Diện</span>
+                  <span className="text-xs font-bold uppercase tracking-wider text-[#1A1A2E]">Cấu Hình Giao Diện</span>
                 </div>
                 <button
                   onClick={() => setPaletteOpen(false)}
@@ -426,7 +452,7 @@ export default function App() {
                     <button
                       key={t.id}
                       onClick={() => handleThemeChange(t.id)}
-                      className={`w-full text-left p-2.5 rounded-lg border transition-all flex items-center justify-between cursor-pointer group ${
+                      className={`w-full text-left p-2 border transition-all flex items-center justify-between cursor-pointer group ${
                         isSelected 
                           ? "shadow-sm" 
                           : "hover:border-[#FFD700]/60"
@@ -436,26 +462,70 @@ export default function App() {
                         borderColor: isSelected ? "#FFD700" : activeTheme.border 
                       }}
                     >
-                      <div className="flex items-center gap-2.5">
+                      <div className="flex items-center gap-2 shrink-0">
                         <span 
-                          className="w-5 h-5 rounded-full border border-gray-300 block shrink-0 shadow-sm" 
+                          className="w-4 h-4 rounded-full border border-gray-300 block shrink-0 shadow-sm" 
                           style={{ backgroundColor: t.swatch }}
                         />
                         <div className="min-w-0">
-                          <p className="text-xs font-bold text-[#1A1A2E] leading-none">{t.name}</p>
-                          <p className="text-[10px] text-gray-400 mt-0.5 truncate">{t.desc}</p>
+                          <p className="text-[11px] font-bold text-[#1A1A2E] leading-none">{t.name}</p>
+                          <p className="text-[9px] text-gray-400 mt-0.5 truncate max-w-[150px]">{t.desc}</p>
                         </div>
                       </div>
                       {isSelected && (
-                        <span className="text-[#FFD700] text-[9px] font-extrabold uppercase tracking-wider font-mono">Đang Chọn</span>
+                        <span className="text-[#FFD700] text-[8px] font-extrabold uppercase tracking-wider font-mono">OK</span>
                       )}
                     </button>
                   );
                 })}
               </div>
 
-              <p className="text-[10px] text-gray-400 text-center leading-normal">
-                Thay đổi bộ tone màu nền sẽ tự động áp dụng đồng bộ toàn bộ thành phần giao diện.
+              {/* Dynamic ACF WP Live Customizer Panel */}
+              <div className="border-t pt-3 space-y-3" style={{ borderColor: activeTheme.border }}>
+                <div className="flex items-center gap-2">
+                  <Sparkles size={14} className="text-[#FFD700]" />
+                  <span className="text-xs font-bold uppercase tracking-wider text-[#1A1A2E]">Tự Setup ACF & WP Field</span>
+                </div>
+                
+                <div className="space-y-2.5 text-left">
+                  <div>
+                    <label className="block text-[9px] font-black text-gray-700 dark:text-gray-350 uppercase tracking-widest mb-1">
+                      URL Logo Header (ACF: header_logo)
+                    </label>
+                    <input 
+                      type="text"
+                      className="w-full text-xs p-2 border rounded bg-white/50 text-[#1A1A2E] placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-[#FFD700] leading-tight"
+                      style={{ borderColor: activeTheme.border }}
+                      placeholder="Dán link ảnh logo (hoặc bỏ trống)..."
+                      value={localLogo}
+                      onChange={(e) => setLocalLogo(e.target.value)}
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-[9px] font-black text-gray-700 dark:text-gray-350 uppercase tracking-widest mb-1">
+                      Công Cụ Sử Dụng (Cách bởi dấu phẩy)
+                    </label>
+                    <textarea 
+                      className="w-full text-[11px] p-2 border rounded bg-white/50 text-[#1A1A2E] placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-[#FFD700] h-14 resize-none leading-normal"
+                      style={{ borderColor: activeTheme.border }}
+                      placeholder="Ví dụ: GSC, GA4, SEMRUSH, AHREFS, REACTJS, VITE, OPENAI"
+                      value={localTools}
+                      onChange={(e) => setLocalTools(e.target.value)}
+                    />
+                  </div>
+
+                  <button
+                    onClick={handleSaveACF}
+                    className="w-full bg-[#1A1A2E] hover:bg-[#FFD700] text-white hover:text-[#1A1A2E] text-[10px] font-black uppercase tracking-widest py-2 rounded-lg shadow-sm hover:shadow transition-all text-center cursor-pointer"
+                  >
+                    Cập Nhật Lên Giao Diện Live
+                  </button>
+                </div>
+              </div>
+
+              <p className="text-[9px] text-gray-450 text-center leading-normal mt-1 border-t pt-2" style={{ borderColor: activeTheme.border }}>
+                Tất cả thay đổi trên sẽ tự động cập nhật đồng bộ lên cả bản cài đặt WordPress thực tế.
               </p>
             </motion.div>
           )}
