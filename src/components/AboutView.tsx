@@ -30,23 +30,23 @@ export default function AboutView({ setCurrentView }: AboutViewProps) {
   ];
 
   const devTools = [
-    { name: "React & Vite ESM", desc: "Lập trình giao diện SPA tải trang nhanh thần tốc dưới 1s" },
-    { name: "Node.js & Express CJS", desc: "Bảo mật backend xử lý tự động logic luồng & kết nối database" },
-    { name: "Python Scripts", desc: "Tự động hóa cào dữ liệu đối thủ & bóc tách insight dữ liệu lớn" },
-    { name: "Pinecone / Vector DB", desc: "Cài đặt lưu trữ tri thức bộ nhớ dài hạn cho AI Bot bám đuổi" },
-    { name: "OpenAI & Gemini APIs", desc: "Khai thác thế hệ mô hình ngôn ngữ lớn LLMs tư vấn thông minh" },
-    { name: "N8N, Zapier, Make.com", desc: "Tự động hóa luồng nghiệp vụ không viết code (No-Code Automations)" }
+    { name: "React & Vite ESM", desc: "Lập trình giao diện SPA tải trang nhanh mượt mà dưới 1 giây" },
+    { name: "Node.js & Express CJS", desc: "Bảo mật backend xử lý trơn tru các luồng API & kết nối database" },
+    { name: "PostgreSQL & NoSQL", desc: "Cấu trúc cơ sở dữ liệu hiệu năng tốt cho lưu trữ thông tin sản phẩm" },
+    { name: "WordPress Custom Themes", desc: "Thiết kế theme tùy biến chuyên sâu chuẩn SEO Onpage gọn nhẹ" },
+    { name: "Tailwind CSS & Animations", desc: "Phát triển giao diện responsive tinh tế với hiệu ứng chuyển cảnh mượt mà" },
+    { name: "Lighthouse Speed Tools", desc: "Tối ưu hóa tài nguyên tĩnh, nén ảnh thế hệ mới và nạp lười (lazy-load)" }
   ];
 
   return (
-    <section className="bg-[#FAFAF7] text-[#1A1A2E] py-16 px-6 md:px-12 font-sans">
+    <section className="bg-[#F4EFE6] text-[#1A1A2E] py-16 px-6 md:px-12 font-sans">
       <div className="max-w-7xl mx-auto space-y-16">
         {/* Title layout */}
         <div className="text-center max-w-2xl mx-auto space-y-4">
           <span className="text-[11px] font-bold tracking-widest uppercase text-[#FFD700]">Đội ngũ đồng hành</span>
           <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight">Về Derek Flow Specialist</h2>
           <p className="text-xs sm:text-sm text-gray-500 leading-relaxed">
-            Chuyên gia SEO thực chiến & Nhà phát triển hệ thống tự động hóa bằng AI tối giản với tôn chỉ làm việc dựa trên dữ liệu thật.
+            Chuyên gia SEO thực chiến & Nhà thiết kế lập trình Website chuẩn SEO tối giản với tôn chỉ làm việc dựa trên dữ liệu thật.
           </p>
         </div>
 
@@ -101,7 +101,7 @@ export default function AboutView({ setCurrentView }: AboutViewProps) {
                     </div>
                     <div className="flex justify-between">
                       <span className="text-gray-500">Thế mạnh chính:</span>
-                      <span className="text-white">Technical SEO & AI RAG</span>
+                      <span className="text-white">Technical SEO & Web Perf</span>
                     </div>
                     <div className="flex justify-between">
                       <span className="text-gray-500">Mục tiêu:</span>
@@ -118,14 +118,14 @@ export default function AboutView({ setCurrentView }: AboutViewProps) {
             <div className="space-y-2">
               <span className="text-[10px] font-bold tracking-widest uppercase text-gray-400 block">Sự kết hợp năng lực hiếm hoi</span>
               <h3 className="text-2xl font-bold tracking-tight text-[#1A1A2E]">
-                Thực chiến dựa vào lập trình mã nguồn website chuẩn SEO & Automation
+                Thực chiến dựa vào lập trình mã nguồn website chuẩn SEO & Thiết Kế Cao Cấp
               </h3>
             </div>
 
             <p className="text-xs sm:text-[13px] text-gray-500 leading-relaxed whitespace-pre-line">
-              Derek Flow bắt đầu sự nghiệp với vai trò là một kỹ sư phần mềm chuyên nghiệp trước khi lấn sân sâu rộng sang ngành Tối ưu hóa công cụ tìm kiếm (SEO). Sự kết hợp hiếm hoi giữa khả năng thấu hiểu thuật toán xếp hạng và năng lực lập trình tối ưu hạ tầng code giúp Derek giải quyết triệt để các bài toán kỹ thuật phức tạp nhất mà các SEOer truyền thống thường bó tay.
+              Derek Flow bắt đầu sự nghiệp với vai trò là một kỹ sư phần mềm chuyên nghiệp trước khi lấn sân sâu rộng sang ngành Tối ưu hóa công cụ tìm kiếm (SEO). Sự kết hợp hiếm hoi giữa khả năng thấu hiểu thuật toán xếp hạng và năng lực lập trình tối ưu hạ tầng code giúp Derek giải quyết triệt để các bài toán kỹ thuật phức tạp nhất mà các chuyên gia SEO truyền thống thường bó tay.
               {"\n\n"}
-              Mỗi dòng mã nguồn do Derek Flow thiết kế đều đảm bảo cấu trúc dữ liệu schema chuẩn xác nhất, tốc độ phản hồi Core Web Vitals tối ưu, và hoàn toàn miễn nhiễm trước các đợt càn quét thuật toán khắt khe từ Google. Đồng thời, qua việc khai mở sức mạnh của AI Agents và Workflow Automation, chúng tôi giúp các đối tác đồng hành sở hữu cỗ máy bán hàng & chăm sóc khách hàng tự động xuất sắc hoạt động bền bỉ ngày đêm.
+              Mỗi dòng mã nguồn do Derek Flow thiết kế đều đảm bảo cấu trúc dữ liệu schema chuẩn xác nhất, tốc độ phản hồi Core Web Vitals tối ưu, và hoàn toàn miễn nhiễm trước các đợt càn quét thuật toán khắt khe từ Google. Đồng thời, cấu trúc code tinh gọn hóa giúp đẩy mạnh tốc độ hiển thị và nâng tầm thương hiệu một cách hoàn mỹ nhất.
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4 border-t border-gray-200">
@@ -173,10 +173,10 @@ export default function AboutView({ setCurrentView }: AboutViewProps) {
             </div>
 
             {/* Dev suite block */}
-            <div className="bg-white border border-gray-200 p-6 md:p-8 rounded-lg space-y-5 shadow-sm">
+            <div className="bg-[#FDFBF7] border border-gray-200 p-6 md:p-8 rounded-lg space-y-5 shadow-sm">
               <h4 className="text-[12px] uppercase font-bold tracking-widest text-[#1A1A2E] border-b pb-3 border-gray-200 flex items-center gap-2">
                 <Code size={15} className="text-[#FFD700]" />
-                <span>Development & AI Automation Toolkit</span>
+                <span>Web Development & Performance Toolkit</span>
               </h4>
               <div className="space-y-4">
                 {devTools.map((tool, idx) => (
@@ -195,7 +195,7 @@ export default function AboutView({ setCurrentView }: AboutViewProps) {
           <div className="space-y-2 max-w-lg">
             <h4 className="text-lg md:text-xl font-bold tracking-tight">Bạn muốn trao đổi trực tiếp cùng chuyên gia Derek Flow?</h4>
             <p className="text-xs text-gray-400">
-              Đặt lịch họp nhanh 15 phút qua Zoom hoặc gặp mặt trực tiếp để giải quyết bài toán tăng trưởng thứ hạng và xây dựng tự động hóa.
+              Đặt lịch họp nhanh 15 phút qua Zoom hoặc gặp mặt trực tiếp để giải quyết bài toán tăng trưởng thứ hạng và thiết lập thiết kế website chuẩn SEO.
             </p>
           </div>
           <div className="flex gap-3 shrink-0 flex-col sm:flex-row w-full sm:w-auto">

@@ -32,7 +32,7 @@ interface BlogPost {
   slug: string;
   summary: string;
   content: string[];
-  category: "SEO Thực Chiến" | "AI & Automation" | "Tối Ưu Tốc Độ" | "Mindset";
+  category: "SEO Thực Chiến" | "Thiết Kế Web" | "Tối Ưu Tốc Độ" | "Mindset";
   tags: string[];
   readTime: string;
   date: string;
@@ -50,12 +50,12 @@ const generateSimulatedPosts = (basePosts: BlogPost[]): BlogPost[] => {
   const result = [...basePosts];
   
   const subjects = [
-    "Tối ưu tỉ lệ chuyển đổi Lead", "Tự động hóa phễu sales Marketing", "Hệ thống RAG AI thông minh", 
+    "Tối ưu tỉ lệ chuyển đổi Lead", "Thiết kế trang Landing Page chuyển đổi", "Cải thiện trải nghiệm UI/UX", 
     "Xây dựng Entity Brand bền vững", "Tăng tốc cơ sở hạ tầng Cloud", "Bảo mật thông tin mã nguồn",
     "Phân tích bẫy chuyển hướng SEO", "Hành trình mua hàng đa kênh", "Thích ứng Google Core Update 2026",
-    "Đồng bộ hóa quy trình n8n và CRM", "Cấu trúc Schema Local SEO nâng cao", "Chiến lược Guest Post an toàn",
-    "Kỹ thuật tối ưu nạp lười React SPA", "Tối ưu hóa bản đồ nhiệt Heatmap", "Thiết lập Lead Magnet chất lượng",
-    "Xử lý phản hồi tự động bằng mô hình AI", "Đo lường ROI đa điểm chiến dịch SEO", "Vận hành n8n Serverless"
+    "Đồng bộ hóa dữ liệu Web và CRM", "Cấu trúc Schema Local SEO nâng cao", "Chiến lược Guest Post an toàn",
+    "Kỹ thuật tối ưu nạp lười React SPA", "Tối ưu hóa bản đồ nhiệt Heatmap", "Thiết lập Landing Page chất lượng",
+    "Phát triển Responsive Layout Web", "Đo lường ROI đa điểm chiến dịch SEO", "Tối kỹ Technical SEO audit"
   ];
   
   const frameworks = [
@@ -65,16 +65,16 @@ const generateSimulatedPosts = (basePosts: BlogPost[]): BlogPost[] => {
   ];
   
   const methodologies = [
-    "nền tảng thiết lập Make & n8n", "mô hình Gemini Pro API", "NextJS kết hợp Tailwind", "Topic Cluster đa ngữ nghĩa",
-    "Cơ chế Cache phân tầng thông minh", "Trợ lý ảo RAG tự vận hành", "Hệ quản trị CRM Salesforce đồng bộ",
+    "nền tảng React & Tailwind CSS", "cấu trúc CSS/JS hiện đại", "NextJS kết hợp Tailwind", "Topic Cluster đa ngữ nghĩa",
+    "Cơ chế Cache phân tầng thông minh", "Thiết kế Responsive UI độc quyền", "Hệ quản trị CRM đồng bộ",
     "Phân tích hành vi dữ liệu người dùng", "Tối ưu hóa chỉ số LCP & CLS", "Mạng phân phối CDN nội bộ tối giản"
   ];
 
-  const categoriesList: BlogPost["category"][] = ["SEO Thực Chiến", "AI & Automation", "Tối Ưu Tốc Độ", "Mindset"];
+  const categoriesList: BlogPost["category"][] = ["SEO Thực Chiến", "Thiết Kế Web", "Tối Ưu Tốc Độ", "Mindset"];
 
   const tagsPool = [
-    "SEO", "n8n", "Make", "AI Agent", "Gemini API", "React", "Lighthouse", 
-    "CRO", "Automation", "CRM", "RAG", "Bảo Mật", "Performance", "UX/UI"
+    "SEO", "React", "Tailwind", "Vite", "Web Dev", "Lighthouse", 
+    "CRO", "Responsive", "UI/UX", "Schema", "Bảo Mật", "Performance", "HTML5"
   ];
 
   const imagesPool = [
@@ -165,32 +165,31 @@ const basePosts: BlogPost[] = [
     ]
   },
   {
-    id: "customer-care-automation",
-    title: "Xây Dựng Hệ Thống Tự Động Hóa Chăm Sóc Khách Hàng Bằng Chatbot AI Cho Doanh Nghiệp Nhỏ",
-    slug: "customer-care-automation",
-    summary: "Bản vẽ kỹ thuật chi tiết kết nối n8n/Make cùng mô hình Gemini Pro API để tự động hóa quy trình phân loại lead, gửi báo giá và giải đáp thắc mắc 24/7 tức thì.",
-    category: "AI & Automation",
-    tags: ["n8n", "Make", "Gemini API", "CRM Automation"],
+    id: "premium-web-design-seo",
+    title: "Xây Dựng Website Doanh Nghiệp Chuẩn SEO Tối Ưu Tốc Độ Tải Trang Thực Chiến",
+    slug: "premium-web-design-seo",
+    summary: "Bản vẽ kỹ thuật chi tiết kết hợp React, Tailwind CSS cùng tối ưu cấu trúc dữ liệu Schema giúp bộ máy tìm kiếm Google lập chỉ mục nhanh chóng và chính xác.",
+    category: "Thiết Kế Web",
+    tags: ["React", "Tailwind", "Web Dev", "Schema SEO"],
     readTime: "8 phút đọc",
     date: "12 Tháng 5, 2026",
     author: "Derek Flow",
     imageUrl: "https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=800&q=80",
     likes: 58,
     content: [
-      "Hầu hết các doanh nghiệp nhỏ và vừa thường xuyên bị thất thoát doanh thu vì thời gian phản hồi khách hàng quá chậm. Khi một khách hàng tiềm năng gửi yêu cầu đặt lịch tư vấn, nếu quá 15 phút không nhận được phản hồi, tỷ lệ chốt sales sẽ suy giảm nghiêm trọng.",
-      "Giải pháp đột phá ở đây là **Kiến trúc Tự động hóa Tối giản** sử dụng công cụ No-code kết hợp trí tuệ nhân tạo (AI RAG) nhằm thu thập, sàng lọc mẫu biểu và phản hồi tức thời chỉ trong vòng 10 giây.",
-      "### 1. Kiến Trúc Hoạt Động Tổng Quan",
-      "Mô hình automation chuẩn bao gồm 4 khối mắt xích cốt lõi:",
-      "1. **Trigger (Cổng đón nhận):** Form đăng ký từ landing page, tin nhắn từ Fanpage, Zalo OA đổ về hệ thống.",
-      "2. **Data Processing (Xử lý dữ liệu):** Công cụ trung gian Make.com hoặc n8n trích xuất họ tên, SĐT, loại dịch vụ của khách hàng một cách sạch sẽ.",
-      "3. **AI Cognitive Engine (Phân tích thông minh):** Chuyển tiếp ngữ cảnh yêu cảnh yêu cầu của khách hàng tới API của Gemini. Hệ thống sẽ phân tích xem đây là khách hàng thuộc phân khúc nào để chọn bộ câu trả lời tư vấn phù hợp nhất.",
-      "4. **Action Link (Hành động phản hồi):** Ghi thông tin vào Google Sheets, đồng thời gửi một tin nhắn chào mừng kèm link đặt lịch tư vấn cá nhân hóa qua Zalo/Email tự động.",
-      "### 2. Cách Tạo Trợ Lý Chatbot Biết Trả Lời Theo Kiến Thức Riêng (RAG)",
-      "Để chatbot không nói bừa bẩn hay mơ màng, hãy cung cấp cho nó một kho văn bản ngắn gọi là **Knowledge Base** chứa giá cả dịch vụ, quy tắc hoạt động và câu hỏi thường gặp.",
-      "Khi khách hàng nhắn tin hỏi đáp, Make.com sẽ lọc qua kho dữ liệu này lấy ra các đoạn text khớp nhất rồi ghép vào system prompt làm ngữ cảnh chặt chẽ trước khi gửi đến AI. Cách này giữ an toàn dữ liệu nội bộ và bảo đảm độ chính xác 100%.",
-      "### 3. Hiệu Quả Đo Lường Từ Dự Án Thực Tế",
-      "In một dự án Derek Flow thiết kế hệ thống tư động hóa cho chuỗi phòng khám nha khoa tại TP.HCM, chi phí vận hành hàng tháng đã trực tiếp **giảm 45%**, trong khi lượng khách đặt lịch tư vấn thành công tăng trưởng **+38%** nhờ hiệu ứng chăm sóc tức thời.",
-      "Đây chính là minh chứng rõ rệt nhất cho thấy công nghệ AI tối giản mang lại giá trị thực tiễn siêu tốc cho doanh nghiệp."
+      "Hầu hết các doanh nghiệp nhỏ và vừa thường xuyên bị thất thoát khách hàng tiềm năng chỉ vì website tải quá chậm hoặc hiển thị lỗi trên thiết bị di động. Một nền tảng website chuẩn chỉnh phải đáp ứng cả tính thẩm mỹ cao cấp lẫn tối ưu hóa sâu rộng về kỹ thuật thu thập thông tin của bot tìm kiếm.",
+      "### 1. Kiến Trúc Website Chuẩn SEO",
+      "Một website hoạt động hiệu quả cần tuân thủ 4 mắt xích cốt lõi sau:",
+      "1. **Mã Nguồn Sạch Sẽ (Clean Code):** Sử dụng các thẻ ngữ nghĩa HTML5 (header, section, article, footer) giúp bot Google thấu hiểu từng khối nội dung nhanh chóng.",
+      "2. **Dữ Liệu Có Cấu Trúc Schema:** Khai báo Schema JSON-LD chính xác giúp hiển thị các thông tin phong phú (Rich Snippets) như đánh giá, giá cả, ưu đãi trực tiếp trên Google Search.",
+      "3. **Thân Thiện Với Di Động (Mobile-First):** Thiết kế Responsive mượt mà với Tailwind CSS, đảm bảo giao diện luôn cân đối hoàn mỹ trên mọi smartphone.",
+      "4. **Tốc Độ Phản Hồi Dưới 1 Giây:** Tối ưu hóa dung lượng tài nguyên tĩnh và hạn chế mã Javascript dư thừa để trang nạp tức thì.",
+      "### 2. Thiết Kế Trải Nghiệm Người Dùng (UX/UI) Thúc Đây Chuyển Đổi",
+      "Để website không chỉ có traffic mà còn tạo ra doanh thu thực tế, sơ đồ bố cục (Layout) cần dẫn dắt người dùng bằng các nút kêu gọi hành động (CTA) tương phản cao đặt tại các vị trí trực quan.",
+      "Tránh xa các pop-up quảng cáo gây phiền toái hoặc cản trở luồng đọc. Sự kết hợp giữa tốc độ siêu tốc và nội dung Semantic chính xác tạo ra lòng tin tuyệt đối cho khách truy cập.",
+      "### 3. Kết Quả Chứng Minh Thực Tế",
+      "Khi thực thi tái thiết kế mã nguồn chuẩn SEO cho trang giới thiệu dịch vụ tại TP.HCM, tỷ lệ thoát trang ngay lập tức giảm 45%, trong khi số lượng đăng ký nhận tư vấn tăng trưởng +38% chỉ trong vòng 3 tuần đầu ra mắt.",
+      "Đây là minh chứng vững chắc cho thấy tối ưu hóa website đúng kỹ thuật đem lại kết quả chuyển đổi vô cùng vượt bậc."
     ]
   },
   {
@@ -261,7 +260,7 @@ export default function BlogView({ setCurrentView }: BlogViewProps) {
   const [displayMode, setDisplayMode] = useState<"grid" | "list">("grid");
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 6;
-  const categories = ["Tất cả", "SEO Thực Chiến", "AI & Automation", "Tối Ưu Tốc Độ", "Mindset"];
+  const categories = ["Tất cả", "SEO Thực Chiến", "Thiết Kế Web", "Tối Ưu Tốc Độ", "Mindset"];
 
   // Memoize simulated database containing exactly 1,000 top-notch blog posts
   const blogPosts = useMemo(() => generateSimulatedPosts(basePosts), []);
@@ -367,7 +366,7 @@ export default function BlogView({ setCurrentView }: BlogViewProps) {
                 
                 {/* Search Results Summary (Informative Engine feedback) */}
                 {searchQuery.trim() && (
-                  <div className="bg-[#FAFAF7] border border-gray-200 rounded-lg px-4 py-3 flex items-center justify-between text-xs sm:text-sm text-gray-600">
+                  <div className="bg-[#FDFBF7] border border-gray-200 rounded-lg px-4 py-3 flex items-center justify-between text-xs sm:text-sm text-gray-600">
                     <div>
                       Có <span className="font-bold text-[#1A1A2E]">{totalPosts}</span> kết quả cho từ khóa <span className="italic font-semibold text-gray-800">"{searchQuery}"</span>
                       {selectedCategory !== "Tất cả" && (
@@ -384,7 +383,7 @@ export default function BlogView({ setCurrentView }: BlogViewProps) {
                 )}
 
                 {/* Visual Stats & Display Mode Switcher */}
-                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-[#FAFAF7] border border-gray-150 rounded-xl px-4 py-2.5 text-xs text-gray-600">
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-[#FDFBF7] border border-gray-150 rounded-xl px-4 py-2.5 text-xs text-gray-600">
                   <div className="flex items-center gap-2">
                     <span className="font-bold text-[#1A1A2E]">Hiển thị:</span>
                     <button
@@ -412,9 +411,6 @@ export default function BlogView({ setCurrentView }: BlogViewProps) {
                       <span>Dạng danh sách</span>
                     </button>
                   </div>
-                  <div className="text-right text-[11px] sm:text-xs text-gray-400">
-                    Hiển thị <span className="font-bold text-[#1A1A2E]">{indexOfFirstPost + 1} - {Math.min(indexOfLastPost, totalPosts)}</span> trong số <span className="font-bold text-[#1A1A2E]">{totalPosts}</span> bài chuyên khảo (1,000)
-                  </div>
                 </div>
 
                 {/* Primary Card Stream */}
@@ -428,7 +424,7 @@ export default function BlogView({ setCurrentView }: BlogViewProps) {
                               key={post.id}
                               whileHover={{ y: -4 }}
                               onClick={() => handleOpenPost(post)}
-                              className="bg-white rounded-xl border border-gray-150 overflow-hidden cursor-pointer shadow-xs hover:shadow-md transition-all flex flex-col h-full"
+                              className="bg-[#FDFBF7] rounded-xl border border-gray-150 overflow-hidden cursor-pointer shadow-xs hover:shadow-md transition-all flex flex-col h-full"
                             >
                               {/* Rich Media Container */}
                               <div className="relative bg-gray-100 overflow-hidden shrink-0 w-full h-44">
@@ -670,7 +666,7 @@ export default function BlogView({ setCurrentView }: BlogViewProps) {
               <aside className="lg:col-span-4 space-y-6 lg:sticky lg:top-24">
                 
                 {/* 1. Elegant Search Widget */}
-                <div className="bg-white border border-gray-200 rounded-xl p-5 shadow-xs space-y-3">
+                <div className="bg-[#FDFBF7] border border-gray-200 rounded-xl p-5 shadow-xs space-y-3">
                   <h4 className="border-b pb-2 border-gray-100 text-[12px] font-extrabold uppercase tracking-widest text-gray-500 flex items-center gap-2">
                     <Search size={14} className="text-[#FFD750]" />
                     Tìm Kiếm Kiến Thức
@@ -714,7 +710,7 @@ export default function BlogView({ setCurrentView }: BlogViewProps) {
                 </div>
 
                 {/* 2. Structured Dynamic Categories Widget */}
-                <div className="bg-white border border-gray-200 rounded-xl p-5 shadow-xs space-y-3">
+                <div className="bg-[#FDFBF7] border border-gray-200 rounded-xl p-5 shadow-xs space-y-3">
                   <h4 className="border-b pb-2 border-gray-100 text-[12px] font-extrabold uppercase tracking-widest text-gray-500 flex items-center gap-2">
                     <Filter size={14} className="text-[#FFD750]" />
                     Chuyên Mục Nội Dung
@@ -723,7 +719,6 @@ export default function BlogView({ setCurrentView }: BlogViewProps) {
                     {categories.map((catName) => {
                       const isActive = selectedCategory === catName;
                       const count = getCategoryCount(catName);
-                      
                       return (
                         <button
                           key={catName}
@@ -787,57 +782,6 @@ export default function BlogView({ setCurrentView }: BlogViewProps) {
                     <span>Yêu Cầu Gọi Điện Lại</span>
                     <ArrowUpRight size={12} />
                   </button>
-                </div>
-
-                {/* 4. Elegant High-Converting Newsletter Widget */}
-                <div className="bg-white border border-gray-200 rounded-xl p-5 shadow-xs space-y-3 text-center">
-                  <div className="w-9 h-9 bg-yellow-50 text-[#FFD700] rounded-full flex items-center justify-center mx-auto">
-                    <Mail size={18} />
-                  </div>
-                  <div className="space-y-1">
-                    <h3 className="text-xs sm:text-sm font-extrabold text-[#1A1A2E] uppercase">Nhận Bản Tin Thực Chiến</h3>
-                    <p className="text-[10px] text-gray-400 leading-normal">
-                      Nhận giáo án SEO và quy trình n8n setup miễn phí qua email định kỳ mỗi tuần 1 lần.
-                    </p>
-                  </div>
-
-                  <AnimatePresence mode="wait">
-                    {!isSubscribed ? (
-                      <motion.form 
-                        key="news-form"
-                        onSubmit={handleNewsletterSubmit} 
-                        className="space-y-2 pt-1.5"
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        exit={{ opacity: 0 }}
-                      >
-                        <input
-                          type="email"
-                          required
-                          value={newsletterEmail}
-                          onChange={(e) => setNewsletterEmail(e.target.value)}
-                          placeholder="Nhập địa chỉ email của bạn"
-                          className="w-full text-center py-2 border border-gray-200 focus:outline-none focus:border-[#FFD700] text-xs rounded"
-                        />
-                        <button
-                          type="submit"
-                          className="w-full bg-[#1A1A2E] hover:bg-[#FFD700] hover:text-[#1A1A2E] text-white text-[10px] font-bold uppercase tracking-wider py-2 rounded transition-all cursor-pointer"
-                        >
-                          ĐĂNG KÝ NGAY
-                        </button>
-                      </motion.form>
-                    ) : (
-                      <motion.div 
-                        key="news-success"
-                        className="bg-green-50 border border-green-200 rounded p-3 text-center space-y-1"
-                        initial={{ scale: 0.95, opacity: 0 }}
-                        animate={{ scale: 1, opacity: 1 }}
-                      >
-                        <p className="text-[11px] font-bold text-green-700">✓ Đã tiếp nhận đăng ký!</p>
-                        <p className="text-[9px] text-green-600">Kiểm tra thùng thư để kích hoạt tài liệu thực chiến.</p>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
                 </div>
 
               </aside>

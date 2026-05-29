@@ -11,11 +11,77 @@ import ContactView from "./components/ContactView";
 import BlogView from "./components/BlogView";
 import Chatbot from "./components/Chatbot";
 import Error404View from "./components/Error404View";
+import TechnicalSpecs from "./components/TechnicalSpecs";
 import { motion, AnimatePresence } from "motion/react";
-import { ArrowRight, Star, TrendingUp, Sparkles, MessageCircle } from "lucide-react";
+import { ArrowRight, Star, TrendingUp, Sparkles, MessageCircle, Palette, X } from "lucide-react";
+
+const BG_THEMES = [
+  {
+    id: "oolong-milk",
+    name: "Trà Ô Long Trầm",
+    desc: "Màu trà sữa ấm trầm, dịu hòa tuyệt đối cho mắt khi đọc bài viết và code",
+    bg: "#E8E4D9",
+    card: "#F4F1E6",
+    border: "#CEBFAC",
+    swatch: "#E8E4D9",
+    dark: false
+  },
+  {
+    id: "dim-matcha",
+    name: "Thạch Vy Slate",
+    desc: "Màu xám đá đen mờ huyền bí, tôn phong thái lịch lãm và tối giản",
+    bg: "#1C1D1F",
+    card: "#242629",
+    border: "#33373D",
+    swatch: "#1C1D1F",
+    dark: true
+  },
+  {
+    id: "jasmine-pale",
+    name: "Thanh Trà Nhài",
+    desc: "Màu nhài nhạt pha ánh rêu trầm lắng đọng tâm tư, rũ bỏ mệt mỏi",
+    bg: "#E2E5DF",
+    card: "#EDF0EA",
+    border: "#C9CEBF",
+    swatch: "#E2E5DF",
+    dark: false
+  },
+  {
+    id: "night-comfort",
+    name: "Hải Quân Thẫm",
+    desc: "Bóng tối đại dương huyền bí, mang lại chiều sâu tập trung tối đa",
+    bg: "#0E131F",
+    card: "#161E30",
+    border: "#232F4A",
+    swatch: "#0E131F",
+    dark: true
+  },
+  {
+    id: "eink-reader",
+    name: "Quặng Đá Obsidian",
+    desc: "Tone đen Obsidian tinh giản thẳm sâu, triệt tiêu mỏi mắt ban đêm",
+    bg: "#0B0C0E",
+    card: "#121417",
+    border: "#1D2025",
+    swatch: "#0B0C0E",
+    dark: true
+  }
+];
 
 export default function App() {
   const [currentView, setCurrentView] = useState<AppView>("home");
+  const [activeThemeId, setActiveThemeId] = useState<string>(() => {
+    return localStorage.getItem("derek-bg-theme") || "oolong-milk";
+  });
+  const [paletteOpen, setPaletteOpen] = useState(false);
+
+  const activeTheme = BG_THEMES.find(t => t.id === activeThemeId) || BG_THEMES[0];
+
+  const handleThemeChange = (id: string) => {
+    setActiveThemeId(id);
+    localStorage.setItem("derek-bg-theme", id);
+    window.dispatchEvent(new CustomEvent("derek-theme-changed", { detail: id }));
+  };
 
   useEffect(() => {
     // 1. Detect if navigating to administrative routes like domain/admin
@@ -61,58 +127,10 @@ export default function App() {
           <div className="space-y-6">
             <Hero setCurrentView={setCurrentView} />
 
-            {/* High Conversion Premium Trust Band Section (Reviews & Case Highlights) */}
-            <section className="bg-[#1A1A2E] text-white py-16 px-6 md:px-12">
-              <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
-                {/* Highlight 1 */}
-                <div className="space-y-3.5 border-l-2 border-[#FFD700] pl-5">
-                  <div className="flex text-[#FFD700] items-center gap-1">
-                    <Star size={13} fill="currentColor" />
-                    <Star size={13} fill="currentColor" />
-                    <Star size={13} fill="currentColor" />
-                    <Star size={13} fill="currentColor" />
-                    <Star size={13} fill="currentColor" />
-                  </div>
-                  <h4 className="text-sm font-bold uppercase tracking-wider text-[#FFD700]">Định Hướng Thực Chiến</h4>
-                  <p className="text-xs text-gray-300 leading-relaxed">
-                    "Sau 4 tháng triển khai chiến dịch SEO chuyên nghiệp cùng Derek Flow, organic traffic nhãn mỹ phẩm của chúng tôi tăng vượt bậc <strong>+210%</strong>, lọt top 3 danh mục bán chạy nhất thị trường."
-                  </p>
-                  <span className="text-[10px] text-gray-500 font-bold block">— Giám đốc Marketing, Nhãn hàng Mỹ phẩm Mỹ</span>
-                </div>
-
-                {/* Highlight 2 */}
-                <div className="space-y-3.5 border-l-2 border-[#FFD700] pl-5">
-                  <div className="flex text-[#FFD700] items-center gap-1">
-                    <Star size={13} fill="currentColor" />
-                    <Star size={13} fill="currentColor" />
-                    <Star size={13} fill="currentColor" />
-                    <Star size={13} fill="currentColor" />
-                    <Star size={13} fill="currentColor" />
-                  </div>
-                  <h4 className="text-sm font-bold uppercase tracking-wider text-[#FFD700]">Tự Động Hóa Vượt Bậc</h4>
-                  <p className="text-xs text-gray-300 leading-relaxed">
-                    "Giải pháp tích hợp AI chatbot và tự động hóa Make.com giúp hệ thống kinh doanh bất động sản của chúng tôi đồng bộ lead tự động 100%, tỷ lệ phản hồi đáp ứng giảm từ 30 phút xuống còn <strong>10 giây</strong>."
-                  </p>
-                  <span className="text-[10px] text-gray-500 font-bold block">— Lê Minh Quốc, CEO TechStart JSC</span>
-                </div>
-
-                {/* Highlight 3 */}
-                <div className="space-y-3.5 border-l-2 border-[#FFD700] pl-5">
-                  <div className="flex text-[#FFD700] items-center gap-1">
-                    <Star size={13} fill="currentColor" />
-                    <Star size={13} fill="currentColor" />
-                    <Star size={13} fill="currentColor" />
-                    <Star size={13} fill="currentColor" />
-                    <Star size={13} fill="currentColor" />
-                  </div>
-                  <h4 className="text-sm font-bold uppercase tracking-wider text-[#FFD700]">Website Tải Trang Thần Tốc</h4>
-                  <p className="text-xs text-gray-300 leading-relaxed">
-                    "Trang đích load trong vòng vỏn vẹn <strong>0.8 giây</strong>, thiết kế tối giản cực sang trọng, tích hợp trơn tru cổng mua bán khiến tỉ lệ chốt đơn (CVR) cải thiện ngay lập tức thêm 15%."
-                  </p>
-                  <span className="text-[10px] text-gray-500 font-bold block">— Trần Phương Thảo, Founder ScentLux</span>
-                </div>
-              </div>
-            </section>
+            {/* Highly Authentic Technical Standards Standard Section instead of fake reviews */}
+            <div className="max-w-7xl mx-auto px-6 md:px-12">
+              <TechnicalSpecs />
+            </div>
 
             {/* Quick Teaser Services Overviews in Homepage */}
             <section className="bg-transparent py-16 px-6 md:px-12 font-sans relative">
@@ -151,9 +169,9 @@ export default function App() {
                     <div className="w-9 h-9 rounded bg-white flex items-center justify-center text-[#FFD700] border border-gray-100">
                       <Sparkles size={16} />
                     </div>
-                    <h4 className="text-sm font-extrabold uppercase tracking-wide text-[#1A1A2E]">Lập Trình Web Luxury</h4>
+                    <h4 className="text-sm font-extrabold uppercase tracking-wide text-[#1A1A2E]">Thiết Kế Web WordPress</h4>
                     <p className="text-xs text-gray-500 leading-relaxed">
-                      Thiết kế kiến tạo website bằng React/Vite mượt mà, tải nhanh tức thì dưới 1s, tương thích 100% di động, cấu bản chuẩn SEO on-page từ lúc code.
+                      Thiết kế và xây dựng giao diện website tối giản qua Custom Theme hoặc Elementor chuẩn chỉ, tối ưu tài nguyên, thân thiện di động và sẵn sàng chuẩn SEO on-page.
                     </p>
                   </div>
 
@@ -162,9 +180,9 @@ export default function App() {
                     <div className="w-9 h-9 rounded bg-white flex items-center justify-center text-[#FFD700] border border-gray-100">
                       <MessageCircle size={16} />
                     </div>
-                    <h4 className="text-sm font-extrabold uppercase tracking-wide text-[#1A1A2E]">AI & Automation</h4>
+                    <h4 className="text-sm font-extrabold uppercase tracking-wide text-[#1A1A2E]">Tối Ưu Tốc Độ & CRO</h4>
                     <p className="text-xs text-gray-500 leading-relaxed">
-                      Kết nối CRM, Google Sheets tự động, lập chatbot AI RAG trả lời tự tin 24/7, giúp tiết kiệm ít nhất 40% chi phí vận hành nghiệp vụ.
+                      Phân tích bản đồ nhiệt, tinh giản mã nguồn và sửa đổi trải nghiệm người dùng giúp giữ chân khách hàng và đột phá tỷ lệ mua hàng tự nhiên.
                     </p>
                   </div>
                 </div>
@@ -176,7 +194,175 @@ export default function App() {
   };
 
   return (
-    <div id="derek-lam-portfolio-app" className="min-h-screen flex flex-col justify-between bg-[#FAFAF8] overflow-x-hidden font-sans antialiased selection:bg-[#FFD700] selection:text-[#1A1A2E] relative">
+    <div id="derek-lam-portfolio-app" className="min-h-screen flex flex-col justify-between overflow-x-hidden font-sans antialiased selection:bg-[#FFD700] selection:text-[#1A1A2E] relative transition-colors duration-300" style={{ backgroundColor: activeTheme.bg }}>
+      {/* Dynamic Background Customizer Style Sheet */}
+      <style>{`
+        :root {
+          --app-bg-custom: ${activeTheme.bg};
+          --app-card-custom: ${activeTheme.card};
+          --app-border-custom: ${activeTheme.border};
+          --app-text-custom: ${activeTheme.dark ? "#FFFFFF" : "#111424"};
+          --app-text-muted: ${activeTheme.dark ? "#F1F5F9" : "#2E3B4E"};
+          --app-text-lighter: ${activeTheme.dark ? "#E2E8F0" : "#4B5563"};
+          --app-accent-custom: ${activeTheme.dark ? "#FFD700" : "#AA7500"}; /* High contrast rich ochre gold on light, bright gold on dark */
+          --app-gold-card-bg-start: ${activeTheme.dark ? "#262520" : "#FAFAF7"};
+          --app-gold-card-bg-end: ${activeTheme.dark ? "#1B1915" : "#F5F0E8"};
+          --app-gold-card-text: ${activeTheme.dark ? "#F1F5F9" : "#111424"};
+          --app-gold-card-text-muted: ${activeTheme.dark ? "#CBD5E1" : "#4B5563"};
+        }
+        
+        /* Forces override for any component using the hardcoded beige background */
+        body,
+        #derek-lam-portfolio-app,
+        section.bg-\\[\\#F4EFE6\\],
+        div.bg-\\[\\#F4EFE6\\],
+        .bg-\\[\\#F4EFE6\\] {
+          background-color: ${activeTheme.bg} !important;
+        }
+
+        /* Highly readable custom styled gold highlighted premium cards */
+        .derek-gold-card {
+          background-image: linear-gradient(to top right, var(--app-gold-card-bg-start), var(--app-gold-card-bg-end)) !important;
+          border-color: #FFD700 !important;
+        }
+
+        .derek-gold-card h1, .derek-gold-card h2, .derek-gold-card h3, .derek-gold-card h4, .derek-gold-card h5, .derek-gold-card h6,
+        .derek-gold-card p, .derek-gold-card li, .derek-gold-card span, .derek-gold-card strong {
+          color: var(--app-gold-card-text) !important;
+        }
+
+        .derek-gold-card .text-gray-400, .derek-gold-card .text-gray-500, .derek-gold-card .text-slate-500, .derek-gold-card .text-slate-400 {
+          color: var(--app-gold-card-text-muted) !important;
+        }
+
+        /* Override specific hardcoded charcoal text colors so they adjust dynamically */
+        .text-\\[\\#1A1A2E\\],
+        h1, h2, h3, h4, h5, h6,
+        li, strong {
+          color: var(--app-text-custom) !important;
+        }
+
+        /* Override specific gold accented text blocks and stars for premium high contrast visibility */
+        .text-\\[\\#FFD700\\] {
+          color: var(--app-accent-custom) !important;
+        }
+
+        /* Ensure icon colors match the adaptive high contrast accent color too */
+        svg.text-\\[\\#FFD700\\] {
+          stroke: var(--app-accent-custom) !important;
+        }
+
+        /* Prevent golden star characters from looking faint or washed out on light layers */
+        span.text-goldAccent, .text-amber-500, .text-yellow-500 {
+          color: var(--app-accent-custom) !important;
+        }
+
+        /* Override standard text-gray classes for superior thematic readability based on contrast */
+        .text-gray-600, .text-slate-600 {
+          color: var(--app-text-muted) !important;
+        }
+
+        .text-gray-500, .text-slate-500 {
+          color: var(--app-text-lighter) !important;
+        }
+
+        .text-gray-400, .text-slate-400 {
+          color: ${activeTheme.dark ? "#CBD5E1" : "#5A6E85"} !important;
+        }
+
+        /* Scope context-aware variables inside naturally dark containers to keep text crisp and highly contrasty */
+        .bg-\\[\\#1A1A2E\\],
+        .bg-gray-950,
+        .bg-black,
+        .text-white,
+        footer {
+          --app-text-custom: #F8FAFC !important;
+          --app-text-muted: #CBD5E1 !important;
+          --app-text-lighter: #94A3B8 !important;
+          --app-accent-custom: #FFD700 !important;
+        }
+
+        /* Enforce readable light colors for elements nested inside naturally dark containers and footers */
+        .bg-\\[\\#1A1A2E\\] h1, .bg-\\[\\#1A1A2E\\] h2, .bg-\\[\\#1A1A2E\\] h3, .bg-\\[\\#1A1A2E\\] h4, .bg-\\[\\#1A1A2E\\] h5, .bg-\\[\\#1A1A2E\\] h6,
+        .bg-\\[\\#1A1A2E\\] p, .bg-\\[\\#1A1A2E\\] li, .bg-\\[\\#1A1A2E\\] strong, .bg-\\[\\#1A1A2E\\] a,
+        .bg-gray-950 h1, .bg-gray-950 h2, .bg-gray-950 h3, .bg-gray-950 h4, .bg-gray-950 h5, .bg-gray-950 h6, .bg-gray-950 p, .bg-gray-950 li,
+        footer, footer h1, footer h2, footer h3, footer h4, footer h5, footer h6, footer p, footer li, footer a, footer strong {
+          color: var(--app-text-custom) !important;
+        }
+
+        /* Standard gray subtexts inside dark layers */
+        .bg-\\[\\#1A1A2E\\] .text-gray-300, .bg-\\[\\#1A1A2E\\] .text-gray-400, 
+        .bg-gray-950 .text-gray-400,
+        footer .text-gray-400, footer .text-slate-400 {
+          color: var(--app-text-muted) !important;
+        }
+
+        /* Bright gold highlights inside CTA and footer should keep beautiful vibrant neon yellow-gold */
+        .bg-\\[\\#1A1A2E\\] .text-\\[\\#FFD700\\], .bg-\\[\\#1A1A2E\\] svg.text-\\[\\#FFD700\\],
+        footer .text-\\[\\#FFD700\\], footer svg.text-\\[\\#FFD700\\] {
+          color: #FFD700 !important;
+          stroke: #FFD700 !important;
+        }
+
+        /* Buttons with background gold (styled as bg-[#FFD700]) MUST force deep dark charcoal text for high contrast */
+        .bg-\\[\\#FFD700\\],
+        .bg-yellow-400,
+        .bg-amber-400 {
+          --app-text-custom: #111424 !important;
+          --app-text-muted: #2E3B4E !important;
+          --app-text-lighter: #4B5563 !important;
+        }
+
+        .bg-\\[\\#FFD700\\] h1, .bg-\\[\\#FFD700\\] h2, .bg-\\[\\#FFD700\\] h3, .bg-\\[\\#FFD700\\] h4, .bg-\\[\\#FFD700\\] p,
+        .bg-\\[\\#FFD700\\] span, .bg-\\[\\#FFD700\\] button, .bg-\\[\\#FFD700\\] a,
+        .bg-yellow-400 button, .bg-yellow-400 span {
+          color: #111424 !important;
+        }
+
+        /* Forces override for any header component or translucent panels */
+        header.bg-\\[\\#F4EFE6\\],
+        header.bg-\\[\\#F4EFE6\\]\\/95,
+        .bg-\\[\\#F4EFE6\\]\\/95 {
+          background-color: ${activeTheme.bg}f2 !important;
+        }
+
+        .md\\:bg-\\[\\#F4EFE6\\]\\/95 {
+          background-color: ${activeTheme.bg}f2 !important;
+        }
+
+        .md\\:bg-\\[\\#F4EFE6\\] {
+          background-color: ${activeTheme.bg} !important;
+        }
+
+        /* Forces override for any card elements with hardcoded light cream */
+        .bg-white,
+        .bg-\\[\\#FDFBF7\\],
+        div.bg-\\[\\#FDFBF7\\],
+        aside.bg-\\[\\#FDFBF7\\],
+        section.bg-\\[\\#FDFBF7\\],
+        .bg-\\[\\#F5F0E8\\],
+        div.bg-\\[\\#F5F0E8\\],
+        .bg-gray-50,
+        header.bg-white {
+          background-color: ${activeTheme.card} !important;
+          border-color: ${activeTheme.border} !important;
+        }
+
+        /* Ensure borders match thematic borders cleanly instead of feeling disjointed */
+        .border-gray-200, .border-gray-150, .border-gray-100 {
+          border-color: ${activeTheme.border} !important;
+        }
+
+        .border-\\[\\#1A1A2E\\] {
+          border-color: var(--app-text-custom) !important;
+        }
+
+        /* Smooth animated transitions for all background style switching */
+        div, section, header, main, aside, button, article, p, h1, h2, h3, h4, h5, h6, span, svg {
+          transition: background-color 300ms ease-out, border-color 300ms ease-out, color 300ms ease-out, stroke 300ms ease-out !important;
+        }
+      `}</style>
+
       {/* Background aesthetic enhancements filling the wide left/right blank gutters */}
       <div className="hidden xl:block absolute inset-0 pointer-events-none overflow-hidden z-0">
         {/* Amber warm fluid light in the left margin area */}
@@ -206,6 +392,87 @@ export default function App() {
           </motion.div>
         </AnimatePresence>
       </main>
+
+      {/* Floating Dynamic Background Color Customizer Selector */}
+      <div className="fixed bottom-6 left-6 z-50 md:bottom-8 md:left-8 font-sans">
+        <AnimatePresence>
+          {paletteOpen && (
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9, y: 10 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.9, y: 10 }}
+              transition={{ duration: 0.2 }}
+              className="border rounded-xl shadow-2xl p-5 mb-4 w-[280px] space-y-4"
+              style={{ backgroundColor: activeTheme.card, borderColor: activeTheme.border }}
+            >
+              <div className="flex items-center justify-between border-b pb-2.5" style={{ borderColor: activeTheme.border }}>
+                <div className="flex items-center gap-2">
+                  <Palette size={16} className="text-[#FFD700]" />
+                  <span className="text-xs font-bold uppercase tracking-wider text-[#1A1A2E]">Tông Màu Giao Diện</span>
+                </div>
+                <button
+                  onClick={() => setPaletteOpen(false)}
+                  className="p-1 hover:bg-black/5 rounded text-gray-400 hover:text-gray-600 transition-colors cursor-pointer"
+                >
+                  <X size={15} />
+                </button>
+              </div>
+
+              {/* Theme buttons list */}
+              <div className="space-y-2">
+                {BG_THEMES.map((t) => {
+                  const isSelected = t.id === activeThemeId;
+                  return (
+                    <button
+                      key={t.id}
+                      onClick={() => handleThemeChange(t.id)}
+                      className={`w-full text-left p-2.5 rounded-lg border transition-all flex items-center justify-between cursor-pointer group ${
+                        isSelected 
+                          ? "shadow-sm" 
+                          : "hover:border-[#FFD700]/60"
+                      }`}
+                      style={{ 
+                        backgroundColor: isSelected ? t.card : "transparent",
+                        borderColor: isSelected ? "#FFD700" : activeTheme.border 
+                      }}
+                    >
+                      <div className="flex items-center gap-2.5">
+                        <span 
+                          className="w-5 h-5 rounded-full border border-gray-300 block shrink-0 shadow-sm" 
+                          style={{ backgroundColor: t.swatch }}
+                        />
+                        <div className="min-w-0">
+                          <p className="text-xs font-bold text-[#1A1A2E] leading-none">{t.name}</p>
+                          <p className="text-[10px] text-gray-400 mt-0.5 truncate">{t.desc}</p>
+                        </div>
+                      </div>
+                      {isSelected && (
+                        <span className="text-[#FFD700] text-[9px] font-extrabold uppercase tracking-wider font-mono">Đang Chọn</span>
+                      )}
+                    </button>
+                  );
+                })}
+              </div>
+
+              <p className="text-[10px] text-gray-400 text-center leading-normal">
+                Thay đổi bộ tone màu nền sẽ tự động áp dụng đồng bộ toàn bộ thành phần giao diện.
+              </p>
+            </motion.div>
+          )}
+        </AnimatePresence>
+
+        {/* Floating Customizer Trigger Action Button */}
+        <button
+          onClick={() => setPaletteOpen(!paletteOpen)}
+          className="flex items-center justify-center w-12 h-12 bg-[#1A1A2E] hover:bg-[#FFD700] text-white hover:text-[#1A1A2E] rounded-full shadow-lg transition-all transform hover:scale-105 cursor-pointer relative group"
+        >
+          {paletteOpen ? <X size={20} /> : <Palette size={20} />}
+          
+          <span className="hidden md:block absolute left-14 bg-[#1A1A2E] text-white text-[10px] font-extrabold uppercase tracking-widest px-3 py-1.5 rounded shadow opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
+            Thay Đổi Tông Màu Nền
+          </span>
+        </button>
+      </div>
 
       {/* Floating Dynamic Chatbot AI Support */}
       <Chatbot />

@@ -15,7 +15,7 @@ export default function Hero({ setCurrentView }: HeroProps) {
     { value: "06", label: "Tháng Đạt Đỉnh", description: "Thời gian trung bình" }
   ];
 
-  const brandLogs = ["GSC", "GA4", "SEMRUSH", "AHREFS", "OPENAI", "MAKE.COM"];
+  const brandLogs = ["GSC", "GA4", "SEMRUSH", "AHREFS", "REACTJS", "VITE"];
 
   return (
     <section className="bg-transparent text-[#1A1A2E] py-16 lg:py-24 px-6 md:px-12 font-sans overflow-hidden relative">
@@ -23,9 +23,9 @@ export default function Hero({ setCurrentView }: HeroProps) {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           {/* Hero Left Content */}
           <div className="lg:col-span-7 space-y-6">
-            <div className="inline-flex items-center space-x-2 px-3 py-1 bg-[#F5F0E8] border border-gray-200 rounded-full">
+            <div className="inline-flex items-center space-x-2 px-3 py-1 bg-[var(--app-card-custom)] border border-[var(--app-border-custom)] rounded-full shadow-2xs">
               <Zap size={12} className="text-[#FFD700]" />
-              <span className="text-[11px] font-bold tracking-widest uppercase text-gray-600">SEO & AI Automation Specialist</span>
+              <span className="text-[11px] font-bold tracking-widest uppercase text-gray-600">SEO & Web Development Specialist</span>
             </div>
 
             <h1 className="text-4xl sm:text-5xl lg:text-5xl font-extrabold tracking-tight leading-tight text-[#1A1A2E]">
@@ -37,7 +37,7 @@ export default function Hero({ setCurrentView }: HeroProps) {
             </h1>
 
             <p className="text-sm md:text-base text-gray-500 leading-relaxed max-w-xl">
-              Kết hợp sức mạnh vượt trội của <strong>SEO thực chiến chuyên sâu</strong> và giải pháp <strong>Tự động hóa bằng AI Agents</strong> để gia tăng gấp bội lượng traffic tự nhiên, tối ưu hóa tỷ lệ chuyển đổi và giải phóng nguồn lực tối đa.
+              Kết hợp sức mạnh vượt trội của <strong>SEO thực chiến chuyên sâu</strong> và giải pháp <strong>Thiết Kế Website Chuẩn SEO</strong> để gia tăng gấp bội lượng traffic tự nhiên, tối ưu hóa tỷ lệ chuyển đổi và thúc đẩy dòng tiền kinh doanh.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
@@ -71,7 +71,7 @@ export default function Hero({ setCurrentView }: HeroProps) {
               </div>
               <div className="flex items-center space-x-2 text-xs text-gray-600">
                 <Cpu size={14} className="text-[#FFD700]" />
-                <span className="font-semibold">Tích hợp AI trợ lý 24/7</span>
+                <span className="font-semibold">Lập trình React/Vite chuẩn SEO</span>
               </div>
               <div className="flex items-center space-x-2 text-xs text-gray-600 block sm:flex">
                 <Award size={14} className="text-[#FFD700]" />
@@ -80,27 +80,80 @@ export default function Hero({ setCurrentView }: HeroProps) {
             </div>
           </div>
 
-          {/* Hero Right Visual Column - Styled beautiful yellow launcher shape */}
+          {/* Hero Right Visual Column - Premium Light SEO Campaign Mockup */}
           <div className="lg:col-span-5 flex justify-center">
-            <div className="relative w-72 h-72 sm:w-80 sm:h-80 md:w-96 md:h-96 rounded-2xl bg-gradient-to-tr from-[#F5F0E8] to-white border border-gray-200 shadow-xl flex items-center justify-center p-8">
-              {/* Decorative nodes */}
-              <div className="absolute top-8 left-8 w-3 h-3 rounded-full bg-[#FFD700]/40 animate-ping"></div>
-              <div className="absolute bottom-12 right-12 w-4 h-4 rounded-full bg-[#1A1A2E]/10"></div>
-              <div className="absolute top-1/4 right-8 w-2 h-2 rounded-full bg-[#FFD700]"></div>
+            <div className="relative w-full max-w-[420px] rounded-2xl bg-[var(--app-card-custom)] border border-[var(--app-border-custom)] shadow-xl p-6 overflow-hidden select-none font-sans">
+              
+              {/* Browser window top controls */}
+              <div className="flex items-center justify-between border-b border-gray-150 pb-3 mb-4">
+                <div className="flex items-center space-x-2">
+                  <div className="flex space-x-1.5">
+                    <span className="w-2.5 h-2.5 rounded-full bg-red-400"></span>
+                    <span className="w-2.5 h-2.5 rounded-full bg-yellow-400"></span>
+                    <span className="w-2.5 h-2.5 rounded-full bg-green-400"></span>
+                  </div>
+                  <span className="text-[10px] font-bold text-gray-400 tracking-wider font-mono">DEREK.FLOW // SEO_REPORT</span>
+                </div>
+                <div className="flex items-center space-x-1 bg-green-50 text-green-700 border border-green-200 px-2.5 py-0.5 rounded-full shrink-0">
+                  <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></span>
+                  <span className="text-[8px] font-extrabold uppercase tracking-widest">Active Track</span>
+                </div>
+              </div>
 
-              {/* Main Visual Core Card */}
-              <motion.div 
-                animate={{ y: [0, -10, 0] }}
-                transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
-                className="w-48 h-48 md:w-56 md:h-56 rounded-xl bg-[#FFD700] shadow-2xl flex flex-col items-center justify-center relative select-none"
-              >
-                <div className="w-20 h-20 md:w-24 md:h-24 rounded-full bg-white/20 flex items-center justify-center backdrop-blur-md animate-pulse">
-                  <Bot size={48} className="text-white" />
+              {/* Core Analytics Showcase */}
+              <div className="space-y-4">
+                <div className="bg-[var(--app-bg-custom)] border border-[var(--app-border-custom)]/80 rounded-xl p-4 flex items-center justify-between">
+                  <div className="space-y-0.5">
+                    <span className="text-[9px] font-extrabold uppercase text-gray-400 tracking-wider">Organic Search traffic</span>
+                    <div className="flex items-baseline space-x-1.5">
+                      <span className="text-2xl font-extrabold text-[#1A1A2E] tracking-tight">482.3K</span>
+                      <span className="text-[11px] text-green-600 font-extrabold font-sans">+187%</span>
+                    </div>
+                  </div>
+                  <div className="p-2.5 bg-white border border-gray-100 rounded-lg text-[#FFD700] shadow-2xs">
+                    <TrendingUp size={20} className="stroke-[2.5]" />
+                  </div>
                 </div>
-                <div className="absolute -bottom-4 bg-[#1A1A2E] text-[#FAFAF7] text-[10px] uppercase font-bold tracking-widest px-4 py-1.5 rounded shadow">
-                  PRO LEVEL STRATEGY
+
+                {/* Keyword Rank Tracker Simulation */}
+                <div className="space-y-2.5">
+                  <span className="text-[9px] font-bold uppercase text-gray-400 tracking-widest pl-1">Bứt Phá Thứ Hạng Từ Khóa</span>
+                  
+                  <div className="bg-white border border-gray-150 rounded-lg p-3 flex items-center justify-between text-xs hover:border-[#FFD700] transition-colors">
+                    <div className="flex items-center gap-2">
+                      <span className="text-[#FFD700] text-sm">★</span>
+                      <span className="font-bold text-[#1A1A2E]">"dịch vụ seo chiến lược"</span>
+                    </div>
+                    <span className="bg-[#1A1A2E] text-[#FFD700] text-[9px] font-extrabold px-2 py-1 rounded">TOP 1</span>
+                  </div>
+
+                  <div className="bg-white border border-gray-150 rounded-lg p-3 flex items-center justify-between text-xs hover:border-[#FFD700] transition-colors">
+                    <div className="flex items-center gap-2">
+                      <span className="text-[#FFD700] text-sm">★</span>
+                      <span className="font-bold text-[#1A1A2E]">"thiết kế website chuẩn seo"</span>
+                    </div>
+                    <span className="bg-[#1A1A2E] text-[#FFD700] text-[9px] font-extrabold px-2 py-1 rounded">TOP 2</span>
+                  </div>
+
+                  <div className="bg-white border border-gray-150 rounded-lg p-3 flex items-center justify-between text-xs hover:border-[#FFD700] transition-colors">
+                    <div className="flex items-center gap-2">
+                      <span className="text-[#FFD700] text-sm">★</span>
+                      <span className="font-bold text-[#1A1A2E]">"dịch vụ nâng cấp web"</span>
+                    </div>
+                    <span className="bg-[#1A1A2E] text-[#FFD700] text-[9px] font-extrabold px-2 py-1 rounded">TOP 1</span>
+                  </div>
                 </div>
-              </motion.div>
+
+                {/* Status indicator bar */}
+                <div className="bg-white border border-gray-150 rounded-lg p-3 flex items-center justify-between text-[11px] text-gray-500">
+                  <div className="flex items-center gap-2">
+                    <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+                    <span>Hệ thống vận hành an toàn...</span>
+                  </div>
+                  <span className="font-mono text-xs font-bold text-[#1A1A2E]">100% OK</span>
+                </div>
+              </div>
+
             </div>
           </div>
         </div>

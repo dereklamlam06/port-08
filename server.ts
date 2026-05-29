@@ -177,6 +177,20 @@ const chatLogs: ChatLog[] = [
 const fallbackBotResponses = (userMsg: string): string => {
   const msg = userMsg.toLowerCase();
   
+  // Strict scope validation: if the query is unrelated to customer support, Derek Flow, SEO, web, automation or contact, refuse politely.
+  const isRelated = 
+    msg.includes("giá") || msg.includes("chi phí") || msg.includes("gói") || msg.includes("bao nhiêu") || msg.includes("mua") || msg.includes("thanh toán") ||
+    msg.includes("seo") || msg.includes("từ khóa") || msg.includes("traffic") || msg.includes("gsc") || msg.includes("analytics") || msg.includes("đẩy top") ||
+    msg.includes("web") || msg.includes("thiết kế") || msg.includes("giao diện") || msg.includes("react") || msg.includes("vite") || msg.includes("mã nguồn") ||
+    msg.includes("automation") || msg.includes("tự động") || msg.includes("agent") || msg.includes("chatbot") || msg.includes("n8n") || msg.includes("zapier") || msg.includes("make") ||
+    msg.includes("liên hệ") || msg.includes("đăng ký") || msg.includes("tư vấn") || msg.includes("đặt lịch") || msg.includes("sđt") || msg.includes("điện thoại") || msg.includes("hotline") || msg.includes("zalo") ||
+    msg.includes("quy trình") || msg.includes("bước") || msg.includes("làm việc") || msg.includes("derek") || msg.includes("flow") || msg.includes("giới thiệu") || msg.includes("chăm sóc") || msg.includes("hỗ trợ") ||
+    msg.includes("chào") || msg.includes("hello") || msg.includes("hi");
+
+  if (!isRelated) {
+    return "Tôi là trợ lý AI của Derek Flow, chỉ được lập trình để trả lời các câu hỏi về chăm sóc khách hàng và giới thiệu các sản phẩm, giải pháp (SEO, Website, AI & Automation) của chúng tôi. Rất tiếc tôi không thể giải đáp các câu hỏi ngoài phạm vi này. Xin mời bạn hỏi thêm về dịch vụ của chúng tôi!";
+  }
+
   if (msg.includes("giá") || msg.includes("chi phí") || msg.includes("bảng giá") || msg.includes("bao nhiêu")) {
     return "Chào bạn! Hiện tại Derek Flow cung cấp các gói dịch vụ tối ưu như sau:\n\n" +
            "1. **SEO Starter**: 15.000.000đ/tháng - Phù hợp cho SME bắt đầu xây dựng hiện diện số (Tối ưu 10 trang, GSC & Google Analytics, nghiên cứu 50 từ khóa).\n" +
@@ -189,8 +203,8 @@ const fallbackBotResponses = (userMsg: string): string => {
     return "Dịch vụ **SEO Fullstack** của Derek Flow tập trung tối ưu hóa từ cấu trúc mã nguồn, tốc độ tải trang, đến chiến lược Content sâu sắc. Bạn có thể xem kết quả thực tế như dự án Mỹ phẩm Hoa Kỳ tăng trưởng ngoạn mục **+210% Organic Traffic** sau 4 tháng triển khai. Bạn có muốn nhận một bản đánh giá (Audit) trang web miễn phí không?";
   }
   
-  if (msg.includes("web") || msg.includes("thiết kế") || msg.includes("react") || msg.includes("vite")) {
-    return "Derek Flow thiết kế website chuẩn UX/UI theo phong cách **Minimalist & Luxury Tech**, tối ưu tải trang cực nhanh (< 1 giây), nền tảng React/Vite kết hợp Express bảo mật tối đa và tương thích 100% thiết bị di động. Website được tối ưu SEO toàn diện từ lúc code giúp bạn tiết kiệm chi phí marketing tối đa.";
+  if (msg.includes("web") || msg.includes("thiết kế") || msg.includes("react") || msg.includes("vite") || msg.includes("wordpress") || msg.includes("wp")) {
+    return "Derek Flow thiết kế website WordPress tốt nhất cho SEO, tối giản theo nhu cầu bằng code custom theme hoặc Elementor kéo thả thông dụng. Website được tối ưu hóa tốc độ tải trang phản hồi cực nhanh, thân thiện di động tuyệt đối và sẵn sàng SEO bài bản từ nền móng hạ tầng giúp bạn gia tăng lưu lượng truy cập ban đầu.";
   }
   
   if (msg.includes("automation") || msg.includes("tự động hóa") || msg.includes("agent") || msg.includes("chatbot") || msg.includes("n8n") || msg.includes("zapier")) {
@@ -209,7 +223,7 @@ const fallbackBotResponses = (userMsg: string): string => {
            "4. **Báo Cáo**: Đo lường hiệu quả chuyển đổi thực tế và bàn giao hệ thống trực quan.";
   }
   
-  return "Chào bạn, tôi là trợ lý AI tự động của chuyên gia Derek Flow. Tôi có thể hỗ trợ cung cấp thông tin gói dịch vụ SEO, xây dựng website Luxury Tech, tích hợp tự động hóa qua Make/N8N/Zapier và hướng dẫn bạn đăng ký tư vấn hoặc thanh toán trực tuyến an toàn. Bạn có câu hỏi nào cụ thể hơn không?";
+  return "Chào bạn, tôi là trợ lý AI tự động của chuyên gia Derek Flow. Tôi có thể hỗ trợ cung cấp thông tin gói dịch vụ SEO, xây dựng website WordPress chuẩn SEO bản đẹp và hướng dẫn bạn đăng ký tư vấn hoặc thanh toán mô phỏng trực tuyến an toàn. Bạn có câu hỏi nào cụ thể hơn không?";
 };
 
 // API route first before Vite setup
@@ -253,17 +267,20 @@ app.post("/api/chat", async (req, res) => {
 
     const systemInstruction = 
       "Bạn là trợ lý AI thông minh tích hợp trên trang web chính thức của chuyên gia Derek Flow (SEO Specialist & AI Automator, Senior Strategist & Full-stack Developer).\n" +
-      "Nhiệm vụ của bạn là tư vấn tận tình, chuyên nghiệp, lịch sự theo tôn chỉ trải nghiệm tối giản và sang trọng (Luxury Tech).\n" +
+      "QUY TẮC BẮT BUỘC (CRITICAL MANDATE - STRICTLY ENFORCED):\n" +
+      "- Bạn CHỈ ĐƯỢC PHÉP trả lời các câu hỏi và thực hiện hội thoại liên quan đến CHĂM SÓC KHÁCH HÀNG (hỗ trợ, giải đáp thủ tục, khiếu nại, trợ giúp kỹ thuật hệ thống, hướng dẫn đặt lịch hẹn) và GIỚI THIỆU SẢN PHẨM/DỊCH VỤ của Derek Flow (bảng giá, dịch vụ SEO Fullstack, thiết kế website WordPress chuẩn SEO, năng lực chuyên môn của Derek Flow).\n" +
+      "- Tuyệt đối KHÔNG ĐƯỢC phép trả lời bất kỳ chủ đề nào khác nằm ngoài phạm vi này (ví dụ: TUYỆT ĐỐI từ chối giải toán, viết code lập trình chung không liên quan đến sản phẩm/mã nguồn của Derek Flow, đưa công thức nấu ăn, viết văn thơ phiếm diện, kiến thức lịch sử địa lý thế giới rộng lớn, hoặc tâm sự/tán gẫu không mục đích...). Hãy từ chối một cách lịch sự nhưng cực kỳ dứt khoát.\n" +
+      "- Nếu người dùng cố tình chuyển chủ đề ngoài phạm vi dịch vụ và chăm sóc khách hàng của Derek Flow, hãy phản hồi chuẩn như sau: 'Tôi là trợ lý AI của Derek Flow, chỉ được lập trình để trả lời các câu hỏi về chăm sóc khách hàng và giới thiệu các sản phẩm/dịch vụ (SEO, Thiết kế website WordPress) của chúng tôi. Rất tiếc tôi không thể giải đáp các câu hỏi ngoài phạm vi này. Xin mời bạn hỏi thêm về dịch vụ của chúng tôi!'\n\n" +
+      "Nhiệm vụ của bạn là tư vấn tận tình, chuyên nghiệp, lịch sự theo tôn chỉ trực quan mới mẻ và thực chất.\n" +
       "Hãy cung cấp thông tin chính xác phục vụ khách hàng với các trọng tâm sau:\n" +
       "1. Chuyên gia Derek Flow: Hơn 10 năm kinh nghiệm tại điểm giao thoa giữa Technical SEO và Phát triển phần mềm tùy chỉnh độc đáo. Tư vấn các giải pháp bứt phá tăng trưởng bền vững cho doanh nghiệp.\n" +
       "2. Dịch vụ chủ đạo:\n" +
       "   - SEO Fullstack: Tối ưu Technical SEO sâu, Content chất lượng cao, backlink audit, đẩy top tìm kiếm an toàn tuyệt đối. Đạt mốc tiêu biểu +210% Organic traffic cho nhãn hàng mĩ phẩm cao cấp.\n" +
-      "   - Thiết kế website: Phong cách Minimalist, tốc độ tải cực nhanh (<1s), thân thiện SEO 100%, chuẩn UX/UI di động mạnh mẽ trên nền tảng React/Vite/Express.\n" +
-      "   - AI Agent & Automation: Phát triển chatbot bán hàng, tự động báo cáo marketing, kết nối hệ thống CRM bằng Zapier, N8N, Make giúp giảm 80% thời gian phản hồi.\n" +
+      "   - Thiết kế website WordPress: Phong cách tối giản, chuẩn SEO trên WordPress bằng code custom theme gọn nhẹ hoặc Elementor dễ bảo trì quản trị.\n" +
       "3. Bảng giá:\n" +
       "   - SEO Starter: 15.000.000 VND / tháng\n" +
       "   - SEO Pro: 35.000.000 VND / tháng (Bán chạy nhất)\n" +
-      "   - AI & Automation: Báo giá tùy chỉnh dự án thực tế (khoảng từ 60.000.000 VND trở lên)\n" +
+      "   - Web & SEO Premium: Báo giá tùy chỉnh khoảng từ 55.000.000 VND thiết kế trọn gói.\n" +
       "4. Quy trình 4 bước: Tư vấn -> Lên Kế Hoạch -> Thực Thi -> Báo Cáo rõ ràng.\n" +
       "Khuyến khích khách hàng đăng ký thông tin liên hệ như họ tên, sđt để Derek Flow tư vấn trực tiếp, hoặc nhấn gói mua để thanh toán mô phỏng trực tuyến bảo mật trên web. Hãy viết bằng tiếng Việt lưu loát, bố cục sạch đẹp, dễ đọc.";
 

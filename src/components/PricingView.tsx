@@ -60,17 +60,17 @@ export default function PricingView({ setCurrentView }: PricingViewProps) {
     },
     {
       id: "plan_3",
-      name: "AI & Automation",
-      subtitle: "Tự động hóa vận hành & tích hợp AI tăng năng lực cạnh tranh.",
-      price: 60000000,
-      priceLabel: "Báo giá theo dự án thực tế",
+      name: "Web & SEO Premium",
+      subtitle: "Thiết kế website độc quyền, tốc độ siêu tốc kết hợp tối ưu SEO Onpage sâu nhất.",
+      price: 55000000,
+      priceLabel: "Trọn gói bàn giao kiến trúc",
       features: [
-        "Xây dựng Chatbot AI phản hồi tự động RAG",
-        "Hệ thống tự động hóa Marketing (Make.com/N8N)",
-        "Đồng bộ hóa dữ liệu tự động CRM & ERP",
-        "Scraping Bots thu thập thông tin tự động",
-        "Hệ thống báo cáo tự sinh KPI tự động",
-        "Quản trị an toàn chuẩn bảo mật hệ thống độc lập"
+        "Phát triển mã nguồn React/ESM mượt mà bảo mật",
+        "Điểm số tốc độ Chrome Lighthouse đạt 99-100",
+        "Bố cục Landing Page thiết kế tối giản độc quyền",
+        "Tích hợp Schema JSON-LD cấu trúc thực thể chi tiết",
+        "Thiết lập kết nối CRM & cổng thanh toán bảo mật",
+        "Đội ngũ kỹ thuật hỗ trợ nâng cấp vận hành 12 tháng"
       ],
       colorTheme: "dark"
     }
@@ -83,7 +83,7 @@ export default function PricingView({ setCurrentView }: PricingViewProps) {
     },
     {
       q: "Thời gian triển khai trong bao lâu?",
-      a: "Tùy thuộc vào quy mô dự án. Chiến dịch SEO thường ghi nhận tín hiệu tăng trưởng sau 4-6 tuần và đạt đỉnh bền vững sau 4-6 tháng. Đối với việc thiết kế web và tự động hóa AI, thời gian bàn giao trung bình từ 2-4 tuần."
+      a: "Tùy thuộc vào quy mô dự án. Chiến dịch SEO thường ghi nhận tín hiệu tăng trưởng sau 4-6 tuần và đạt đỉnh bền vững sau 4-6 tháng. Đối với việc thiết kế web và tối ưu hóa hệ thống, thời gian bàn giao trung bình từ 2-4 tuần."
     },
     {
       q: "Báo cáo hiệu quả diễn ra như thế nào?",
@@ -95,7 +95,7 @@ export default function PricingView({ setCurrentView }: PricingViewProps) {
     },
     {
       q: "Có hỗ trợ sau khi hoàn thành bàn giao không?",
-      a: "Hoàn toàn có! Tất cả website và hệ thống tự động hóa AI đều được bảo hành kỹ thuật 12 tháng hoàn toàn miễn phí. Đội ngũ chuyên gia luôn sẵn sàng hỗ trợ cập nhật thuật toán 24/7."
+      a: "Hoàn toàn có! Tất cả website và giải pháp SEO đều được hỗ trợ bảo trì kỹ thuật 12 tháng hoàn toàn miễn phí. Đội ngũ chuyên gia luôn sẵn sàng hỗ trợ cập nhật thuật toán 24/7."
     }
   ];
 
@@ -182,12 +182,12 @@ export default function PricingView({ setCurrentView }: PricingViewProps) {
   };
 
   return (
-    <section className="bg-[#FAFAF7] text-[#1A1A2E] py-16 px-6 md:px-12 font-sans relative">
+    <section className="bg-[#F4EFE6] text-[#1A1A2E] py-16 px-6 md:px-12 font-sans relative">
       <div className="max-w-7xl mx-auto space-y-16">
         {/* Main Title layout */}
         <div className="text-center max-w-2xl mx-auto space-y-4">
           <span className="text-[11px] font-bold tracking-widest uppercase text-[#FFD700]">Chi phí đầu tư rõ ràng</span>
-          <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight">Bảng Giá Dịch Vụ SEO & AI</h2>
+          <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight">Bảng Giá Dịch Vụ SEO & Web</h2>
           <p className="text-xs sm:text-sm text-gray-500 leading-relaxed">
             Các gói giải pháp được thiết kế tối giản, minh bạch các hạng mục bàn giao nhằm tập trung tối đa tối ưu hóa chuyển đổi thực tế cho doanh nghiệp.
           </p>
@@ -204,10 +204,10 @@ export default function PricingView({ setCurrentView }: PricingViewProps) {
                 key={plan.id}
                 className={`border rounded-lg p-6 md:p-8 flex flex-col justify-between relative shadow-sm transition-all duration-300 ${
                   isGoldTheme 
-                    ? "border-[#FFD700] bg-gradient-to-tr from-[#FAFAF7] to-[#F5F0E8] ring-2 ring-[#FFD700]/20 -translate-y-1" 
+                    ? "border-[#FFD700] derek-gold-card ring-2 ring-[#FFD700]/20 -translate-y-1" 
                     : isDarkTheme
                     ? "bg-[#1A1A2E] text-[#E2E3E0] border-gray-800"
-                    : "border-gray-200 bg-white"
+                    : "border-gray-200 bg-[#FDFBF7]"
                 }`}
               >
                 {/* Badge PHỔ BIẾN */}
@@ -269,7 +269,7 @@ export default function PricingView({ setCurrentView }: PricingViewProps) {
         </p>
 
         {/* FAQ Section */}
-        <div className="bg-white border border-gray-200 p-8 rounded-lg space-y-8 max-w-4xl mx-auto shadow-sm">
+        <div className="bg-[#FDFBF7] border border-gray-200 p-8 rounded-lg space-y-8 max-w-4xl mx-auto shadow-sm">
           <div className="text-center space-y-2">
             <span className="text-[10px] font-bold tracking-widest uppercase text-gray-400">Hỗ trợ nhanh</span>
             <h3 className="text-xl md:text-2xl font-bold">Câu Hỏi Thường Gặp</h3>

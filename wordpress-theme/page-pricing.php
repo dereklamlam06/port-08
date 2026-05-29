@@ -69,7 +69,7 @@ get_header(); ?>
             </div>
 
             <!-- Plan 2: SEO Pro (Gold Highlighted) -->
-            <div class="border border-[#FFD700] bg-gradient-to-tr from-[#FAFAF7] to-[#F5F0E8] ring-2 ring-[#FFD700]/20 rounded-lg p-6 md:p-8 flex flex-col justify-between relative shadow-md transition-all duration-300 hover:shadow-lg -translate-y-1">
+            <div class="border border-[#FFD700] derek-gold-card ring-2 ring-[#FFD700]/20 rounded-lg p-6 md:p-8 flex flex-col justify-between relative shadow-md transition-all duration-300 hover:shadow-lg -translate-y-1">
                 <span class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-[#FFD700] text-[#1A1A2E] text-[10px] font-extrabold px-3 py-1 rounded-full uppercase tracking-wider shadow">
                     PHỔ BIẾN NHẤT
                 </span>
@@ -209,7 +209,7 @@ get_header(); ?>
 
                     if ($is_popular) {
                         ?>
-                        <div class="border border-[#FFD700] bg-gradient-to-tr from-[#FAFAF7] to-[#F5F0E8] ring-2 ring-[#FFD700]/20 rounded-lg p-6 md:p-8 flex flex-col justify-between relative shadow-md transition-all duration-300 hover:shadow-lg -translate-y-1">
+                        <div class="border border-[#FFD700] derek-gold-card ring-2 ring-[#FFD700]/20 rounded-lg p-6 md:p-8 flex flex-col justify-between relative shadow-md transition-all duration-300 hover:shadow-lg -translate-y-1">
                             <span class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-[#FFD700] text-[#1A1A2E] text-[10px] font-extrabold px-3 py-1 rounded-full uppercase tracking-wider shadow">
                                 DỰ ÁN NỔI BẬT
                             </span>

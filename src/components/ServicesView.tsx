@@ -22,38 +22,14 @@ export default function ServicesView({ setCurrentView }: ServicesViewProps) {
     },
     {
       icon: <Code className="text-[#FFD700]" size={24} />,
-      title: "Build Web Chuẩn SEO",
-      description: "Thiết kế và phát triển ứng dụng web, trang giới thiệu doanh nghiệp hoặc landing page cực kỳ cao cấp, tối ưu tốc độ tải trang dưới 1 giây. Giao diện tối giản, hiện đại và tương thích hoàn hảo mọi thiết bị di động.",
-      workflow: "Vẽ sơ đồ (Sketch) → Thiết kế UI/UX → Lập trình mã nguồn sạch → Kiểm định tốc độ & bảo mật.",
+      title: "Thiết Kế Web WordPress Chuẩn SEO",
+      description: "Xây dựng website trên nền tảng WordPress bằng code tay tối ưu (Custom Theme) hoặc Elementor chuẩn chỉ. Đảm bảo giao diện hiện đại, tối ưu tốc độ tải trang, chuẩn SEO toàn diện và vô cùng dễ bảo trì, cập nhật nội dung.",
+      workflow: "Trao đổi nhu cầu → Thiết kế layout UI/UX → Lập trình theme hoặc Elementor tối giản → Tối ưu hóa SEO & Tốc độ.",
       deliverables: [
-        "Công nghệ hiện đại React / Vite / Express bảo mật",
-        "Thiết kế UI/UX độc quyền, không dùng template đại trà",
-        "Tối ưu Core Web Vitals xanh mướt, tải trang thần tốc",
-        "Tích hợp các cổng thanh toán & chatbot tư vấn tự động"
-      ]
-    },
-    {
-      icon: <Bot className="text-[#FFD700]" size={24} />,
-      title: "AI Agent Doanh Nghiệp",
-      description: "Tích hợp trí tuệ nhân tạo (Generative AI) vào trực tiếp quy trình vận hành của bạn. Thiết lập các trợ lý ảo hỗ trợ khách hàng tự động 24/7, tự sinh nội dung tiếp thị thông minh, RAG dữ liệu doanh nghiệp và tăng tỷ lệ giữ chân khách hàng.",
-      workflow: "Thu thập dữ liệu tri thức → Thiết kế prompts chuyên biệt → Fine-tuning LLMs → Triển khai & theo dõi.",
-      deliverables: [
-        "Chatbot AI hỗ trợ tự động bám sát dữ liệu sản phẩm",
-        "Hệ thống tự động chấm điểm khách hàng tiềm năng",
-        "Trợ lý AI lập báo cáo marketing tự động từ tri thức",
-        "Tối ưu hóa quy trình tư vấn tự động hóa hoàn toàn"
-      ]
-    },
-    {
-      icon: <Repeat className="text-[#FFD700]" size={24} />,
-      title: "Tự Động Hóa Automation",
-      description: "Kết nối toàn bộ hệ thống lưu trữ, trang web, CRM và các kênh truyền thông của bạn thông qua Make.com, N8N hoặc Zapier. Giải phóng đến 80% nhân sự khỏi các tác vụ nhập liệu, chuyển nguồn và thống kê thủ công.",
-      workflow: "Vẽ luồng xử lý (Map Flow) → Thiết lập logic điều kiện → Xử lý lỗi tự động → Tối ưu hóa quy trình.",
-      deliverables: [
-        "Đồng bộ hóa dữ liệu khách hàng từ Web về Google Sheets/CRM",
-        "Hệ thống gửi Email marketing bám đuổi tự động theo hành vi",
-        "Scraping Bots thu thập thông tin thị trường đối thủ hàng ngày",
-        "Cảnh báo thông báo tự động hóa qua Telegram/Zalo ngay lập tức"
+        "Website WordPress dễ dàng quản trị, cập nhật bài viết & sản phẩm",
+        "Lựa chọn Code Custom gọn nhẹ hoặc Elementor kéo thả chuyên nghiệp",
+        "Tối ưu Core Web Vitals, tăng tốc độ phản hồi tối đa",
+        "Tích hợp cấu trúc dữ liệu schema định danh thực thể & Google Maps"
       ]
     }
   ];
@@ -61,19 +37,19 @@ export default function ServicesView({ setCurrentView }: ServicesViewProps) {
   const steps = [
     { num: "01", title: "Tư Vấn Chuyên Sâu", desc: "Lắng nghe bài toán kinh doanh, ngân sách và nhu cầu đặc thù thực tế của doanh nghiệp." },
     { num: "02", title: "Lên Kế Hoạch Lộ Trình", desc: "Thiết kế giải pháp kiến trúc kỹ thuật tối giản, lộ trình triển khai chi tiết & báo giá rõ ràng." },
-    { num: "03", title: "Thực Thi Toàn Diện", desc: "Phát triển giải pháp, tối ưu SEO, lập trình logic, tích hợp AI và kiểm định tốc độ ngặt nghèo." },
+    { num: "03", title: "Thực Thi Toàn Diện", desc: "Phát triển giải pháp, tối ưu SEO, lập trình logic cấu trúc dữ liệu schema và kiểm định tốc độ ngặt nghèo." },
     { num: "04", title: "Bàn Giao & Báo Cáo", desc: "Thống kê hiệu quả chuyển đổi thực tế, bàn giao hệ thống và hướng dẫn vận hành trực quan." }
   ];
 
   return (
-    <section className="bg-[#FAFAF7] text-[#1A1A2E] py-16 px-6 md:px-12 font-sans">
+    <section className="bg-[#F4EFE6] text-[#1A1A2E] py-16 px-6 md:px-12 font-sans">
       <div className="max-w-7xl mx-auto space-y-16">
         {/* Title details */}
         <div className="text-center max-w-2xl mx-auto space-y-4">
           <span className="text-[11px] font-bold tracking-widest uppercase text-[#FFD700]">Năng lực cốt lõi</span>
           <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight text-[#1A1A2E]">Dịch Vụ Tinh Hoa</h2>
           <p className="text-xs sm:text-sm text-gray-500 leading-relaxed">
-            Giải pháp công nghệ bứt phá kết hợp hoàn hảo giữa năng lực chiến lược SEO và công nghệ AI Automation giúp tự động hóa quy trình nghiệp vụ tối đa của bạn.
+            Giải pháp công nghệ bứt phá kết hợp hoàn hảo giữa năng lực chiến lược SEO và công nghệ thiết lập website cao cấp giúp tối ưu hóa giá trị kinh doanh cho doanh nghiệp của bạn.
           </p>
         </div>
 
@@ -85,7 +61,7 @@ export default function ServicesView({ setCurrentView }: ServicesViewProps) {
               className="bg-[#F5F0E8] border border-gray-200 p-6 md:p-8 rounded-lg space-y-5 hover:border-[#FFD700] hover:shadow-md transition-all group duration-300"
             >
               <div className="flex items-center space-x-3">
-                <div className="p-3 bg-white border border-gray-100 rounded">
+                <div className="p-3 bg-[#FDFBF7] border border-gray-100 rounded">
                   {service.icon}
                 </div>
                 <h3 className="text-lg font-bold text-[#1A1A2E] group-hover:text-[#FFD700] transition-colors">
@@ -118,7 +94,7 @@ export default function ServicesView({ setCurrentView }: ServicesViewProps) {
         </div>
 
         {/* Workflow Diagram */}
-        <div className="bg-white border border-gray-200 p-8 rounded-lg space-y-10 shadow-sm">
+        <div className="bg-[#FDFBF7] border border-gray-200 p-8 rounded-lg space-y-10 shadow-sm">
           <div className="text-center max-w-xl mx-auto space-y-2">
             <span className="text-[10px] font-bold tracking-widest uppercase text-gray-400">Minh bạch & chuẩn mực</span>
             <h3 className="text-xl md:text-2xl font-bold text-[#1A1A2E]">Quy Trình Làm Việc Thống Nhất</h3>

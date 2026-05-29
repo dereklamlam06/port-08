@@ -145,7 +145,7 @@
                 </div>
                 <div>
                     <div class="text-[12.5px] px-3.5 py-2.5 rounded-lg leading-relaxed bg-[#F5F0E8] text-navyPrimary border border-gray-200 rounded-bl-none text-justify">
-                        Xin chào! Tôi là Trợ lý AI tự động của Derek Flow. Tôi có thể hỗ trợ giải đáp nhanh mọi thắc mắc của bạn về tối ưu hóa SEO chuyên sâu, thiết kế website Luxury Tech, tích hợp AI Agents và tự động hóa quy trình. Bạn cần tôi hỗ trợ thông tin gì hôm nay?
+                        Xin chào! Tôi là Trợ lý AI tự động của Derek Flow. Tôi có thể hỗ trợ giải đáp nhanh mọi thắc mắc của bạn về tối ưu hóa SEO chuyên sâu, thiết kế website chuẩn SEO và các hạng mục kỹ thuật liên quan. Bạn cần tôi hỗ trợ thông tin gì hôm nay?
                     </div>
                     <span class="text-[9px] text-gray-400 mt-1 block px-1" id="wp-chatbot-welcome-time">12:00</span>
                 </div>

@@ -61,4 +61,12 @@ export interface CaseStudy {
     label: string;
     value: string;
   }[];
+  initialState?: string; // Ban đầu / Nhận web
+  problem?: string;      // Vấn đề
+  fix?: string;          // Khắc phục / Fix
+  results?: string[];    // Kết quả đạt được
+  proofImageInitial?: string;
+  proofImageProblem?: string;
+  proofImageFix?: string;
+  proofImageResults?: string;
 }

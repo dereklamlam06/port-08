@@ -39,7 +39,7 @@ export default function Header({ currentView, setCurrentView }: HeaderProps) {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-[#FAFAF8]/95 backdrop-blur-md border-b border-[#E5E7EB] font-sans shadow-sm">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-[var(--app-card-custom)]/90 backdrop-blur-md border-b border-[var(--app-border-custom)] font-sans shadow-sm">
       <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
         {/* Brand Logo - Supporting customizable logo uploads */}
         <div 
@@ -66,8 +66,8 @@ export default function Header({ currentView, setCurrentView }: HeaderProps) {
               <button
                 key={item.view}
                 onClick={() => handleNavClick(item.view)}
-                className={`text-[13px] font-medium tracking-wider uppercase transition-colors cursor-pointer relative py-2 ${
-                  isActive ? "text-[#1A1A2E] font-bold" : "text-gray-500 hover:text-[#1A1A2E]"
+                className={`text-[13px] font-bold tracking-widest uppercase transition-colors cursor-pointer relative py-2.5 ${
+                  isActive ? "text-navyPrimary font-black" : "text-gray-500 hover:text-navyPrimary"
                 }`}
               >
                 {item.label}
@@ -102,7 +102,7 @@ export default function Header({ currentView, setCurrentView }: HeaderProps) {
 
       {/* Mobile Menu Dropdown */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-[#FAFAF8] border-b border-[#E5E7EB] px-6 py-4 space-y-4">
+        <div className="md:hidden bg-[var(--app-card-custom)] border-b border-[var(--app-border-custom)] px-6 py-4 space-y-4">
           <div className="flex flex-col space-y-3">
             {navItems.map((item) => (
               <button

@@ -47,7 +47,7 @@ export default function ContactView() {
   };
 
   return (
-    <section className="bg-[#FAFAF7] text-[#1A1A2E] py-16 px-6 md:px-12 font-sans">
+    <section className="bg-[#F4EFE6] text-[#1A1A2E] py-16 px-6 md:px-12 font-sans">
       <div className="max-w-7xl mx-auto space-y-12">
         {/* Header content section */}
         <div className="text-center max-w-2xl mx-auto space-y-4">
@@ -58,7 +58,7 @@ export default function ContactView() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 bg-white rounded-lg border border-gray-200 shadow-sm overflow-hidden">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 bg-[#FDFBF7] rounded-lg border border-gray-200 shadow-sm overflow-hidden">
           {/* Left panel: Info Coordinates */}
           <div className="lg:col-span-5 bg-[#1A1A2E] text-white p-8 md:p-12 flex flex-col justify-between space-y-12 relative">
             <div className="absolute top-0 right-0 w-32 h-32 bg-[#FFD700]/5 rounded-full blur-2xl"></div>

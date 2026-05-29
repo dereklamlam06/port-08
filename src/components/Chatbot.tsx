@@ -10,7 +10,7 @@ export default function Chatbot() {
     {
       id: "welcome",
       sender: "bot",
-      text: "Xin chào! Tôi là Trợ lý AI tự động của Derek Flow. Tôi có thể hỗ trợ giải đáp nhanh mọi thắc mắc của bạn về tối ưu hóa SEO chuyên sâu, thiết kế website Luxury Tech, tích hợp AI Agents và tự động hóa quy trình. Bạn cần tôi hỗ trợ thông tin gì hôm nay?",
+      text: "Xin chào! Tôi là Trợ lý AI tự động của Derek Flow. Tôi có thể hỗ trợ giải đáp nhanh mọi thắc mắc của bạn về tối ưu hóa SEO chuyên sâu, thiết kế website chuẩn SEO và các hạng mục kỹ thuật liên quan. Bạn cần tôi hỗ trợ thông tin gì hôm nay?",
       timestamp: new Date().toLocaleTimeString("vi-VN", { hour: "2-digit", minute: "2-digit" })
     }
   ]);

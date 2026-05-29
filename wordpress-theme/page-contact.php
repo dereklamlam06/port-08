@@ -89,7 +89,7 @@ get_header(); ?>
                         <label class="text-[10px] font-bold text-gray-500 uppercase">Dịch vụ quan tâm</label>
                         <select id="lead-service" class="w-full bg-white border border-gray-300 rounded px-3 py-2.5 text-xs outline-none focus:border-[#FFD700] text-gray-700 font-semibold font-sans">
                             <option value="Chiến dịch SEO Tổng Thể">Chiến dịch SEO Tổng Thể</option>
-                            <option value="Thiết kế website Luxury chuẩn SEO">Thiết kế website Luxury chuẩn SEO</option>
+                            <option value="Thiết kế website WordPress chuẩn SEO">Thiết kế website WordPress chuẩn SEO</option>
                             <option value="Tích hợp AI & Automation">Tích hợp AI & Automation</option>
                             <option value="Tư vấn giải pháp trọn gói">Tư vấn giải pháp trọn gói</option>
                         </select>

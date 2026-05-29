@@ -13,13 +13,37 @@ get_header(); ?>
     <section class="text-center space-y-4 mb-14 relative z-10 max-w-3xl mx-auto">
         <div class="inline-flex items-center gap-2 bg-[#FFD700]/10 border border-[#FFD700]/25 px-3 py-1.5 rounded-full text-[10px] font-extrabold uppercase tracking-widest text-[#1A1A2E]">
             <span class="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse"></span>
-            <span>Chuyên Trang Chia Sẻ Chuyên Sâu • WordPress Blog</span>
+            <span><?php echo is_category() ? 'Danh mục lưu trữ • WordPress Category' : 'Chuyên Trang Chia Sẻ Chuyên Sâu • WordPress Blog'; ?></span>
         </div>
         <h1 class="text-4xl sm:text-5xl font-black text-navyPrimary tracking-tight leading-none">
-            Blog Tăng Trưởng Thực Chiến
+            <?php 
+            if (is_category()) {
+                $term_id = get_queried_object_id();
+                $acf_cat_title = get_field('category_meta_title', 'category_' . $term_id);
+                if (!empty($acf_cat_title)) {
+                    echo esc_html($acf_cat_title);
+                } else {
+                    single_cat_title();
+                }
+            } else {
+                echo 'Blog Tăng Trưởng Thực Chiến';
+            }
+            ?>
         </h1>
         <p class="text-xs sm:text-sm text-gray-500 max-w-2xl mx-auto leading-relaxed">
-            Các chuyên đề hướng dẫn lập bản đồ Semantic SEO bền vững, tích hợp tự động hóa n8n / Make vào quy trình vận hành phễu lead, tối ưu hóa tốc độ load React/WordPress đỉnh cao.
+            <?php 
+            if (is_category()) {
+                $term_id = get_queried_object_id();
+                $acf_cat_desc = get_field('category_meta_desc', 'category_' . $term_id);
+                if (!empty($acf_cat_desc)) {
+                    echo esc_html($acf_cat_desc);
+                } else {
+                    echo category_description();
+                }
+            } else {
+                echo 'Các chuyên đề hướng dẫn lập bản đồ Semantic SEO bền vững, tích hợp tự động hóa n8n / Make vào quy trình vận hành phễu lead, tối ưu hóa tốc độ load React/WordPress đỉnh cao.';
+            }
+            ?>
         </p>
     </section>
 

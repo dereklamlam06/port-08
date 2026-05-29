@@ -19,39 +19,81 @@ get_header(); ?>
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <!-- Avatar frame -->
             <div class="lg:col-span-5 flex justify-center">
-                <div class="relative w-72 h-80 sm:w-80 sm:h-96 md:w-[350px] md:h-[420px] rounded-2xl bg-gradient-to-tr from-[#1A1A2E] to-gray-800 p-8 shadow-2xl overflow-hidden text-[#FAFAF7] flex flex-col justify-between">
-                    <!-- Decorative items -->
-                    <div class="absolute top-0 right-0 w-32 h-32 bg-[#FFD700]/10 rounded-full blur-2xl"></div>
-                    
-                    <div class="space-y-4 relative z-10">
-                        <div class="w-12 h-12 rounded bg-[#FFD700] flex items-center justify-center text-[#1A1A2E]">
-                            <svg class="w-6 h-6 text-[#1A1A2E]" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M11.5 .5L14 8h7.5L15 12l2.5 7.5-6-4.5-6 4.5L8 12 1.5 8H9z"/>
-                            </svg>
-                        </div>
-                        <div class="space-y-1">
-                            <h3 class="text-xl font-extrabold uppercase tracking-wide text-white">DEREK FLOW</h3>
-                            <p class="text-[11px] text-gray-400 uppercase tracking-widest font-mono">Senior Strategist & Developer</p>
-                        </div>
-                        <p class="text-xs text-gray-300 leading-relaxed pt-2">
-                            "Sự vượt bậc trong vị trí thứ hạng tìm kiếm và độ tinh giản của bộ máy vận hành là thước đo duy nhất để đánh giá thành công của dự án."
-                        </p>
-                    </div>
+                <div class="relative w-72 h-80 sm:w-80 sm:h-96 md:w-[350px] md:h-[420px] rounded-2xl shadow-2xl overflow-hidden group">
+                    <?php
+                    $theme_dir = get_template_directory();
+                    $theme_uri = get_template_directory_uri();
+                    $custom_avatar_url = dl_field('custom_avatar_url', '');
 
-                    <div class="space-y-2 border-t border-gray-700/50 pt-4 text-xs font-mono relative z-10">
-                        <div class="flex justify-between">
-                            <span class="text-gray-500">Kinh nghiệm:</span>
-                            <span class="text-white">10+ Năm Thực Chiến</span>
+                    if (empty($custom_avatar_url)) {
+                        if (file_exists($theme_dir . '/uploads/avatar.jpg')) {
+                            $custom_avatar_url = $theme_uri . '/uploads/avatar.jpg';
+                        } elseif (file_exists(dirname($theme_dir) . '/uploads/avatar.jpg')) {
+                            $custom_avatar_url = dirname($theme_uri) . '/uploads/avatar.jpg';
+                        } elseif (file_exists($theme_dir . '/uploads/avatar.png')) {
+                            $custom_avatar_url = $theme_uri . '/uploads/avatar.png';
+                        } elseif (file_exists(dirname($theme_dir) . '/uploads/avatar.png')) {
+                            $custom_avatar_url = dirname($theme_uri) . '/uploads/avatar.png';
+                        }
+                    }
+
+                    if (!empty($custom_avatar_url)): ?>
+                        <!-- High-Fidelity Custom Image uploaded by user, fits 4:5 vertical proportions nicely -->
+                        <div class="absolute inset-0 w-full h-full">
+                            <div class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                                <img 
+                                    src="<?php echo esc_url($custom_avatar_url); ?>" 
+                                    alt="Derek Flow Specialist" 
+                                    class="w-full h-full object-cover" 
+                                />
+                            </div>
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent flex flex-col justify-end p-6 select-none font-sans">
+                                <div class="space-y-1">
+                                    <h3 class="text-xl font-extrabold uppercase tracking-wide text-white leading-none">DEREK FLOW</h3>
+                                    <p class="text-[10px] text-[#FFD700] uppercase tracking-widest font-mono font-bold">Senior Strategist & Developer</p>
+                                </div>
+                                <p class="text-[11px] text-gray-300 leading-relaxed pt-2 border-t border-white/10 mt-2.5">
+                                    "Sự vượt bậc trong thứ hạng và độ tinh giản vận hành là thước đo duy nhất thành công."
+                                </p>
+                            </div>
                         </div>
-                        <div class="flex justify-between">
-                            <span class="text-gray-500">Thế mạnh chính:</span>
-                            <span class="text-white">Technical SEO & AI RAG</span>
+                    <?php else: ?>
+                        <!-- Default Luxury Badge visual if no custom image is uploaded -->
+                        <div class="w-full h-full bg-gradient-to-tr from-[#1A1A2E] to-gray-800 p-8 text-[#FAFAF7] flex flex-col justify-between absolute inset-0">
+                            <!-- Decorative items -->
+                            <div class="absolute top-0 right-0 w-32 h-32 bg-[#FFD700]/10 rounded-full blur-2xl"></div>
+                            
+                            <div class="space-y-4 relative z-10">
+                                <div class="w-12 h-12 rounded bg-[#FFD700] flex items-center justify-center text-[#1A1A2E]">
+                                    <svg class="w-6 h-6 text-[#1A1A2E]" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M11.5 .5L14 8h7.5L15 12l2.5 7.5-6-4.5-6 4.5L8 12 1.5 8H9z"/>
+                                    </svg>
+                                </div>
+                                <div class="space-y-1">
+                                    <h3 class="text-xl font-extrabold uppercase tracking-wide text-white">DEREK FLOW</h3>
+                                    <p class="text-[11px] text-gray-400 uppercase tracking-widest font-mono">Senior Strategist & Developer</p>
+                                </div>
+                                <p class="text-xs text-gray-300 leading-relaxed pt-2">
+                                    "Sự vượt bậc trong vị trí thứ hạng tìm kiếm và độ tinh giản của bộ máy vận hành là thước đo duy nhất để đánh giá thành công của dự án."
+                                </p>
+                            </div>
+
+                            <div class="space-y-2 border-t border-gray-700/50 pt-4 text-xs font-mono relative z-10">
+                                <div class="flex justify-between">
+                                    <span class="text-gray-500">Kinh nghiệm:</span>
+                                    <span class="text-white">10+ Năm Thực Chiến</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-500">Thế mạnh chính:</span>
+                                    <span class="text-white">Technical SEO & AI RAG</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-500">Mục tiêu:</span>
+                                    <span class="text-[#FFD700]">To Peak Efficiency</span>
+                                </div>
+                            </div>
                         </div>
-                        <div class="flex justify-between">
-                            <span class="text-gray-500">Mục tiêu:</span>
-                            <span class="text-[#FFD700]">To Peak Efficiency</span>
-                        </div>
-                    </div>
+                    <?php endif; ?>
                 </div>
             </div>
 
