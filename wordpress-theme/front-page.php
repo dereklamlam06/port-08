@@ -227,8 +227,6 @@ get_header(); ?>
                 <p class="text-xs text-gray-300 leading-relaxed">
                     "Trang đích load trong vòng vỏn vẹn <strong>0.8 giây</strong>, thiết kế tối giản cực sang trọng, tích hợp trơn tru cổng mua bán khiến tỉ lệ chốt đơn (CVR) cải thiện ngay lập tức thêm 15%."
                 </p>
-                    "Trang đích load trong vòng vỏn vẹn <strong>0.8 giây</strong>, thiết kế tối giản cực sang trọng, tích hợp trơn tru cổng mua bán khiến tỉ lệ chốt đơn (CVR) cải thiện ngay lập tức thêm 15%."
-                </p>
                 <span class="text-[10px] text-gray-500 font-bold block">— Trần Phương Thảo, Founder ScentLux</span>
             </div>
         </div>
@@ -244,7 +242,7 @@ get_header(); ?>
                         <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
                         <span>Phương Pháp Thực Nghiệm Đặc Thù</span>
                     </div>
-                    <h3 class="text-2xl md:text-3xl font-extrabold tracking-tight text-white!">
+                    <h3 class="text-2xl md:text-3xl font-extrabold tracking-tight" style="color: #ffffff !important;">
                         <?php echo esc_html(dl_field('tech_specs_title', 'Bản Vẽ Thực Thi & Tiêu Chuẩn Cam Kết')); ?>
                     </h3>
                     <p class="text-xs sm:text-sm text-gray-400 max-w-2xl">
@@ -279,7 +277,7 @@ get_header(); ?>
                             <div class="inline-block text-[10px] uppercase font-bold text-[#FFD700] tracking-widest px-2 py-0.5 bg-gray-800/60 rounded">
                                 ⚡ <?php echo esc_html(dl_field('tech_spec_t1_badge', 'Performance Index')); ?>
                             </div>
-                            <h4 class="text-xl font-bold tracking-tight text-white">
+                            <h4 class="text-xl font-bold tracking-tight" style="color: #ffffff !important;">
                                 <?php echo esc_html(dl_field('tech_spec_t1_title', 'Tối Ưu Tốc Độ Tải Trang (Core Web Vitals)')); ?>
                             </h4>
                             <p class="text-xs sm:text-sm text-gray-300 leading-relaxed">
@@ -354,7 +352,7 @@ function derek_optimize_assets() {
                             <div class="inline-block text-[10px] uppercase font-bold text-[#FFD700] tracking-widest px-2 py-0.5 bg-gray-800/60 rounded">
                                 ⚡ <?php echo esc_html(dl_field('tech_spec_t2_badge', 'Entity & Schema')); ?>
                             </div>
-                            <h4 class="text-xl font-bold tracking-tight text-white">
+                            <h4 class="text-xl font-bold tracking-tight" style="color: #ffffff !important;">
                                 <?php echo esc_html(dl_field('tech_spec_t2_title', 'Lập Chỉ Mục Thực Thể & JSON-LD Khắt Khe')); ?>
                             </h4>
                             <p class="text-xs sm:text-sm text-gray-300 leading-relaxed">
@@ -428,7 +426,7 @@ function derek_optimize_assets() {
                             <div class="inline-block text-[10px] uppercase font-bold text-[#FFD700] tracking-widest px-2 py-0.5 bg-gray-800/60 rounded">
                                 ⚡ <?php echo esc_html(dl_field('tech_spec_t3_badge', 'Crawl Optimization')); ?>
                             </div>
-                            <h4 class="text-xl font-bold tracking-tight text-white">
+                            <h4 class="text-xl font-bold tracking-tight" style="color: #ffffff !important;">
                                 <?php echo esc_html(dl_field('tech_spec_t3_title', 'Phân Dòng Liên Kết SILO & Crawl Budget')); ?>
                             </h4>
                             <p class="text-xs sm:text-sm text-gray-300 leading-relaxed">

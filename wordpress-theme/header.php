@@ -55,15 +55,11 @@
     <script>
         (function() {
             var themes = {
-                "oolong-milk": { bg: "#FAFAF7", card: "#FFFFFF", border: "#E2D9C8", dark: false },
-                "dim-matcha": { bg: "#CFD6CD", card: "#E4EAE2", border: "#BBC3B9", dark: false },
-                "jasmine-pale": { bg: "#E3E6DF", card: "#EEF1EA", border: "#CCD1C8", dark: false },
-                "eink-reader": { bg: "#E1E1E1", card: "#EDEDED", border: "#C5C5C5", dark: false },
-                "sunset-amber": { bg: "#E3D5C5", card: "#ECDDCF", border: "#CDBFB0", dark: false },
-                "sand-dune": { bg: "#DDD8CF", card: "#EAE6DF", border: "#C5BFB5", dark: false },
-                "warm-beige": { bg: "#E8E2D5", card: "#F4EFE6", border: "#D2C9B8", dark: false },
-                "nordic-fog": { bg: "#D4D9DB", card: "#EFF2F3", border: "#BDC4C7", dark: false },
-                "night-comfort": { bg: "#1C1E20", card: "#26282C", border: "#373A40", dark: true }
+                "oolong-milk": { bg: "#E8E4D9", card: "#F4F1E6", border: "#CEBFAC", dark: false },
+                "dim-matcha": { bg: "#1C1D1F", card: "#242629", border: "#33373D", dark: true },
+                "jasmine-pale": { bg: "#E2E5DF", card: "#EDF0EA", border: "#C9CEBF", dark: false },
+                "night-comfort": { bg: "#0E131F", card: "#161E30", border: "#232F4A", dark: true },
+                "eink-reader": { bg: "#0B0C0E", card: "#121417", border: "#1D2025", dark: true }
             };
             var activeId = localStorage.getItem("derek-bg-theme") || "oolong-milk";
             var theme = themes[activeId] || themes["oolong-milk"];
