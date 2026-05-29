@@ -193,7 +193,7 @@ export default function Hero({ setCurrentView }: HeroProps) {
         {/* Trust logos */}
         <div className="mt-12 flex flex-col sm:flex-row items-center justify-between gap-6 border-t border-gray-200/45 pt-8">
           <span className="text-[11.5px] font-black uppercase tracking-widest text-[var(--app-accent-custom)]">CÔNG CỤ SỬ DỤNG CHUYÊN SÂU:</span>
-          <div className="flex flex-wrap items-center justify-center gap-6 md:gap-11 text-[13px] font-mono font-black text-[var(--app-text-muted)]">
+          <div className="flex flex-wrap items-center justify-center gap-6 md:gap-11 text-[13px] font-mono font-black text-gray-700 dark:text-gray-200">
             {brandLogs.map((log) => (
               <span key={log} className="hover:text-[var(--app-accent-custom)] transition-colors cursor-default uppercase tracking-wider">
                 {log}

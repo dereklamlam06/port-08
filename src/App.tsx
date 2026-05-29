@@ -274,7 +274,11 @@ export default function App() {
         }
 
         /* Override standard text-gray classes for superior thematic readability based on contrast */
-        .text-gray-600, .text-slate-600 {
+        .text-gray-950, .text-slate-950, .text-gray-900, .text-slate-900, .text-gray-800, .text-slate-800, .text-gray-700, .text-slate-700 {
+          color: var(--app-text-custom) !important;
+        }
+
+        .text-gray-650, .text-gray-600, .text-slate-650, .text-slate-600 {
           color: var(--app-text-muted) !important;
         }
 
