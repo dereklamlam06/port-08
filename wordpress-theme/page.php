@@ -42,6 +42,13 @@ if (in_array($slug, ['dich-vu', 'services', 'dich-vu-seo', 'our-services'])) {
         get_footer();
         exit;
     }
+} elseif (in_array($slug, ['blog', 'tin-tuc', 'news'])) {
+    $template = locate_template(['page-blog.php', 'index.php']);
+    if (!empty($template)) {
+        include($template);
+        get_footer();
+        exit;
+    }
 }
 
 // Default Page Layout fallback if the page is a standard user-created page with Gutenberg content
