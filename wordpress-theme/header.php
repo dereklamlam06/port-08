@@ -258,7 +258,7 @@
     </div>
 
     <!-- Mobile Drawer Sub-Menu (UX optimized for comfortable touch targets 44px) -->
-    <div id="mobile-menu-drawer" class="hidden md:hidden bg-white border-t border-gray-150 py-4 px-6 animate-fade-in block">
+    <div id="mobile-menu-drawer" class="hidden md:hidden bg-white border-t border-gray-150 py-4 px-6 animate-fade-in">
         <nav class="flex flex-col gap-3.5">
             <a href="<?php echo esc_url(home_url('/dich-vu')); ?>" class="mobile-menu-link block text-sm font-bold uppercase tracking-wider text-[#1A1A2E] hover:text-goldAccent py-2.5 border-b border-gray-50">DỊCH VỤ</a>
             <a href="<?php echo esc_url(home_url('/gioi-thieu')); ?>" class="mobile-menu-link block text-sm font-bold uppercase tracking-wider text-[#1A1A2E] hover:text-goldAccent py-2.5 border-b border-gray-50">GIỚI THIỆU</a>
